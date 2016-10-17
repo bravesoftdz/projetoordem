@@ -1,0 +1,87 @@
+unit UntDM;
+
+interface
+
+uses
+  System.SysUtils, System.Classes, Data.DB, Data.Win.ADODB;
+
+type
+  TDM = class(TDataModule)
+    ADOConnection1: TADOConnection;
+    ADODSCliente: TADODataSet;
+    DSCliente: TDataSource;
+    ADODSFuncionario: TADODataSet;
+    ADODSOrdemServico: TADODataSet;
+    ADODSProduto: TADODataSet;
+    DSFuncionario: TDataSource;
+    ADODSOrdemServiconum_os: TAutoIncField;
+    ADODSOrdemServicoid_cliente: TIntegerField;
+    ADODSOrdemServicoid_funcionario: TIntegerField;
+    ADODSOrdemServicodescri_equipamento: TStringField;
+    ADODSOrdemServicodata_inicio: TStringField;
+    ADODSOrdemServicodata_termino: TStringField;
+    ADODSOrdemServicoobservacoes: TStringField;
+    ADODSOrdemServicoserie_equipamento: TStringField;
+    ADODSOrdemServicostatus_ordem: TStringField;
+    DSOrdemServico: TDataSource;
+    DSProduto: TDataSource;
+    ADODSServicos: TADODataSet;
+    DSServicos: TDataSource;
+    ADODSProdutosXOrdem: TADODataSet;
+    ADODSServicosXOrdem: TADODataSet;
+    DSProdutosXOrdem: TDataSource;
+    DSServicosXOrdem: TDataSource;
+    ADODSServicosid_servico: TAutoIncField;
+    ADODSServicostipo_servico: TStringField;
+    ADODSServicospreco: TFloatField;
+    ADODSProdutoid_produto: TAutoIncField;
+    ADODSProdutopreco: TFloatField;
+    ADODSProdutoespecificacoes: TStringField;
+    ADODSProdutomarca: TStringField;
+    ADODSProdutoquantidade: TIntegerField;
+    ADODSServicosXOrdemid_servico: TIntegerField;
+    ADODSServicosXOrdemnum_os: TIntegerField;
+    ADODSFuncionarioid_funcionario: TAutoIncField;
+    ADODSFuncionariocargo: TStringField;
+    ADODSFuncionarionome_func: TStringField;
+    ADODSFuncionariocpf: TStringField;
+    ADODSFuncionariorg: TStringField;
+    ADODSFuncionariodata_nasc: TStringField;
+    ADODSFuncionarioendereco: TStringField;
+    ADODSFuncionariocep: TStringField;
+    ADODSFuncionariocidade: TStringField;
+    ADODSFuncionarioestado: TStringField;
+    ADODSFuncionariotelefone: TStringField;
+    ADODSFuncionariocelular: TStringField;
+    ADODSFuncionarioemail: TStringField;
+    ADODSClienteid_cliente: TAutoIncField;
+    ADODSClientenome_razao: TStringField;
+    ADODSClientecpf_cnpj: TStringField;
+    ADODSClienterg_ie: TStringField;
+    ADODSClientedata_nasc: TStringField;
+    ADODSClienteendereco: TStringField;
+    ADODSClientecep: TStringField;
+    ADODSClientecidade: TStringField;
+    ADODSClienteestado: TStringField;
+    ADODSClientetelefone: TStringField;
+    ADODSClientecelular: TStringField;
+    ADODSClienteemail: TStringField;
+    ADODSClientetipo: TStringField;
+    ADODSClientebairro: TStringField;
+    ADODSFuncionariobairro: TStringField;
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  DM: TDM;
+
+implementation
+
+{%CLASSGROUP 'Vcl.Controls.TControl'}
+
+{$R *.dfm}
+
+end.
