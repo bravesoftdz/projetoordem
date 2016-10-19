@@ -134,7 +134,12 @@ end;
 
 procedure TFrmCadCliente.DBEdit1Exit(Sender: TObject);
 begin
- if (testacpf(DBEdit1.Text)= false) then
+  {if DBEdit1.Text = '' then
+    begin
+    Application.MessageBox('O campo CPF não pode ser vázio.', 'Atenção', MB_OK+MB_ICONINFORMATION);
+    DBEdit1.SetFocus;
+    end
+  else} if (testacpf(DBEdit1.Text)= false) then
   begin
     Application.MessageBox('CPF inválido', 'ERROR', + MB_ICONERROR);
     DBEdit1.SetFocus;

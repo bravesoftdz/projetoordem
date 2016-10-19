@@ -50,6 +50,7 @@ object FrmCadCliente: TFrmCadCliente
     Caption = 'ToolBar1'
     DisabledImages = FrmManCliente.ImageList2
     EdgeBorders = [ebTop, ebBottom]
+    GradientEndColor = 14079702
     HotImages = FrmManCliente.ImageList3
     Images = FrmManCliente.ImageList1
     ParentShowHint = False
@@ -94,7 +95,6 @@ object FrmCadCliente: TFrmCadCliente
       item
         Width = 50
       end>
-    ExplicitTop = 376
   end
   object PnlFicha: TPanel
     Left = 0
@@ -103,7 +103,6 @@ object FrmCadCliente: TFrmCadCliente
     Height = 257
     Align = alClient
     TabOrder = 3
-    ExplicitHeight = 286
     object Label10: TLabel
       Left = 94
       Top = 184
@@ -161,7 +160,7 @@ object FrmCadCliente: TFrmCadCliente
       Caption = 'RG'
     end
     object Label5: TLabel
-      Left = 86
+      Left = 83
       Top = 73
       Width = 27
       Height = 13
