@@ -31,6 +31,7 @@ type
     procedure cad_produtoExecute(Sender: TObject);
     procedure Cad_funcionarioExecute(Sender: TObject);
     procedure Cad_ServicoExecute(Sender: TObject);
+    procedure Cad_osExecute(Sender: TObject);
   private
     { Private declarations }
   public
@@ -45,7 +46,7 @@ implementation
 {$R *.dfm}
 
 uses UntManCliente, UntManFuncionario, UntCadProduto, UntManProduto,
-  UntManServico;
+  UntManServico, UntManOS;
 
 procedure TFrmMenuPrincipal.act_sairExecute(Sender: TObject);
 begin
@@ -60,6 +61,11 @@ end;
 procedure TFrmMenuPrincipal.Cad_funcionarioExecute(Sender: TObject);
 begin
   FrmManFuncionario.ShowModal;
+end;
+
+procedure TFrmMenuPrincipal.Cad_osExecute(Sender: TObject);
+begin
+FrmManOS.ShowModal;
 end;
 
 procedure TFrmMenuPrincipal.cad_produtoExecute(Sender: TObject);

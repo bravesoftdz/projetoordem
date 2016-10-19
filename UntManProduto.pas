@@ -13,7 +13,6 @@ type
     ImageList2: TImageList;
     ImageList3: TImageList;
     Panel1: TPanel;
-    Label1: TLabel;
     ToolBar1: TToolBar;
     btn_Inserir: TToolButton;
     btn_Alterar: TToolButton;
@@ -25,11 +24,13 @@ type
     Edit1: TEdit;
     StatusBar1: TStatusBar;
     DBGrid1: TDBGrid;
+    Label1: TLabel;
     procedure btn_InserirClick(Sender: TObject);
     procedure btn_AlterarClick(Sender: TObject);
     procedure btn_ExcluirClick(Sender: TObject);
     procedure btn_SairClick(Sender: TObject);
     procedure FormActivate(Sender: TObject);
+    procedure Edit1Change(Sender: TObject);
   private
     { Private declarations }
   public
@@ -66,7 +67,7 @@ begin
     Application.MessageBox('O registro foi excluído com sucesso.','Informação', MB_OK+MB_ICONINFORMATION);
   end
   else
-    Application.MessageBox('O exclusão do registro foi abortada.','Informação', MB_OK+MB_ICONERROR);
+    Application.MessageBox('A exclusão do registro foi abortada.','Informação', MB_OK+MB_ICONERROR);
 
 end;
 
@@ -83,6 +84,11 @@ end;
 procedure TFrmManProduto.btn_SairClick(Sender: TObject);
 begin
 close;
+end;
+
+procedure TFrmManProduto.Edit1Change(Sender: TObject);
+begin
+DM.ADODSServicos.Locate('id_produto',Edit1.Text, [loCaseInsensitive,loPartialKey]);
 end;
 
 procedure TFrmManProduto.FormActivate(Sender: TObject);

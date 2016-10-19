@@ -812,17 +812,14 @@ object FrmMenuPrincipal: TFrmMenuPrincipal
     Top = 0
     Width = 531
     Height = 31
-    UseSystemFont = False
     ActionManager = ActionManager1
     Caption = 'ActionMainMenuBar1'
-    Color = clMenuBar
-    ColorMap.DisabledFontColor = 7171437
-    ColorMap.HighlightColor = clWhite
-    ColorMap.BtnSelectedFont = clBlack
-    ColorMap.UnusedColor = clWhite
+    ColorMap.HighlightColor = 14410210
+    ColorMap.BtnSelectedColor = clBtnFace
+    ColorMap.UnusedColor = 14410210
     EdgeBorders = [ebTop, ebBottom]
     Font.Charset = DEFAULT_CHARSET
-    Font.Color = clBlack
+    Font.Color = clWindowText
     Font.Height = -13
     Font.Name = 'Segoe UI'
     Font.Style = []
@@ -835,14 +832,12 @@ object FrmMenuPrincipal: TFrmMenuPrincipal
     Height = 44
     ActionManager = ActionManager1
     Caption = 'ActionToolBar1'
-    Color = clMenuBar
-    ColorMap.DisabledFontColor = 7171437
-    ColorMap.HighlightColor = clWhite
-    ColorMap.BtnSelectedFont = clBlack
-    ColorMap.UnusedColor = clWhite
+    ColorMap.HighlightColor = 14410210
+    ColorMap.BtnSelectedColor = clBtnFace
+    ColorMap.UnusedColor = 14410210
     EdgeBorders = [ebTop, ebBottom]
     Font.Charset = DEFAULT_CHARSET
-    Font.Color = clBlack
+    Font.Color = clWindowText
     Font.Height = -11
     Font.Name = 'Tahoma'
     Font.Style = []
@@ -874,7 +869,7 @@ object FrmMenuPrincipal: TFrmMenuPrincipal
     Left = 168
     Top = 152
     Bitmap = {
-      494C010106005000500018001800FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      494C010106005400540018001800FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000600000003000000001002000000000000048
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
@@ -1524,7 +1519,6 @@ object FrmMenuPrincipal: TFrmMenuPrincipal
         Items = <
           item
             Action = Cad_os
-            Caption = '&Ordem de Servi'#231'o'
             ImageIndex = 0
           end
           item
@@ -1566,6 +1560,7 @@ object FrmMenuPrincipal: TFrmMenuPrincipal
       Caption = 'Ordem de Servi'#231'o'
       Hint = 'Manuten'#231#227'o Ordem de Servi'#231'o'
       ImageIndex = 0
+      OnExecute = Cad_osExecute
     end
     object Cad_Servico: TAction
       Category = 'Cadastro'
