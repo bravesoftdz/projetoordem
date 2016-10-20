@@ -67,6 +67,7 @@ type
     procedure btn_ExcluirClick(Sender: TObject);
     procedure btn_SalvarClick(Sender: TObject);
     procedure btn_CancelarClick(Sender: TObject);
+    procedure FormClose(Sender: TObject; var Action: TCloseAction);
   private
     { Private declarations }
     procedure Botoes(Ativa: Boolean);
@@ -76,6 +77,7 @@ type
 
 var
   FrmManOS: TFrmManOS;
+  //Operação de Navegação
   operacao: integer;
 
 implementation
@@ -99,7 +101,7 @@ begin
         btn_proximo.Enabled:= True;
         btn_Ultimo.Enabled:= True;
       end;
-
+      //Verifica se esta no inicio da tabela
       if DM.ADODSOrdemServico.Eof = True then
       begin
         btn_Proximo.Enabled:= False;
@@ -129,17 +131,19 @@ begin
   end;
   btn_Salvar.Enabled:= not Ativa;
   btn_Cancelar.Enabled:= not Ativa;
-  PnlFicha.Enabled:= not Ativa;
+  {PnlFicha.Enabled:= not Ativa; }
 end;
 
 procedure TFrmManOS.btn_PrimeiroClick(Sender: TObject);
 begin
+//Primeiro botão
 DM.ADODSOrdemServico.First;
 Botoes(true);
 end;
 
 procedure TFrmManOS.btn_ProximoClick(Sender: TObject);
 begin
+//Botão próximo
      DM.ADODSOrdemServico.Next;
      Botoes(true);
 end;
@@ -155,6 +159,7 @@ end;
 
 procedure TFrmManOS.btn_AnteriorClick(Sender: TObject);
 begin
+    //botão anterior
      DM.ADODSOrdemServico.Prior;
      Botoes(true);
 end;
@@ -218,6 +223,23 @@ DM.ADODSOrdemServico.Close;
 DM.ADODSOrdemServico.CommandText := '';
 DM.ADODSOrdemServico.CommandText := 'select * from ORDEM_SERVICOS order by data_inicio';
 DM.ADODSOrdemServico.Open;
+
+Botoes(true);
+
+ADOQueryCliente.Close;
+ADOQueryCliente.Open;
+
+ADOQueryFuncionario.Close;
+ADOQueryFuncionario.Open;
+
+end;
+
+procedure TFrmManOS.FormClose(Sender: TObject; var Action: TCloseAction);
+begin
+dm.ADODSOrdemServico.Close;
+
+ADOQueryCliente.Close;
+ADOQueryFuncionario.Close;
 end;
 
 end.

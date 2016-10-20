@@ -50,7 +50,6 @@ object FrmCadCliente: TFrmCadCliente
     Caption = 'ToolBar1'
     DisabledImages = FrmManCliente.ImageList2
     EdgeBorders = [ebTop, ebBottom]
-    GradientEndColor = 14079702
     HotImages = FrmManCliente.ImageList3
     Images = FrmManCliente.ImageList1
     ParentShowHint = False
@@ -195,7 +194,7 @@ object FrmCadCliente: TFrmCadCliente
       Caption = 'Estado'
     end
     object DBComboBox1: TDBComboBox
-      Left = 120
+      Left = 119
       Top = 16
       Width = 84
       Height = 21
@@ -213,7 +212,6 @@ object FrmCadCliente: TFrmCadCliente
       Top = 151
       Width = 65
       Height = 21
-      Style = csDropDownList
       DataField = 'estado'
       DataSource = DM.DSCliente
       Items.Strings = (
@@ -316,6 +314,7 @@ object FrmCadCliente: TFrmCadCliente
       Top = 151
       Width = 121
       Height = 21
+      DataField = 'bairro'
       DataSource = DM.DSCliente
       TabOrder = 7
     end

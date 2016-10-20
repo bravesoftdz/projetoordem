@@ -26,7 +26,6 @@ object FrmCadFuncionario: TFrmCadFuncionario
     Color = clMoneyGreen
     ParentBackground = False
     TabOrder = 0
-    ExplicitWidth = 457
     object Label1: TLabel
       Left = 128
       Top = 6
@@ -50,9 +49,6 @@ object FrmCadFuncionario: TFrmCadFuncionario
     ParentShowHint = False
     ShowHint = False
     TabOrder = 1
-    ExplicitLeft = 8
-    ExplicitTop = 96
-    ExplicitWidth = 610
     object Label2: TLabel
       Left = 88
       Top = 27
@@ -134,7 +130,7 @@ object FrmCadFuncionario: TFrmCadFuncionario
       Left = 82
       Top = 322
       Width = 33
-      Height = 14
+      Height = 13
       Caption = 'Celular'
     end
     object Label14: TLabel
@@ -251,7 +247,7 @@ object FrmCadFuncionario: TFrmCadFuncionario
       Width = 56
       Height = 21
       DataField = 'estado'
-      DataSource = DM.DSCliente
+      DataSource = DM.DSFuncionario
       Items.Strings = (
         'AC'
         'AL'
@@ -301,8 +297,6 @@ object FrmCadFuncionario: TFrmCadFuncionario
       item
         Width = 50
       end>
-    ExplicitTop = 327
-    ExplicitWidth = 457
   end
   object ToolBar1: TToolBar
     Left = 0
@@ -320,7 +314,6 @@ object FrmCadFuncionario: TFrmCadFuncionario
     ParentShowHint = False
     ShowHint = True
     TabOrder = 3
-    ExplicitWidth = 457
     object btn_salvar: TToolButton
       Left = 0
       Top = 0

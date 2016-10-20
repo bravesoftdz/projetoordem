@@ -111,7 +111,7 @@ begin
 if (tbStrIsDate(DBEdit5.Text) = false) then
   begin
     Application.MessageBox('Digite uma data válida.', 'Error', MB_OK+MB_ICONERROR);
-    DBEdit11.SetFocus;
+    DBEdit5.SetFocus;
   end;
 end;
 

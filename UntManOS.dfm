@@ -15,6 +15,7 @@ object FrmManOS: TFrmManOS
   OldCreateOrder = False
   Position = poScreenCenter
   OnActivate = FormActivate
+  OnClose = FormClose
   PixelsPerInch = 96
   TextHeight = 13
   object Panel1: TPanel
@@ -204,7 +205,7 @@ object FrmManOS: TFrmManOS
       Caption = 'N'#250'mero'
     end
     object DBText1: TDBText
-      Left = 72
+      Left = 93
       Top = 14
       Width = 65
       Height = 17
@@ -221,19 +222,19 @@ object FrmManOS: TFrmManOS
     object Label4: TLabel
       Left = 16
       Top = 64
-      Width = 46
+      Width = 55
       Height = 13
-      Caption = 'Vendedor'
+      Caption = 'Funcion'#225'rio'
     end
     object Label5: TLabel
-      Left = 392
+      Left = 413
       Top = 14
       Width = 53
       Height = 13
       Caption = 'Data Inicial'
     end
     object DBText2: TDBText
-      Left = 472
+      Left = 493
       Top = 14
       Width = 65
       Height = 17
@@ -241,7 +242,7 @@ object FrmManOS: TFrmManOS
       DataSource = DM.DSOrdemServico
     end
     object SpeedButton1: TSpeedButton
-      Left = 522
+      Left = 543
       Top = 35
       Width = 23
       Height = 22
@@ -304,7 +305,7 @@ object FrmManOS: TFrmManOS
         00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF}
     end
     object SpeedButton2: TSpeedButton
-      Left = 522
+      Left = 543
       Top = 60
       Width = 23
       Height = 22
@@ -367,7 +368,7 @@ object FrmManOS: TFrmManOS
         00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF}
     end
     object DBEdit1: TDBEdit
-      Left = 72
+      Left = 93
       Top = 36
       Width = 121
       Height = 21
@@ -376,7 +377,7 @@ object FrmManOS: TFrmManOS
       TabOrder = 0
     end
     object DBEdit2: TDBEdit
-      Left = 72
+      Left = 93
       Top = 61
       Width = 121
       Height = 21
@@ -385,7 +386,7 @@ object FrmManOS: TFrmManOS
       TabOrder = 1
     end
     object DBLookupComboBox1: TDBLookupComboBox
-      Left = 195
+      Left = 216
       Top = 36
       Width = 321
       Height = 21
@@ -397,7 +398,7 @@ object FrmManOS: TFrmManOS
       TabOrder = 2
     end
     object DBLookupComboBox2: TDBLookupComboBox
-      Left = 195
+      Left = 216
       Top = 61
       Width = 321
       Height = 21
@@ -499,7 +500,7 @@ object FrmManOS: TFrmManOS
     Width = 24
     Left = 16
     Bitmap = {
-      494C01010C002000280018001800FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      494C01010C0020002C0018001800FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000600000006000000001002000000000000090
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
@@ -1699,7 +1700,7 @@ object FrmManOS: TFrmManOS
     Width = 24
     Left = 64
     Bitmap = {
-      494C01010C002000280018001800FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      494C01010C0020002C0018001800FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000600000006000000001002000000000000090
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
@@ -2899,7 +2900,7 @@ object FrmManOS: TFrmManOS
     Width = 24
     Left = 112
     Bitmap = {
-      494C01010C002C00400018001800FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      494C01010C002C00440018001800FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000600000006000000001002000000000000090
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000

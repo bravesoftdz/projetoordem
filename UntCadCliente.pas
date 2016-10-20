@@ -139,10 +139,14 @@ begin
     Application.MessageBox('O campo CPF não pode ser vázio.', 'Atenção', MB_OK+MB_ICONINFORMATION);
     DBEdit1.SetFocus;
     end
-  else} if (testacpf(DBEdit1.Text)= false) then
+  else}
+  if DBComboBox1.Text = 'Física' then
   begin
-    Application.MessageBox('CPF inválido', 'ERROR', + MB_ICONERROR);
-    DBEdit1.SetFocus;
+    if (testacpf(DBEdit1.Text)= false) then
+    begin
+      Application.MessageBox('CPF inválido', 'ERROR', + MB_ICONERROR);
+      DBEdit1.SetFocus;
+    end;
   end;
 end;
 

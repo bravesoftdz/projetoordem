@@ -1,0 +1,350 @@
+object FrmCadCliente: TFrmCadCliente
+  Left = 0
+  Top = 0
+  BorderIcons = []
+  BorderStyle = bsSingle
+  Caption = 'Manuten'#231#227'o no Cadastro de Cliente'
+  ClientHeight = 366
+  ClientWidth = 591
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  Position = poScreenCenter
+  PixelsPerInch = 96
+  TextHeight = 13
+  object Panel1: TPanel
+    Left = 0
+    Top = 0
+    Width = 591
+    Height = 41
+    Align = alTop
+    Color = clGradientInactiveCaption
+    ParentBackground = False
+    TabOrder = 0
+    object Label1: TLabel
+      Left = 120
+      Top = 6
+      Width = 339
+      Height = 23
+      Caption = 'Manuten'#231#227'o no Cadastro de Cliente'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindow
+      Font.Height = -19
+      Font.Name = 'Tahoma'
+      Font.Style = [fsBold]
+      ParentFont = False
+    end
+  end
+  object ToolBar1: TToolBar
+    Left = 0
+    Top = 41
+    Width = 591
+    Height = 49
+    BorderWidth = 1
+    ButtonHeight = 40
+    ButtonWidth = 43
+    Caption = 'ToolBar1'
+    DisabledImages = FrmManCliente.ImageList2
+    EdgeBorders = [ebTop, ebBottom]
+    HotImages = FrmManCliente.ImageList3
+    Images = FrmManCliente.ImageList1
+    ParentShowHint = False
+    ShowHint = True
+    TabOrder = 1
+    object btn_salvar: TToolButton
+      Left = 0
+      Top = 0
+      Caption = 'btn_salvar'
+      ImageIndex = 3
+      OnClick = btn_salvarClick
+    end
+    object btn_Cancelar: TToolButton
+      Left = 43
+      Top = 0
+      Caption = 'btn_Cancelar'
+      ImageIndex = 4
+      OnClick = btn_CancelarClick
+    end
+    object ToolButton3: TToolButton
+      Left = 86
+      Top = 0
+      Width = 8
+      Caption = 'ToolButton3'
+      ImageIndex = 2
+      Style = tbsSeparator
+    end
+    object btn_sair: TToolButton
+      Left = 94
+      Top = 0
+      Caption = 'btn_sair'
+      ImageIndex = 5
+      OnClick = btn_sairClick
+    end
+  end
+  object StatusBar1: TStatusBar
+    Left = 0
+    Top = 347
+    Width = 591
+    Height = 19
+    Panels = <
+      item
+        Width = 50
+      end>
+  end
+  object PnlFicha: TPanel
+    Left = 0
+    Top = 90
+    Width = 591
+    Height = 257
+    Align = alClient
+    TabOrder = 3
+    object Label10: TLabel
+      Left = 94
+      Top = 184
+      Width = 19
+      Height = 13
+      Caption = 'CEP'
+    end
+    object Label11: TLabel
+      Left = 253
+      Top = 183
+      Width = 42
+      Height = 13
+      Caption = 'Telefone'
+    end
+    object Label12: TLabel
+      Left = 413
+      Top = 183
+      Width = 33
+      Height = 13
+      Caption = 'Celular'
+    end
+    object Label13: TLabel
+      Left = 85
+      Top = 210
+      Width = 28
+      Height = 13
+      Caption = 'E-mail'
+    end
+    object Label14: TLabel
+      Left = 18
+      Top = 100
+      Width = 96
+      Height = 13
+      Caption = 'Data de Nascimento'
+    end
+    object Label2: TLabel
+      Left = 70
+      Top = 19
+      Width = 43
+      Height = 13
+      Caption = 'Tipo[F/J]'
+    end
+    object Label3: TLabel
+      Left = 95
+      Top = 46
+      Width = 19
+      Height = 13
+      Caption = 'CPF'
+    end
+    object Label4: TLabel
+      Left = 349
+      Top = 46
+      Width = 14
+      Height = 13
+      Caption = 'RG'
+    end
+    object Label5: TLabel
+      Left = 83
+      Top = 73
+      Width = 27
+      Height = 13
+      Caption = 'Nome'
+    end
+    object Label6: TLabel
+      Left = 68
+      Top = 127
+      Width = 45
+      Height = 13
+      Caption = 'Endere'#231'o'
+    end
+    object Label7: TLabel
+      Left = 80
+      Top = 154
+      Width = 33
+      Height = 13
+      Caption = 'Cidade'
+    end
+    object Label8: TLabel
+      Left = 278
+      Top = 154
+      Width = 28
+      Height = 13
+      Caption = 'Bairro'
+    end
+    object Label9: TLabel
+      Left = 452
+      Top = 154
+      Width = 33
+      Height = 13
+      Caption = 'Estado'
+    end
+    object DBComboBox1: TDBComboBox
+      Left = 120
+      Top = 16
+      Width = 84
+      Height = 21
+      Style = csDropDownList
+      DataField = 'tipo'
+      DataSource = DM.DSCliente
+      Items.Strings = (
+        'F'#237'sica'
+        'Jur'#237'dica')
+      TabOrder = 0
+      OnExit = DBComboBox1Exit
+    end
+    object DBComboBox2: TDBComboBox
+      Left = 491
+      Top = 151
+      Width = 65
+      Height = 21
+      Style = csDropDownList
+      DataField = 'estado'
+      DataSource = DM.DSCliente
+      Items.Strings = (
+        'AC'
+        'AL'
+        'AP'
+        'AM'
+        'BA'
+        'CE'
+        'DF'
+        'ES'
+        'GO'
+        'MA'
+        'MT'
+        'MS'
+        'MG'
+        'PA'
+        'PB'
+        'PR'
+        'PE'
+        'PI'
+        'RJ'
+        'RN'
+        'RS'
+        'RO'
+        'RR'
+        'SC'
+        'SP'
+        'SE'
+        'TO')
+      TabOrder = 8
+    end
+    object DBEdit1: TDBEdit
+      Left = 120
+      Top = 43
+      Width = 223
+      Height = 21
+      DataField = 'cpf_cnpj'
+      DataSource = DM.DSCliente
+      TabOrder = 1
+      OnExit = DBEdit1Exit
+    end
+    object DBEdit10: TDBEdit
+      Left = 120
+      Top = 207
+      Width = 436
+      Height = 21
+      DataField = 'email'
+      DataSource = DM.DSCliente
+      TabOrder = 12
+    end
+    object DBEdit11: TDBEdit
+      Left = 120
+      Top = 97
+      Width = 121
+      Height = 21
+      DataField = 'data_nasc'
+      DataSource = DM.DSCliente
+      TabOrder = 4
+      OnExit = DBEdit11Exit
+    end
+    object DBEdit2: TDBEdit
+      Left = 369
+      Top = 43
+      Width = 187
+      Height = 21
+      DataField = 'rg_ie'
+      DataSource = DM.DSCliente
+      TabOrder = 2
+    end
+    object DBEdit3: TDBEdit
+      Left = 120
+      Top = 70
+      Width = 436
+      Height = 21
+      DataField = 'nome_razao'
+      DataSource = DM.DSCliente
+      TabOrder = 3
+    end
+    object DBEdit4: TDBEdit
+      Left = 120
+      Top = 124
+      Width = 436
+      Height = 21
+      DataField = 'endereco'
+      DataSource = DM.DSCliente
+      TabOrder = 5
+    end
+    object DBEdit5: TDBEdit
+      Left = 120
+      Top = 151
+      Width = 148
+      Height = 21
+      DataField = 'cidade'
+      DataSource = DM.DSCliente
+      TabOrder = 6
+    end
+    object DBEdit6: TDBEdit
+      Left = 312
+      Top = 151
+      Width = 121
+      Height = 21
+      DataField = 'bairro'
+      DataSource = DM.DSCliente
+      TabOrder = 7
+    end
+    object DBEdit7: TDBEdit
+      Left = 120
+      Top = 180
+      Width = 121
+      Height = 21
+      DataField = 'cep'
+      DataSource = DM.DSCliente
+      TabOrder = 9
+    end
+    object DBEdit8: TDBEdit
+      Left = 301
+      Top = 180
+      Width = 98
+      Height = 21
+      DataField = 'telefone'
+      DataSource = DM.DSCliente
+      TabOrder = 10
+    end
+    object DBEdit9: TDBEdit
+      Left = 452
+      Top = 180
+      Width = 104
+      Height = 21
+      DataField = 'celular'
+      DataSource = DM.DSCliente
+      TabOrder = 11
+    end
+  end
+end
