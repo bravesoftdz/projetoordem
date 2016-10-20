@@ -147,7 +147,6 @@ object FrmManOS: TFrmManOS
       Hint = 'Salvar Registro'
       Caption = 'btn_Salvar'
       ImageIndex = 8
-      OnClick = btn_SalvarClick
     end
     object btn_Cancelar: TToolButton
       Left = 411
@@ -155,7 +154,6 @@ object FrmManOS: TFrmManOS
       Hint = 'Cancelar Registro'
       Caption = 'btn_Cancelar'
       ImageIndex = 9
-      OnClick = btn_CancelarClick
     end
     object ToolButton11: TToolButton
       Left = 454
@@ -186,7 +184,6 @@ object FrmManOS: TFrmManOS
       Hint = 'Sair'
       Caption = 'btn_Sair'
       ImageIndex = 11
-      OnClick = btn_SairClick
     end
   end
   object Panel2: TPanel

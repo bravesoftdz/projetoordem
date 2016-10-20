@@ -186,7 +186,6 @@ object FrmManOS: TFrmManOS
       Hint = 'Sair'
       Caption = 'btn_Sair'
       ImageIndex = 11
-      OnClick = btn_SairClick
     end
   end
   object Panel2: TPanel

@@ -65,8 +65,6 @@ type
     procedure btn_InserirClick(Sender: TObject);
     procedure btn_AlterarClick(Sender: TObject);
     procedure btn_ExcluirClick(Sender: TObject);
-    procedure btn_SalvarClick(Sender: TObject);
-    procedure btn_CancelarClick(Sender: TObject);
   private
     { Private declarations }
     procedure Botoes(Ativa: Boolean);
@@ -159,15 +157,6 @@ begin
      Botoes(true);
 end;
 
-procedure TFrmManOS.btn_CancelarClick(Sender: TObject);
-begin
-  DM.ADODSOrdemServico.Cancel;
-  Application.MessageBox('O registro foi cancelado com sucesso.','Informação',MB_OK+MB_DEFBUTTON1+MB_ICONERROR);
-
-  operacao:= 1;
-  Botoes(TRUE);
-end;
-
 procedure TFrmManOS.btn_ExcluirClick(Sender: TObject);
   var
   confExclusao: integer;
@@ -196,15 +185,6 @@ begin
 Close;
 end;
 
-
-procedure TFrmManOS.btn_SalvarClick(Sender: TObject);
-begin
-DM.ADODSOrdemServico.Post;
-Application.MessageBox('O registro foi salvo com sucesso.','Informação',MB_OK+MB_DEFBUTTON1+MB_ICONINFORMATION);
-
-operacao:= 1;
-Botoes(TRUE);
-end;
 
 procedure TFrmManOS.btn_UltimoClick(Sender: TObject);
 begin

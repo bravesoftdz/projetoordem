@@ -56,17 +56,11 @@ type
     DataSource2: TDataSource;
     ADOQueryFuncionarioid_funcionario: TAutoIncField;
     ADOQueryFuncionarionome_func: TStringField;
+    procedure btn_FiltrarClick(Sender: TObject);
     procedure btn_PrimeiroClick(Sender: TObject);
     procedure btn_AnteriorClick(Sender: TObject);
     procedure btn_SairClick(Sender: TObject);
     procedure FormActivate(Sender: TObject);
-    procedure btn_ProximoClick(Sender: TObject);
-    procedure btn_UltimoClick(Sender: TObject);
-    procedure btn_InserirClick(Sender: TObject);
-    procedure btn_AlterarClick(Sender: TObject);
-    procedure btn_ExcluirClick(Sender: TObject);
-    procedure btn_SalvarClick(Sender: TObject);
-    procedure btn_CancelarClick(Sender: TObject);
   private
     { Private declarations }
     procedure Botoes(Ativa: Boolean);
@@ -136,59 +130,37 @@ procedure TFrmManOS.btn_PrimeiroClick(Sender: TObject);
 begin
 DM.ADODSOrdemServico.First;
 Botoes(true);
-end;
-
-procedure TFrmManOS.btn_ProximoClick(Sender: TObject);
-begin
-     DM.ADODSOrdemServico.Next;
-     Botoes(true);
-end;
-
-procedure TFrmManOS.btn_AlterarClick(Sender: TObject);
-begin
-DM.ADODSOrdemServico.Edit;
-DM.ADODSOrdemServicodata_inicio.AsDateTime:= date;
-
-operacao:= 0;
-Botoes(false);
+{DM.ADODSOrdemServico.Edit;
+FrmCadOrdemServico.btn_Salvar.Enabled:= true;
+FrmCadOrdemServico.btn_Cancelar.Enabled:= true;
+FrmCadOrdemServico.btn_Sair.Enabled:= false;
+FrmCadOrdemServico.pnlFicha.Enabled:= true;
+FrmCadOrdemServico.ShowModal;    }
 end;
 
 procedure TFrmManOS.btn_AnteriorClick(Sender: TObject);
+var
+  confExcl: integer;
 begin
-     DM.ADODSOrdemServico.Prior;
-     Botoes(true);
-end;
-
-procedure TFrmManOS.btn_CancelarClick(Sender: TObject);
-begin
-  DM.ADODSOrdemServico.Cancel;
-  Application.MessageBox('O registro foi cancelado com sucesso.','Informação',MB_OK+MB_DEFBUTTON1+MB_ICONERROR);
-
-  operacao:= 1;
-  Botoes(TRUE);
-end;
-
-procedure TFrmManOS.btn_ExcluirClick(Sender: TObject);
-  var
-  confExclusao: integer;
-begin
-  confExclusao:= Application.MessageBox('Tem certeza que deseja excluir?','Atenção', MB_YESNO+MB_DEFBUTTON2+MB_ICONQUESTION);
-  if confExclusao = IDYES then
+  confExcl := Application.MessageBox('Confirma a exclusão deste registro?', 'Atenção', MB_YESNO+MB_DEFBUTTON2+MB_ICONQUESTION);
+  if confExcl = IDYES then
   begin
-    ShowMessage('Registro nº '+DM.ADODSOrdemServiconum_os.AsString+ ' com sucesso.');
     DM.ADODSOrdemServico.Delete;
-  end;
+    Application.MessageBox('O registro foi excluído com sucesso.','Informação', MB_OK+MB_ICONINFORMATION);
+  end
+  else
+    Application.MessageBox('A exclusão do registro foi abortada.','Informação', MB_OK+MB_ICONERROR);
+
 end;
 
-procedure TFrmManOS.btn_InserirClick(Sender: TObject);
+procedure TFrmManOS.btn_FiltrarClick(Sender: TObject);
 begin
-  DM.ADODSOrdemServico.Insert;
-  DM.ADODSOrdemServicodata_inicio.AsDateTime:= date;
-  DM.ADODSOrdemServico.Post;
-  DM.ADODSOrdemServico.Edit;
-
-  Botoes(false);
-  operacao:= 0
+DM.ADODSOrdemServico.Insert;
+{FrmCadOrdemServico.btn_Salvar.Enabled:= true;
+FrmCadOrdemServico.btn_Cancelar.Enabled:= true;
+FrmCadOrdemServico.btn_Sair.Enabled:= false;
+FrmCadOrdemServico.pnlFicha.Enabled:= true;
+FrmCadOrdemServico.ShowModal;}
 end;
 
 procedure TFrmManOS.btn_SairClick(Sender: TObject);
@@ -197,20 +169,6 @@ Close;
 end;
 
 
-procedure TFrmManOS.btn_SalvarClick(Sender: TObject);
-begin
-DM.ADODSOrdemServico.Post;
-Application.MessageBox('O registro foi salvo com sucesso.','Informação',MB_OK+MB_DEFBUTTON1+MB_ICONINFORMATION);
-
-operacao:= 1;
-Botoes(TRUE);
-end;
-
-procedure TFrmManOS.btn_UltimoClick(Sender: TObject);
-begin
-     DM.ADODSOrdemServico.Last;
-     Botoes(true);
-end;
 
 procedure TFrmManOS.FormActivate(Sender: TObject);
 begin

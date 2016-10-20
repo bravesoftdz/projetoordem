@@ -54,12 +54,13 @@ object FrmManOS: TFrmManOS
     ParentShowHint = False
     ShowHint = True
     TabOrder = 1
-    object btn_Filtrar: TToolButton
+    object btn_Inserir: TToolButton
       Left = 0
       Top = 0
       Hint = 'Filtrar Registro'
       Caption = 'btn_Filtrar'
       ImageIndex = 0
+      OnClick = btn_InserirClick
     end
     object ToolButton4: TToolButton
       Left = 43
@@ -69,37 +70,35 @@ object FrmManOS: TFrmManOS
       ImageIndex = 3
       Style = tbsSeparator
     end
-    object btn_Primeiro: TToolButton
+    object btn_Alterar: TToolButton
       Left = 51
       Top = 0
       Hint = 'Primeiro Registro'
       Caption = 'btn_Primeiro'
       ImageIndex = 1
-      OnClick = btn_PrimeiroClick
+      OnClick = btn_AlterarClick
     end
-    object btn_Anterior: TToolButton
+    object btn_Excluir: TToolButton
       Left = 94
       Top = 0
       Hint = 'Registro Anterior'
       Caption = 'btn_Anterior'
       ImageIndex = 2
-      OnClick = btn_AnteriorClick
+      OnClick = btn_ExcluirClick
     end
-    object btn_Proximo: TToolButton
+    object ToolButton1: TToolButton
       Left = 137
       Top = 0
       Hint = 'Pr'#243'ximo Registro'
       Caption = 'btn_Proximo'
       ImageIndex = 3
-      OnClick = btn_ProximoClick
     end
-    object btn_Ultimo: TToolButton
+    object ToolButton2: TToolButton
       Left = 180
       Top = 0
       Hint = #218'ltimo Registro'
       Caption = 'btn_Ultimo'
       ImageIndex = 4
-      OnClick = btn_UltimoClick
     end
     object ToolButton3: TToolButton
       Left = 223
@@ -109,29 +108,26 @@ object FrmManOS: TFrmManOS
       ImageIndex = 5
       Style = tbsSeparator
     end
-    object btn_Inserir: TToolButton
+    object ToolButton5: TToolButton
       Left = 231
       Top = 0
       Hint = 'Inserir Registro'
       Caption = 'btn_Inserir'
       ImageIndex = 5
-      OnClick = btn_InserirClick
     end
-    object btn_Alterar: TToolButton
+    object ToolButton6: TToolButton
       Left = 274
       Top = 0
       Hint = 'Alterar Registro'
       Caption = 'btn_Alterar'
       ImageIndex = 6
-      OnClick = btn_AlterarClick
     end
-    object btn_Excluir: TToolButton
+    object ToolButton7: TToolButton
       Left = 317
       Top = 0
       Hint = 'Excluir Registro'
       Caption = 'btn_Excluir'
       ImageIndex = 7
-      OnClick = btn_ExcluirClick
     end
     object ToolButton8: TToolButton
       Left = 360
@@ -141,21 +137,19 @@ object FrmManOS: TFrmManOS
       ImageIndex = 8
       Style = tbsSeparator
     end
-    object btn_Salvar: TToolButton
+    object ToolButton9: TToolButton
       Left = 368
       Top = 0
       Hint = 'Salvar Registro'
       Caption = 'btn_Salvar'
       ImageIndex = 8
-      OnClick = btn_SalvarClick
     end
-    object btn_Cancelar: TToolButton
+    object ToolButton10: TToolButton
       Left = 411
       Top = 0
       Hint = 'Cancelar Registro'
       Caption = 'btn_Cancelar'
       ImageIndex = 9
-      OnClick = btn_CancelarClick
     end
     object ToolButton11: TToolButton
       Left = 454
@@ -165,7 +159,7 @@ object FrmManOS: TFrmManOS
       ImageIndex = 10
       Style = tbsSeparator
     end
-    object btn_Imprimir: TToolButton
+    object ToolButton12: TToolButton
       Left = 462
       Top = 0
       Hint = 'Imprimir'
@@ -180,13 +174,12 @@ object FrmManOS: TFrmManOS
       ImageIndex = 11
       Style = tbsSeparator
     end
-    object btn_Sair: TToolButton
+    object ToolButton14: TToolButton
       Left = 513
       Top = 0
       Hint = 'Sair'
       Caption = 'btn_Sair'
       ImageIndex = 11
-      OnClick = btn_SairClick
     end
   end
   object Panel2: TPanel
