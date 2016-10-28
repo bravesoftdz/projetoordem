@@ -93,7 +93,6 @@ type
     procedure Bbt_InserirClick(Sender: TObject);
     procedure Bbt_ConfirmarClick(Sender: TObject);
     procedure Bbt_CancelarClick(Sender: TObject);
-    procedure DBEdit5Exit(Sender: TObject);
   private
     { Private declarations }
     procedure Botoes(Ativa: Boolean);
@@ -278,13 +277,7 @@ begin
   DM.ADODSOrdemServico.Edit;
 
   Botoes(false);
-  operacao:= 0;
-
-  Bbt_Inserir.Enabled := true;
-  Bbt_Excluir.Enabled := false;
-  Bbt_Confirmar.Enabled := false;
-  Bbt_Cancelar.Enabled := false;
-  pnlItems.Enabled := false;
+  operacao:= 0
 end;
 
 procedure TFrmManOS.btn_SairClick(Sender: TObject);
@@ -308,20 +301,6 @@ begin
      Botoes(true);
 end;
 
-procedure TFrmManOS.DBEdit5Exit(Sender: TObject);
-begin
-if DM.ADODSProdutosXOrdemquant.AsInteger < 1 then
-  begin
-    ShowMessage('A quantidade deve ser maior que 1.');
-    DBEdit5.SetFocus;
-    Abort;
-  end
-else
-  DM.ADODSProdutosXOrdemvalor_total.AsFloat := DM.ADODSProdutosXOrdemvalor_unit.AsFloat * DM.ADODSProdutosXOrdemquant.AsInteger;
-
-
-end;
-
 procedure TFrmManOS.FormActivate(Sender: TObject);
 begin
 operacao := 1;
@@ -336,20 +315,12 @@ DM.ADODSProdutosXOrdem.Open;
 
 Botoes(true);
 
-pnlItems.Enabled := false;
-Bbt_Inserir.Enabled := true;
-Bbt_Excluir.Enabled := false;
-Bbt_Confirmar.Enabled := false;
-Bbt_Cancelar.Enabled := false;
-
 ADOQueryCliente.Close;
 ADOQueryCliente.Open;
 
 ADOQueryFuncionario.Close;
 ADOQueryFuncionario.Open;
 
-ADOQueryProduto.Close;
-ADOQueryProduto.Open;
 end;
 
 procedure TFrmManOS.FormClose(Sender: TObject; var Action: TCloseAction);

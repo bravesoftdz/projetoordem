@@ -81,7 +81,6 @@ type
     procedure ADODSProdutosXOrdemid_produtoValidate(Sender: TField);
     procedure ADODSProdutosXOrdemAfterPost(DataSet: TDataSet);
     procedure ADODSProdutosXOrdemAfterDelete(DataSet: TDataSet);
-    procedure ADODSProdutosXOrdemNewRecord(DataSet: TDataSet);
   private
     { Private declarations }
   public
@@ -182,11 +181,6 @@ begin
       FrmManOS.DBEdit5.SetFocus;
     end;
 
-end;
-
-procedure TDM.ADODSProdutosXOrdemNewRecord(DataSet: TDataSet);
-begin
-  ADODSProdutosXOrdemnum_os.AsInteger := ADODSOrdemServiconum_os.AsInteger;
 end;
 
 end.

@@ -15,6 +15,7 @@ object FrmManOS: TFrmManOS
   OldCreateOrder = False
   Position = poScreenCenter
   OnActivate = FormActivate
+  OnClose = FormClose
   PixelsPerInch = 96
   TextHeight = 13
   object Panel1: TPanel
@@ -189,13 +190,14 @@ object FrmManOS: TFrmManOS
       OnClick = btn_SairClick
     end
   end
-  object Panel2: TPanel
+  object pnlFicha: TPanel
     Left = 0
     Top = 90
     Width = 641
-    Height = 103
-    Align = alTop
+    Height = 317
+    Align = alClient
     TabOrder = 2
+    ExplicitHeight = 103
     object Label2: TLabel
       Left = 16
       Top = 14
@@ -408,6 +410,137 @@ object FrmManOS: TFrmManOS
       ListSource = DM.DSFuncionario
       TabOrder = 3
     end
+    object GroupBox1: TGroupBox
+      Left = 0
+      Top = 88
+      Width = 639
+      Height = 129
+      Caption = 'Itens da Ordem'
+      TabOrder = 4
+      object pnlItems: TPanel
+        Left = 3
+        Top = 19
+        Width = 633
+        Height = 81
+        TabOrder = 0
+        object Label6: TLabel
+          Left = 11
+          Top = 8
+          Width = 38
+          Height = 13
+          Caption = 'Produto'
+        end
+        object Label7: TLabel
+          Left = 295
+          Top = 8
+          Width = 50
+          Height = 13
+          Caption = 'Valor Unit.'
+        end
+        object Label8: TLabel
+          Left = 377
+          Top = 8
+          Width = 36
+          Height = 13
+          Caption = 'Qtdade'
+        end
+        object Label9: TLabel
+          Left = 461
+          Top = 8
+          Width = 51
+          Height = 13
+          Caption = 'Valor Total'
+        end
+        object SpeedButton3: TSpeedButton
+          Left = 255
+          Top = 26
+          Width = 23
+          Height = 22
+        end
+        object DBEdit3: TDBEdit
+          Left = 11
+          Top = 27
+          Width = 59
+          Height = 21
+          DataField = 'id_produto'
+          DataSource = DM.DSProdutosXOrdem
+          TabOrder = 0
+        end
+        object DBEdit4: TDBEdit
+          Left = 295
+          Top = 27
+          Width = 76
+          Height = 21
+          DataField = 'valor_unit'
+          DataSource = DM.DSProdutosXOrdem
+          TabOrder = 1
+        end
+        object DBEdit5: TDBEdit
+          Left = 377
+          Top = 27
+          Width = 67
+          Height = 21
+          DataField = 'quant'
+          DataSource = DM.DSProdutosXOrdem
+          TabOrder = 2
+        end
+        object DBEdit6: TDBEdit
+          Left = 461
+          Top = 27
+          Width = 71
+          Height = 21
+          DataField = 'valor_total'
+          DataSource = DM.DSProdutosXOrdem
+          TabOrder = 3
+        end
+        object DBLookupComboBox3: TDBLookupComboBox
+          Left = 76
+          Top = 27
+          Width = 173
+          Height = 21
+          DataField = 'id_produto'
+          DataSource = DM.DSProduto
+          KeyField = 'id_produto'
+          ListField = 'especificacoes'
+          ListSource = DSProduto
+          TabOrder = 4
+        end
+        object Bbt_Inserir: TBitBtn
+          Left = 200
+          Top = 54
+          Width = 75
+          Height = 25
+          Caption = 'Inserir'
+          TabOrder = 5
+          OnClick = Bbt_InserirClick
+        end
+        object Bbt_Excluir: TBitBtn
+          Left = 296
+          Top = 54
+          Width = 75
+          Height = 25
+          Caption = 'Excluir'
+          TabOrder = 6
+          OnClick = Bbt_ExcluirClick
+        end
+        object Bbt_Confirmar: TBitBtn
+          Left = 388
+          Top = 54
+          Width = 75
+          Height = 25
+          Caption = 'Confirmar'
+          TabOrder = 7
+        end
+        object Bbt_Cancelar: TBitBtn
+          Left = 469
+          Top = 54
+          Width = 75
+          Height = 25
+          Caption = 'Cancelar'
+          TabOrder = 8
+        end
+      end
+    end
   end
   object StatusBar1: TStatusBar
     Left = 0
@@ -419,87 +552,12 @@ object FrmManOS: TFrmManOS
         Width = 50
       end>
   end
-  object DBGrid1: TDBGrid
-    Left = 0
-    Top = 193
-    Width = 641
-    Height = 214
-    Align = alClient
-    DataSource = DM.DSOrdemServico
-    TabOrder = 4
-    TitleFont.Charset = DEFAULT_CHARSET
-    TitleFont.Color = clWindowText
-    TitleFont.Height = -11
-    TitleFont.Name = 'Tahoma'
-    TitleFont.Style = []
-    Columns = <
-      item
-        Expanded = False
-        FieldName = 'num_os'
-        Title.Caption = 'N'#250'mero'
-        Visible = True
-      end
-      item
-        Expanded = False
-        FieldName = 'id_cliente'
-        Title.Caption = 'Cliente'
-        Width = 50
-        Visible = True
-      end
-      item
-        Expanded = False
-        FieldName = 'id_funcionario'
-        Title.Caption = 'Funcion'#225'rio'
-        Width = 65
-        Visible = True
-      end
-      item
-        Expanded = False
-        FieldName = 'descri_equipamento'
-        Title.Caption = 'Descri'#231#227'o do Equipamento'
-        Width = 350
-        Visible = True
-      end
-      item
-        Expanded = False
-        FieldName = 'data_inicio'
-        Title.Caption = 'Data Inicial'
-        Width = 85
-        Visible = True
-      end
-      item
-        Expanded = False
-        FieldName = 'data_termino'
-        Title.Caption = 'Data de T'#233'mino'
-        Width = 85
-        Visible = True
-      end
-      item
-        Expanded = False
-        FieldName = 'observacoes'
-        Title.Caption = 'Observa'#231#245'es'
-        Width = 150
-        Visible = True
-      end
-      item
-        Expanded = False
-        FieldName = 'serie_equipamento'
-        Width = 148
-        Visible = True
-      end
-      item
-        Expanded = False
-        FieldName = 'status_ordem'
-        Width = 149
-        Visible = True
-      end>
-  end
   object ImageList1: TImageList
     Height = 24
     Width = 24
     Left = 16
     Bitmap = {
-      494C01010C0020002C0018001800FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      494C01010C002000300018001800FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000600000006000000001002000000000000090
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
@@ -1699,7 +1757,7 @@ object FrmManOS: TFrmManOS
     Width = 24
     Left = 64
     Bitmap = {
-      494C01010C0020002C0018001800FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      494C01010C002000300018001800FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000600000006000000001002000000000000090
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
@@ -2899,7 +2957,7 @@ object FrmManOS: TFrmManOS
     Width = 24
     Left = 112
     Bitmap = {
-      494C01010C002C00440018001800FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      494C01010C002C00480018001800FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000600000006000000001002000000000000090
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
@@ -4110,7 +4168,7 @@ object FrmManOS: TFrmManOS
       Size = 50
     end
   end
-  object DataSource1: TDataSource
+  object DSCliente: TDataSource
     DataSet = ADOQueryCliente
     Left = 224
   end
@@ -4135,5 +4193,21 @@ object FrmManOS: TFrmManOS
   object DataSource2: TDataSource
     DataSet = ADOQueryFuncionario
     Left = 504
+  end
+  object ADOQueryProduto: TADOQuery
+    Connection = DM.ADOConnection1
+    CursorType = ctStatic
+    Parameters = <>
+    SQL.Strings = (
+      
+        'select id_produto, especificacoes, preco from produtos order by ' +
+        'especificacoes')
+    Left = 595
+    Top = 205
+  end
+  object DSProduto: TDataSource
+    DataSet = ADOQueryProduto
+    Left = 547
+    Top = 205
   end
 end

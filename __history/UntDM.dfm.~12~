@@ -268,7 +268,6 @@ object DM: TDM
     CursorType = ctStatic
     AfterPost = ADODSProdutosXOrdemAfterPost
     AfterDelete = ADODSProdutosXOrdemAfterDelete
-    OnNewRecord = ADODSProdutosXOrdemNewRecord
     CommandText = 'select * from ProdutosXOrdem'
     Parameters = <>
     Left = 624

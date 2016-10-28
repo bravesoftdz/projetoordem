@@ -20,10 +20,9 @@ type
     btn_Primeiro: TToolButton;
     btn_Anterior: TToolButton;
     ToolButton4: TToolButton;
-    Panel2: TPanel;
+    pnlFicha: TPanel;
     Label2: TLabel;
     StatusBar1: TStatusBar;
-    DBGrid1: TDBGrid;
     btn_Proximo: TToolButton;
     btn_Ultimo: TToolButton;
     ToolButton3: TToolButton;
@@ -49,13 +48,31 @@ type
     SpeedButton1: TSpeedButton;
     SpeedButton2: TSpeedButton;
     ADOQueryCliente: TADOQuery;
-    DataSource1: TDataSource;
+    DSCliente: TDataSource;
     ADOQueryClienteid_cliente: TAutoIncField;
     ADOQueryClienteNome_razao: TStringField;
     ADOQueryFuncionario: TADOQuery;
     DataSource2: TDataSource;
     ADOQueryFuncionarioid_funcionario: TAutoIncField;
     ADOQueryFuncionarionome_func: TStringField;
+    GroupBox1: TGroupBox;
+    pnlItems: TPanel;
+    Label6: TLabel;
+    Label7: TLabel;
+    Label8: TLabel;
+    Label9: TLabel;
+    SpeedButton3: TSpeedButton;
+    DBEdit3: TDBEdit;
+    DBEdit4: TDBEdit;
+    DBEdit5: TDBEdit;
+    DBEdit6: TDBEdit;
+    DBLookupComboBox3: TDBLookupComboBox;
+    ADOQueryProduto: TADOQuery;
+    DSProduto: TDataSource;
+    Bbt_Inserir: TBitBtn;
+    Bbt_Excluir: TBitBtn;
+    Bbt_Confirmar: TBitBtn;
+    Bbt_Cancelar: TBitBtn;
     procedure btn_PrimeiroClick(Sender: TObject);
     procedure btn_AnteriorClick(Sender: TObject);
     procedure btn_SairClick(Sender: TObject);
@@ -67,6 +84,10 @@ type
     procedure btn_ExcluirClick(Sender: TObject);
     procedure btn_SalvarClick(Sender: TObject);
     procedure btn_CancelarClick(Sender: TObject);
+    procedure FormClose(Sender: TObject; var Action: TCloseAction);
+    procedure Bbt_ExcluirClick(Sender: TObject);
+    procedure Bbt_InserirClick(Sender: TObject);
+    procedure Bbt_ConfirmarClick(Sender: TObject);
   private
     { Private declarations }
     procedure Botoes(Ativa: Boolean);
@@ -76,6 +97,7 @@ type
 
 var
   FrmManOS: TFrmManOS;
+  //Operação de Navegação
   operacao: integer;
 
 implementation
@@ -83,6 +105,47 @@ implementation
 {$R *.dfm}
 
 uses UntDM;
+
+procedure TFrmManOS.Bbt_ConfirmarClick(Sender: TObject);
+begin
+if DBLookupComboBox3.Text = '' then
+  begin
+    ShowMessage('O campo[Produto] não pode ficar em branco.');
+    DBLookupComboBox3.SetFocus;
+    Abort;
+  end;
+if DBEdit5.Text = '' then
+  begin
+    ShowMessage('O campo[Quantidade] não pode ficar em branco.');
+    DBEdit5.SetFocus;
+    Abort;
+  end;
+DBEdit5.SetFocus;
+end;
+
+procedure TFrmManOS.Bbt_ExcluirClick(Sender: TObject);
+begin
+Bbt_Inserir.Enabled := true;
+Bbt_Cancelar.Enabled := false;
+Bbt_Confirmar.Enabled := false;
+Bbt_Excluir.Enabled := true;
+
+pnlItems.Enabled := false;
+DM.ADODSProdutosXOrdem.Delete;
+
+end;
+
+procedure TFrmManOS.Bbt_InserirClick(Sender: TObject);
+begin
+
+Bbt_Inserir.Enabled := false;
+Bbt_Cancelar.Enabled := true;
+Bbt_Confirmar.Enabled := true;
+Bbt_Excluir.Enabled := false;
+
+pnlItems.Enabled := true;
+DM.ADODSProdutosXOrdem.Insert;
+end;
 
 procedure TFrmManOS.Botoes(Ativa: Boolean);
 begin
@@ -99,7 +162,7 @@ begin
         btn_proximo.Enabled:= True;
         btn_Ultimo.Enabled:= True;
       end;
-
+      //Verifica se esta no inicio da tabela
       if DM.ADODSOrdemServico.Eof = True then
       begin
         btn_Proximo.Enabled:= False;
@@ -129,17 +192,19 @@ begin
   end;
   btn_Salvar.Enabled:= not Ativa;
   btn_Cancelar.Enabled:= not Ativa;
-  PnlFicha.Enabled:= not Ativa;
+  {PnlFicha.Enabled:= not Ativa; }
 end;
 
 procedure TFrmManOS.btn_PrimeiroClick(Sender: TObject);
 begin
+//Primeiro botão
 DM.ADODSOrdemServico.First;
 Botoes(true);
 end;
 
 procedure TFrmManOS.btn_ProximoClick(Sender: TObject);
 begin
+//Botão próximo
      DM.ADODSOrdemServico.Next;
      Botoes(true);
 end;
@@ -155,6 +220,7 @@ end;
 
 procedure TFrmManOS.btn_AnteriorClick(Sender: TObject);
 begin
+    //botão anterior
      DM.ADODSOrdemServico.Prior;
      Botoes(true);
 end;
@@ -164,8 +230,8 @@ begin
   DM.ADODSOrdemServico.Cancel;
   Application.MessageBox('O registro foi cancelado com sucesso.','Informação',MB_OK+MB_DEFBUTTON1+MB_ICONERROR);
 
-operacao:= 1;
-Botoes(TRUE);
+  operacao:= 1;
+  Botoes(TRUE);
 end;
 
 procedure TFrmManOS.btn_ExcluirClick(Sender: TObject);
@@ -184,6 +250,7 @@ procedure TFrmManOS.btn_InserirClick(Sender: TObject);
 begin
   DM.ADODSOrdemServico.Insert;
   DM.ADODSOrdemServicodata_inicio.AsDateTime:= date;
+  DM.ADODSOrdemServicostatus_ordem.AsString := 'S';
   DM.ADODSOrdemServico.Post;
   DM.ADODSOrdemServico.Edit;
 
@@ -214,10 +281,33 @@ end;
 
 procedure TFrmManOS.FormActivate(Sender: TObject);
 begin
+operacao := 1;
+
 DM.ADODSOrdemServico.Close;
 DM.ADODSOrdemServico.CommandText := '';
 DM.ADODSOrdemServico.CommandText := 'select * from ORDEM_SERVICOS order by data_inicio';
 DM.ADODSOrdemServico.Open;
+
+DM.ADODSProdutosXOrdem.Close;
+DM.ADODSProdutosXOrdem.Open;
+
+Botoes(true);
+
+ADOQueryCliente.Close;
+ADOQueryCliente.Open;
+
+ADOQueryFuncionario.Close;
+ADOQueryFuncionario.Open;
+
+end;
+
+procedure TFrmManOS.FormClose(Sender: TObject; var Action: TCloseAction);
+begin
+dm.ADODSOrdemServico.Close;
+DM.ADODSProdutosXOrdem.Close;
+
+ADOQueryCliente.Close;
+ADOQueryFuncionario.Close;
 end;
 
 end.

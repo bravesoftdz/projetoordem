@@ -153,7 +153,7 @@ object DM: TDM
   object ADODSOrdemServico: TADODataSet
     Connection = ADOConnection1
     CursorType = ctStatic
-    CommandText = 'select * from Ordem_Servicos'#13#10
+    CommandText = 'select * from Ordem_Servicos'
     Parameters = <>
     Left = 336
     Top = 16
@@ -190,12 +190,6 @@ object DM: TDM
     object ADODSOrdemServicostatus_ordem: TStringField
       FieldName = 'status_ordem'
       Size = 50
-    end
-    object ADODSOrdemServicovalor_produtos: TFloatField
-      FieldName = 'valor_produtos'
-    end
-    object ADODSOrdemServicovalor_total: TFloatField
-      FieldName = 'valor_total'
     end
   end
   object ADODSProduto: TADODataSet
@@ -266,9 +260,6 @@ object DM: TDM
   object ADODSProdutosXOrdem: TADODataSet
     Connection = ADOConnection1
     CursorType = ctStatic
-    AfterPost = ADODSProdutosXOrdemAfterPost
-    AfterDelete = ADODSProdutosXOrdemAfterDelete
-    OnNewRecord = ADODSProdutosXOrdemNewRecord
     CommandText = 'select * from ProdutosXOrdem'
     Parameters = <>
     Left = 624

@@ -53,6 +53,8 @@ CREATE TABLE Ordem_Servicos(
 	observacoes varchar(250) not null,
 	serie_equipamento varchar(50) not null,
 	status_ordem varchar(50),
+	valor_produtos float not null,
+	valor_total float not null,
 	PRIMARY KEY (num_os),
 	CONSTRAINT FK_id_cliente FOREIGN KEY (id_cliente) REFERENCES Clientes (id_cliente),
 	CONSTRAINT FK_id_funcionario FOREIGN KEY (id_funcionario) REFERENCES Funcionarios (id_funcionario)
@@ -85,6 +87,10 @@ CREATE TABLE ServicosXOrdem(
 CREATE TABLE ProdutosXOrdem(
 	id_produto int not null,
 	num_os int not null,
+	valor_unit float not null,
+	quant int not null,
+	valor_total float not null,
+	nome_produto varchar not null, 
 	CONSTRAINT PK_ProdutoXOrdem PRIMARY KEY (id_produto, num_os),
 	CONSTRAINT FK_ProdutoXOrdem2 FOREIGN KEY (id_produto) REFERENCES Produtos (id_produto),
 	CONSTRAINT FK_ProdutoXOrdem3 FOREIGN KEY (num_os) REFERENCES Ordem_Servicos (num_os),

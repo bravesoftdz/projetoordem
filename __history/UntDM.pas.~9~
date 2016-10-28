@@ -80,8 +80,6 @@ type
     ADODSOrdemServicovalor_total: TFloatField;
     procedure ADODSProdutosXOrdemid_produtoValidate(Sender: TField);
     procedure ADODSProdutosXOrdemAfterPost(DataSet: TDataSet);
-    procedure ADODSProdutosXOrdemAfterDelete(DataSet: TDataSet);
-    procedure ADODSProdutosXOrdemNewRecord(DataSet: TDataSet);
   private
     { Private declarations }
   public
@@ -98,40 +96,6 @@ implementation
 uses UntManOS;
 
 {$R *.dfm}
-
-procedure TDM.ADODSProdutosXOrdemAfterDelete(DataSet: TDataSet);
-var
-  bmk: TBookmark;
-  valTot: double;
-begin
-with ADODSProdutosXOrdem do
-  begin
-    bmk := GetBookmark;
-    DisableControls;
-    try
-      valTot:= 0.0;
-      First;
-      while not EOF do
-      begin
-        valTot:= valTot + ADODSProdutosXOrdemvalor_total.AsFloat;
-        Next;
-      end;
-    finally
-    EnableControls;
-    if bmk <> nil then
-    begin
-      GotoBookmark(bmk);
-      FreeBookmark(bmk);
-    end;
-    end;
-    if not (ADODSOrdemServico.State in [dsInsert, dsEdit]) then
-    ADODSOrdemServico.Edit;
-
-    ADODSOrdemServicovalor_produtos.AsFloat:= valTot;
-    ADODSOrdemServicovalor_total.AsFloat := valTot;
-
-  end;
-end;
 
 procedure TDM.ADODSProdutosXOrdemAfterPost(DataSet: TDataSet);
 var
@@ -182,11 +146,6 @@ begin
       FrmManOS.DBEdit5.SetFocus;
     end;
 
-end;
-
-procedure TDM.ADODSProdutosXOrdemNewRecord(DataSet: TDataSet);
-begin
-  ADODSProdutosXOrdemnum_os.AsInteger := ADODSOrdemServiconum_os.AsInteger;
 end;
 
 end.
