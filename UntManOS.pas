@@ -208,14 +208,14 @@ begin
   btn_Sair.Enabled:= Ativa;
   if (DM.ADODSOrdemServico.RecordCount > 0) then
   begin
-  btn_Filtrar.Enabled:= Ativa;
-  btn_Imprimir.Enabled:= Ativa;
-  btn_Alterar.Enabled:= Ativa;
-  btn_Excluir.Enabled:= Ativa;
+    btn_Filtrar.Enabled:= Ativa;
+    btn_Imprimir.Enabled:= Ativa;
+    btn_Alterar.Enabled:= Ativa;
+    btn_Excluir.Enabled:= Ativa;
   end;
   btn_Salvar.Enabled:= not Ativa;
   btn_Cancelar.Enabled:= not Ativa;
-  {PnlFicha.Enabled:= not Ativa; }
+  PnlFicha.Enabled:= not Ativa;
 end;
 
 procedure TFrmManOS.btn_PrimeiroClick(Sender: TObject);

@@ -25,8 +25,6 @@ object FrmCadProduto: TFrmCadProduto
     Color = clMoneyGreen
     ParentBackground = False
     TabOrder = 0
-    ExplicitLeft = 2
-    ExplicitTop = -6
     object Label1: TLabel
       Left = 106
       Top = 12
@@ -57,7 +55,6 @@ object FrmCadProduto: TFrmCadProduto
     ParentShowHint = False
     ShowHint = True
     TabOrder = 1
-    ExplicitWidth = 490
     object btn_salvar: TToolButton
       Left = 0
       Top = 0
@@ -97,8 +94,6 @@ object FrmCadProduto: TFrmCadProduto
       item
         Width = 50
       end>
-    ExplicitTop = 203
-    ExplicitWidth = 490
   end
   object pnlFicha: TPanel
     Left = 0
@@ -107,9 +102,6 @@ object FrmCadProduto: TFrmCadProduto
     Height = 208
     Align = alClient
     TabOrder = 3
-    ExplicitLeft = -8
-    ExplicitTop = 84
-    ExplicitWidth = 567
     object Label2: TLabel
       Left = 49
       Top = 49
@@ -145,7 +137,7 @@ object FrmCadProduto: TFrmCadProduto
       Height = 21
       DataField = 'preco'
       DataSource = DM.DSProduto
-      TabOrder = 0
+      TabOrder = 1
     end
     object DBEdit2: TDBEdit
       Left = 81
@@ -154,7 +146,7 @@ object FrmCadProduto: TFrmCadProduto
       Height = 21
       DataField = 'marca'
       DataSource = DM.DSProduto
-      TabOrder = 1
+      TabOrder = 0
     end
     object DBMemo1: TDBMemo
       Left = 126
@@ -163,7 +155,7 @@ object FrmCadProduto: TFrmCadProduto
       Height = 94
       DataField = 'especificacoes'
       DataSource = DM.DSProduto
-      TabOrder = 2
+      TabOrder = 3
     end
     object DBEdit3: TDBEdit
       Left = 81
@@ -172,7 +164,7 @@ object FrmCadProduto: TFrmCadProduto
       Height = 21
       DataField = 'quantidade'
       DataSource = DM.DSProduto
-      TabOrder = 3
+      TabOrder = 2
     end
   end
 end

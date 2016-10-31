@@ -4,8 +4,8 @@ object FrmManProduto: TFrmManProduto
   BorderIcons = []
   BorderStyle = bsSingle
   Caption = 'Manuten'#231#227'o no Cadastro de Produtos'
-  ClientHeight = 557
-  ClientWidth = 671
+  ClientHeight = 501
+  ClientWidth = 587
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -20,12 +20,13 @@ object FrmManProduto: TFrmManProduto
   object Panel1: TPanel
     Left = 0
     Top = 0
-    Width = 671
+    Width = 587
     Height = 41
     Align = alTop
     Color = clGradientInactiveCaption
     ParentBackground = False
     TabOrder = 0
+    ExplicitWidth = 671
     object Label1: TLabel
       Left = 200
       Top = 10
@@ -43,7 +44,7 @@ object FrmManProduto: TFrmManProduto
   object ToolBar1: TToolBar
     Left = 0
     Top = 41
-    Width = 671
+    Width = 587
     Height = 49
     BorderWidth = 1
     ButtonHeight = 40
@@ -56,6 +57,7 @@ object FrmManProduto: TFrmManProduto
     ParentShowHint = False
     ShowHint = True
     TabOrder = 1
+    ExplicitWidth = 671
     object btn_Inserir: TToolButton
       Left = 0
       Top = 0
@@ -96,10 +98,11 @@ object FrmManProduto: TFrmManProduto
   object Panel2: TPanel
     Left = 0
     Top = 90
-    Width = 671
+    Width = 587
     Height = 41
     Align = alTop
     TabOrder = 2
+    ExplicitWidth = 671
     object Label2: TLabel
       Left = 16
       Top = 14
@@ -118,19 +121,21 @@ object FrmManProduto: TFrmManProduto
   end
   object StatusBar1: TStatusBar
     Left = 0
-    Top = 538
-    Width = 671
+    Top = 482
+    Width = 587
     Height = 19
     Panels = <
       item
         Width = 50
       end>
+    ExplicitTop = 538
+    ExplicitWidth = 671
   end
   object DBGrid1: TDBGrid
     Left = 0
     Top = 131
-    Width = 671
-    Height = 407
+    Width = 587
+    Height = 351
     Align = alClient
     DataSource = DM.DSProduto
     TabOrder = 4
@@ -156,14 +161,14 @@ object FrmManProduto: TFrmManProduto
         Expanded = False
         FieldName = 'especificacoes'
         Title.Caption = 'Especifica'#231#245'es'
-        Width = 300
+        Width = 263
         Visible = True
       end
       item
         Expanded = False
         FieldName = 'marca'
         Title.Caption = 'Marca'
-        Width = 150
+        Width = 109
         Visible = True
       end
       item
@@ -180,7 +185,7 @@ object FrmManProduto: TFrmManProduto
     Left = 264
     Top = 240
     Bitmap = {
-      494C010106002400240018001800FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      494C010106002400280018001800FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000600000003000000001002000000000000048
       0000000000000000000000000000000000000000000000000000000000000000
       00000000000000000000000000000000000000009A0000009A0000039D00020D
@@ -787,7 +792,7 @@ object FrmManProduto: TFrmManProduto
     Left = 336
     Top = 240
     Bitmap = {
-      494C010106002400240018001800FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      494C010106002400280018001800FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000600000003000000001002000000000000048
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000009595950095959500969696009999
@@ -1394,7 +1399,7 @@ object FrmManProduto: TFrmManProduto
     Left = 400
     Top = 240
     Bitmap = {
-      494C010106002400240018001800FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      494C010106002400280018001800FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000600000003000000001002000000000000048
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000820000008200000186000005

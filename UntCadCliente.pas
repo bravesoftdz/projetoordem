@@ -128,18 +128,12 @@ begin
 if (tbStrIsDate(DBEdit11.Text) = false) then
   begin
     Application.MessageBox('Digite uma data válida.', 'Error', MB_OK+MB_ICONERROR);
-    DBEdit5.SetFocus;
+    DBEdit11.SetFocus;
   end;
 end;
 
 procedure TFrmCadCliente.DBEdit1Exit(Sender: TObject);
 begin
-  {if DBEdit1.Text = '' then
-    begin
-    Application.MessageBox('O campo CPF não pode ser vázio.', 'Atenção', MB_OK+MB_ICONINFORMATION);
-    DBEdit1.SetFocus;
-    end
-  else}
   if DBComboBox1.Text = 'Física' then
   begin
     if (testacpf(DBEdit1.Text)= false) then

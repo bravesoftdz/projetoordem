@@ -6,6 +6,8 @@ use DB_OS
 
 use master
 
+drop table Clientes
+
 CREATE TABLE Clientes(
 	tipo varchar(50) not null,
 	id_cliente integer identity(1,1),
@@ -90,7 +92,6 @@ CREATE TABLE ProdutosXOrdem(
 	valor_unit float not null,
 	quant int not null,
 	valor_total float not null,
-	nome_produto varchar not null, 
 	CONSTRAINT PK_ProdutoXOrdem PRIMARY KEY (id_produto, num_os),
 	CONSTRAINT FK_ProdutoXOrdem2 FOREIGN KEY (id_produto) REFERENCES Produtos (id_produto),
 	CONSTRAINT FK_ProdutoXOrdem3 FOREIGN KEY (num_os) REFERENCES Ordem_Servicos (num_os),

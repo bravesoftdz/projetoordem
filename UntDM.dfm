@@ -3,7 +3,6 @@ object DM: TDM
   Height = 150
   Width = 844
   object ADOConnection1: TADOConnection
-    Connected = True
     ConnectionString = 
       'Provider=SQLOLEDB.1;Integrated Security=SSPI;Persist Security In' +
       'fo=False;Initial Catalog=DB_OS;Data Source=LUCAS-PC\SQLEXPRESS;U' +
@@ -288,10 +287,6 @@ object DM: TDM
     end
     object ADODSProdutosXOrdemvalor_total: TFloatField
       FieldName = 'valor_total'
-    end
-    object ADODSProdutosXOrdemnome_produto: TStringField
-      FieldName = 'nome_produto'
-      Size = 1
     end
     object ADODSProdutosXOrdemNomeProduto: TStringField
       FieldKind = fkLookup

@@ -3,7 +3,7 @@ unit UntDM;
 interface
 
 uses
-  System.SysUtils, System.Classes, Data.DB, Data.Win.ADODB;
+  System.SysUtils, System.Classes, Data.DB, Data.Win.ADODB, Vcl.Dialogs;
 
 type
   TDM = class(TDataModule)
@@ -65,7 +65,6 @@ type
     ADODSProdutosXOrdemvalor_unit: TFloatField;
     ADODSProdutosXOrdemquant: TIntegerField;
     ADODSProdutosXOrdemvalor_total: TFloatField;
-    ADODSProdutosXOrdemnome_produto: TStringField;
     ADODSProdutosXOrdemNomeProduto: TStringField;
     ADODSOrdemServiconum_os: TAutoIncField;
     ADODSOrdemServicoid_cliente: TIntegerField;
@@ -171,7 +170,7 @@ procedure TDM.ADODSProdutosXOrdemid_produtoValidate(Sender: TField);
 begin
   if not FrmManOS.ADOQueryProduto.Locate('id_produto', ADODSProdutosXOrdemid_produto.AsString, []) then
     begin
-      MessageDlg('Produto não encontrado ',mtError,[MB_OK], 0);
+      MessageDlg('Produto não encontrado ',mtError,[mbOK], 0);
       Abort;
     end
     else
