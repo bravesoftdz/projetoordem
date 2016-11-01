@@ -6,11 +6,9 @@ use DB_OS
 
 use master
 
-drop table Clientes
-
 CREATE TABLE Clientes(
 	tipo varchar(50) not null,
-	id_cliente integer identity(1,1),
+	id integer identity(1,1),
 	nome_razao varchar(50) not null,
 	cpf_cnpj varchar(18) not null unique,
 	rg_ie varchar(15),
@@ -23,11 +21,11 @@ CREATE TABLE Clientes(
 	telefone varchar(18)not null,
 	celular varchar(19),
 	email varchar(50),
-	PRIMARY KEY (id_cliente)
+	PRIMARY KEY (id)
 	)
 
 CREATE TABLE Funcionarios(
-	id_funcionario integer identity(1,1),
+	id integer identity(1,1),
 	cargo varchar(50) not null,
 	nome_func varchar(50) not null,
 	cpf varchar(14) not null unique,
@@ -41,12 +39,12 @@ CREATE TABLE Funcionarios(
 	telefone varchar(18)not null,
 	celular varchar(19),
 	email varchar(50),
-	PRIMARY KEY (id_funcionario)
+	PRIMARY KEY (id)
 )
 
 
 CREATE TABLE Ordem_Servicos(
-	num_os int identity(1,1),
+	numero int identity(1,1),
 	id_cliente int not null,
 	id_funcionario int not null,
 	descri_equipamento varchar(250) not null,
@@ -57,33 +55,33 @@ CREATE TABLE Ordem_Servicos(
 	status_ordem varchar(50),
 	valor_produtos float not null,
 	valor_total float not null,
-	PRIMARY KEY (num_os),
-	CONSTRAINT FK_id_cliente FOREIGN KEY (id_cliente) REFERENCES Clientes (id_cliente),
-	CONSTRAINT FK_id_funcionario FOREIGN KEY (id_funcionario) REFERENCES Funcionarios (id_funcionario)
+	PRIMARY KEY (numero),
+	CONSTRAINT FK_id_cliente FOREIGN KEY (id_cliente) REFERENCES Clientes (id),
+	CONSTRAINT FK_id_funcionario FOREIGN KEY (id_funcionario) REFERENCES Funcionarios (id)
 )
 
 CREATE TABLE Produtos(
-	id_produto int identity(1,1),
+	id int identity(1,1),
 	preco float not null,
 	especificacoes varchar(250) not null,
 	marca varchar(50) not null,
 	quantidade int not null,
-	PRIMARY KEY (id_produto)
+	PRIMARY KEY (id)
 )
 
 CREATE TABLE Servicos(
-	id_servico int identity(1,1),
+	id int identity(1,1),
 	tipo_servico varchar(50) not null,
 	preco float not null,
-	PRIMARY KEY (id_servico)
+	PRIMARY KEY (id)
 )
 
 CREATE TABLE ServicosXOrdem(
 	id_servico int not null,
 	num_os int not null,
 	CONSTRAINT PK_ServicoXOrdem PRIMARY KEY (id_servico, num_os),
-	CONSTRAINT FK_ServicoXOrdem2 FOREIGN KEY (id_servico) REFERENCES Servicos (id_servico),
-	CONSTRAINT FK_ServicoXOrdem3 FOREIGN KEY (num_os) REFERENCES Ordem_Servicos (num_os),
+	CONSTRAINT FK_ServicoXOrdem2 FOREIGN KEY (id_servico) REFERENCES Servicos (id),
+	CONSTRAINT FK_ServicoXOrdem3 FOREIGN KEY (num_os) REFERENCES Ordem_Servicos (numero),
 )
 
 CREATE TABLE ProdutosXOrdem(
@@ -93,6 +91,6 @@ CREATE TABLE ProdutosXOrdem(
 	quant int not null,
 	valor_total float not null,
 	CONSTRAINT PK_ProdutoXOrdem PRIMARY KEY (id_produto, num_os),
-	CONSTRAINT FK_ProdutoXOrdem2 FOREIGN KEY (id_produto) REFERENCES Produtos (id_produto),
-	CONSTRAINT FK_ProdutoXOrdem3 FOREIGN KEY (num_os) REFERENCES Ordem_Servicos (num_os),
+	CONSTRAINT FK_ProdutoXOrdem2 FOREIGN KEY (id_produto) REFERENCES Produtos (id),
+	CONSTRAINT FK_ProdutoXOrdem3 FOREIGN KEY (num_os) REFERENCES Ordem_Servicos (numero),
 )

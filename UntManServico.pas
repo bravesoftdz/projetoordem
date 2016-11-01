@@ -99,7 +99,7 @@ procedure TFrmManServico.FormActivate(Sender: TObject);
 begin
   DM.ADODSServicos.Close;
   DM.ADODSServicos.CommandText := '';
-  DM.ADODSServicos.CommandText := 'select * from Servicos order by id_servico';
+  DM.ADODSServicos.CommandText := 'select * from Servicos order by id';
   DM.ADODSServicos.Open;
 end;
 

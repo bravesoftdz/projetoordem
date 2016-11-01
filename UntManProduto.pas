@@ -88,14 +88,14 @@ end;
 
 procedure TFrmManProduto.Edit1Change(Sender: TObject);
 begin
-DM.ADODSServicos.Locate('id_produto',Edit1.Text, [loCaseInsensitive,loPartialKey]);
+DM.ADODSServicos.Locate('id',Edit1.Text, [loCaseInsensitive,loPartialKey]);
 end;
 
 procedure TFrmManProduto.FormActivate(Sender: TObject);
 begin
 DM.ADODSProduto.Close;
 DM.ADODSProduto.CommandText:= '';
-DM.ADODSProduto.CommandText:= 'select * from PRODUTOS order by id_produto';
+DM.ADODSProduto.CommandText:= 'select * from PRODUTOS order by id';
 DM.ADODSProduto.Open;
 end;
 
