@@ -4,7 +4,7 @@ object FrmManOS: TFrmManOS
   BorderIcons = []
   BorderStyle = bsSingle
   Caption = 'Manuten'#231#227'o no Cadastro de Ordem de Servi'#231'o'
-  ClientHeight = 462
+  ClientHeight = 521
   ClientWidth = 596
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
@@ -194,24 +194,10 @@ object FrmManOS: TFrmManOS
     Left = 0
     Top = 90
     Width = 596
-    Height = 353
+    Height = 412
     Align = alClient
     TabOrder = 2
-    object Label2: TLabel
-      Left = 16
-      Top = 14
-      Width = 37
-      Height = 13
-      Caption = 'N'#250'mero'
-    end
-    object DBText1: TDBText
-      Left = 93
-      Top = 14
-      Width = 65
-      Height = 17
-      DataField = 'numero'
-      DataSource = DM.DSOrdemServico
-    end
+    ExplicitHeight = 318
     object Label3: TLabel
       Left = 16
       Top = 39
@@ -369,6 +355,21 @@ object FrmManOS: TFrmManOS
         00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF}
       OnClick = SpeedButton2Click
     end
+    object DBText1: TDBText
+      Left = 133
+      Top = 14
+      Width = 65
+      Height = 17
+      DataField = 'numero'
+      DataSource = DM.DSOrdemServico
+    end
+    object Label2: TLabel
+      Left = 16
+      Top = 14
+      Width = 100
+      Height = 13
+      Caption = 'N'#186' Ordem de Servi'#231'o'
+    end
     object DBEdit1: TDBEdit
       Left = 93
       Top = 36
@@ -380,7 +381,7 @@ object FrmManOS: TFrmManOS
     end
     object DBEdit2: TDBEdit
       Left = 93
-      Top = 61
+      Top = 60
       Width = 121
       Height = 21
       DataField = 'id_funcionario'
@@ -558,8 +559,8 @@ object FrmManOS: TFrmManOS
           Top = 27
           Width = 173
           Height = 21
-          DataField = 'id'
-          DataSource = DM.DSProduto
+          DataField = 'id_produto'
+          DataSource = DM.DSProdutosXOrdem
           KeyField = 'id'
           ListField = 'especificacoes'
           ListSource = DSProduto
@@ -860,23 +861,39 @@ object FrmManOS: TFrmManOS
         OnClick = Bbt_InserirClick
       end
     end
+    object PageControl1: TPageControl
+      Left = 53
+      Top = 232
+      Width = 289
+      Height = 193
+      ActivePage = TabSheet2
+      TabOrder = 5
+      object TabSheet1: TTabSheet
+        Caption = 'TabSheet1'
+      end
+      object TabSheet2: TTabSheet
+        Caption = 'TabSheet2'
+        ImageIndex = 1
+      end
+    end
   end
   object StatusBar1: TStatusBar
     Left = 0
-    Top = 443
+    Top = 502
     Width = 596
     Height = 19
     Panels = <
       item
         Width = 50
       end>
+    ExplicitTop = 408
   end
   object ImageList1: TImageList
     Height = 24
     Width = 24
     Left = 16
     Bitmap = {
-      494C01010C0020003C0018001800FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      494C01010C0020004C0018001800FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000600000006000000001002000000000000090
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
@@ -2076,7 +2093,7 @@ object FrmManOS: TFrmManOS
     Width = 24
     Left = 64
     Bitmap = {
-      494C01010C0020003C0018001800FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      494C01010C0020004C0018001800FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000600000006000000001002000000000000090
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
@@ -3276,7 +3293,7 @@ object FrmManOS: TFrmManOS
     Width = 24
     Left = 112
     Bitmap = {
-      494C01010C002C00540018001800FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      494C01010C002C00640018001800FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000600000006000000001002000000000000090
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000

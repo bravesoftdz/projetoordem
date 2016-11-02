@@ -6,7 +6,7 @@ object DM: TDM
     Connected = True
     ConnectionString = 
       'Provider=SQLOLEDB.1;Integrated Security=SSPI;Persist Security In' +
-      'fo=False;Initial Catalog=DB_OS;Data Source=LUCAS-PC\SQLEXPRESS;U' +
+      'fo=False;Initial Catalog=DB_OS;Data Source=NCC01-02\SQLEXPRESS;U' +
       'se Procedure for Prepare=1;Auto Translate=True;Packet Size=4096;' +
       'Workstation ID=LUCAS-PC;Use Encryption for Data=False;Tag with c' +
       'olumn collation when possible=False'
@@ -269,16 +269,22 @@ object DM: TDM
     AfterPost = ADODSProdutosXOrdemAfterPost
     AfterDelete = ADODSProdutosXOrdemAfterDelete
     OnNewRecord = ADODSProdutosXOrdemNewRecord
-    CommandText = 'select * from ProdutosXOrdem'
-    Parameters = <>
+    CommandText = 'select * from ProdutosXOrdem'#13#10'where num_os = :numero'
+    DataSource = DSOrdemServico
+    Parameters = <
+      item
+        Name = 'numero'
+        Attributes = [paSigned]
+        DataType = ftInteger
+        Precision = 10
+        Size = 4
+        Value = Null
+      end>
     Left = 624
     Top = 16
     object ADODSProdutosXOrdemid_produto: TIntegerField
       FieldName = 'id_produto'
       OnValidate = ADODSProdutosXOrdemid_produtoValidate
-    end
-    object ADODSProdutosXOrdemnum_os: TIntegerField
-      FieldName = 'num_os'
     end
     object ADODSProdutosXOrdemvalor_unit: TFloatField
       FieldName = 'valor_unit'
@@ -298,6 +304,9 @@ object DM: TDM
       KeyFields = 'id_produto'
       Size = 50
       Lookup = True
+    end
+    object ADODSProdutosXOrdemnum_os: TIntegerField
+      FieldName = 'num_os'
     end
   end
   object ADODSServicosXOrdem: TADODataSet

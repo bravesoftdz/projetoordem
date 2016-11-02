@@ -36,7 +36,6 @@ type
     btn_Imprimir: TToolButton;
     ToolButton13: TToolButton;
     btn_Sair: TToolButton;
-    DBText1: TDBText;
     Label3: TLabel;
     Label4: TLabel;
     Label5: TLabel;
@@ -49,12 +48,8 @@ type
     SpeedButton2: TSpeedButton;
     ADOQueryCliente: TADOQuery;
     DSCliente: TDataSource;
-    ADOQueryClienteid_cliente: TAutoIncField;
-    ADOQueryClienteNome_razao: TStringField;
     ADOQueryFuncionario: TADOQuery;
     DataSource2: TDataSource;
-    ADOQueryFuncionarioid_funcionario: TAutoIncField;
-    ADOQueryFuncionarionome_func: TStringField;
     GroupBox1: TGroupBox;
     pnlItems: TPanel;
     Label6: TLabel;
@@ -74,9 +69,14 @@ type
     Bbt_Confirmar: TBitBtn;
     Bbt_Cancelar: TBitBtn;
     DBGrid1: TDBGrid;
-    ADOQueryProdutoid_produto: TAutoIncField;
+    ADOQueryFuncionarioid: TAutoIncField;
+    ADOQueryFuncionarionome_func: TStringField;
+    ADOQueryClienteid: TAutoIncField;
+    ADOQueryClienteNome_razao: TStringField;
+    ADOQueryProdutoid: TAutoIncField;
     ADOQueryProdutoespecificacoes: TStringField;
     ADOQueryProdutopreco: TFloatField;
+    DBEdit7: TDBEdit;
     procedure btn_PrimeiroClick(Sender: TObject);
     procedure btn_AnteriorClick(Sender: TObject);
     procedure btn_SairClick(Sender: TObject);
@@ -96,6 +96,7 @@ type
     procedure DBEdit5Exit(Sender: TObject);
     procedure SpeedButton1Click(Sender: TObject);
     procedure SpeedButton2Click(Sender: TObject);
+    procedure SpeedButton3Click(Sender: TObject);
   private
     { Private declarations }
     procedure Botoes(Ativa: Boolean);
@@ -112,7 +113,7 @@ implementation
 
 {$R *.dfm}
 
-uses UntDM, UntManCliente, UntManFuncionario;
+uses UntDM, UntManCliente, UntManFuncionario, UntManProduto;
 
 procedure TFrmManOS.Bbt_CancelarClick(Sender: TObject);
 begin
@@ -266,7 +267,7 @@ begin
   confExclusao:= Application.MessageBox('Tem certeza que deseja excluir?','Atenção', MB_YESNO+MB_DEFBUTTON2+MB_ICONQUESTION);
   if confExclusao = IDYES then
   begin
-    ShowMessage('Registro nº '+DM.ADODSOrdemServiconum_os.AsString+ ' com sucesso.');
+    ShowMessage('Registro nº '+DM.ADODSOrdemServiconumero.AsString+ ' com sucesso.');
     DM.ADODSOrdemServico.Delete;
   end;
 end;
@@ -371,6 +372,11 @@ end;
 procedure TFrmManOS.SpeedButton2Click(Sender: TObject);
 begin
   FrmManFuncionario.ShowModal;
+end;
+
+procedure TFrmManOS.SpeedButton3Click(Sender: TObject);
+begin
+  FrmManProduto.ShowModal;
 end;
 
 end.

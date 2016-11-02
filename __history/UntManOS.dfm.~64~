@@ -4,7 +4,7 @@ object FrmManOS: TFrmManOS
   BorderIcons = []
   BorderStyle = bsSingle
   Caption = 'Manuten'#231#227'o no Cadastro de Ordem de Servi'#231'o'
-  ClientHeight = 462
+  ClientHeight = 427
   ClientWidth = 596
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
@@ -194,23 +194,16 @@ object FrmManOS: TFrmManOS
     Left = 0
     Top = 90
     Width = 596
-    Height = 353
+    Height = 318
     Align = alClient
     TabOrder = 2
+    ExplicitHeight = 353
     object Label2: TLabel
       Left = 16
       Top = 14
-      Width = 37
+      Width = 99
       Height = 13
-      Caption = 'N'#250'mero'
-    end
-    object DBText1: TDBText
-      Left = 93
-      Top = 14
-      Width = 65
-      Height = 17
-      DataField = 'num_os'
-      DataSource = DM.DSOrdemServico
+      Caption = 'N'#186' Ordem de servi'#231'o'
     end
     object Label3: TLabel
       Left = 16
@@ -394,7 +387,7 @@ object FrmManOS: TFrmManOS
       Height = 21
       DataField = 'id_cliente'
       DataSource = DM.DSOrdemServico
-      KeyField = 'id_cliente'
+      KeyField = 'id'
       ListField = 'nome_razao'
       ListSource = DM.DSCliente
       TabOrder = 2
@@ -406,7 +399,7 @@ object FrmManOS: TFrmManOS
       Height = 21
       DataField = 'id_funcionario'
       DataSource = DM.DSOrdemServico
-      KeyField = 'id_funcionario'
+      KeyField = 'id'
       ListField = 'nome_func'
       ListSource = DM.DSFuncionario
       TabOrder = 3
@@ -514,6 +507,7 @@ object FrmManOS: TFrmManOS
             FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00
             FFFF00FF1AA5D51EA8D621A9D723AAD723AAD722A9D720A8D61CA5D4FF00FFFF
             00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF}
+          OnClick = SpeedButton3Click
         end
         object DBEdit3: TDBEdit
           Left = 11
@@ -557,9 +551,9 @@ object FrmManOS: TFrmManOS
           Top = 27
           Width = 173
           Height = 21
-          DataField = 'id_produto'
+          DataField = 'id'
           DataSource = DM.DSProduto
-          KeyField = 'id_produto'
+          KeyField = 'id'
           ListField = 'especificacoes'
           ListSource = DSProduto
           TabOrder = 4
@@ -583,7 +577,6 @@ object FrmManOS: TFrmManOS
             Expanded = False
             FieldName = 'id_produto'
             Title.Caption = 'C'#243'd. Produto'
-            Width = 64
             Visible = True
           end
           item
@@ -860,23 +853,33 @@ object FrmManOS: TFrmManOS
         OnClick = Bbt_InserirClick
       end
     end
+    object DBEdit7: TDBEdit
+      Left = 121
+      Top = 9
+      Width = 121
+      Height = 21
+      DataField = 'numero'
+      DataSource = DM.DSOrdemServico
+      TabOrder = 5
+    end
   end
   object StatusBar1: TStatusBar
     Left = 0
-    Top = 443
+    Top = 408
     Width = 596
     Height = 19
     Panels = <
       item
         Width = 50
       end>
+    ExplicitTop = 443
   end
   object ImageList1: TImageList
     Height = 24
     Width = 24
     Left = 16
     Bitmap = {
-      494C01010C002000380018001800FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      494C01010C002000440018001800FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000600000006000000001002000000000000090
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
@@ -2076,7 +2079,7 @@ object FrmManOS: TFrmManOS
     Width = 24
     Left = 64
     Bitmap = {
-      494C01010C002000380018001800FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      494C01010C002000440018001800FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000600000006000000001002000000000000090
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
@@ -3276,7 +3279,7 @@ object FrmManOS: TFrmManOS
     Width = 24
     Left = 112
     Bitmap = {
-      494C01010C002C00500018001800FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      494C01010C002C005C0018001800FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000600000006000000001002000000000000090
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
@@ -4476,10 +4479,10 @@ object FrmManOS: TFrmManOS
     CursorType = ctStatic
     Parameters = <>
     SQL.Strings = (
-      'SELECT id_cliente, Nome_razao FROM Clientes ORDER BY nome_razao')
+      'SELECT id, Nome_razao FROM Clientes ORDER BY nome_razao')
     Left = 168
-    object ADOQueryClienteid_cliente: TAutoIncField
-      FieldName = 'id_cliente'
+    object ADOQueryClienteid: TAutoIncField
+      FieldName = 'id'
       ReadOnly = True
     end
     object ADOQueryClienteNome_razao: TStringField
@@ -4496,12 +4499,10 @@ object FrmManOS: TFrmManOS
     CursorType = ctStatic
     Parameters = <>
     SQL.Strings = (
-      
-        'SELECT id_funcionario, nome_func FROM Funcionarios ORDER BY nome' +
-        '_func')
+      'SELECT id, nome_func FROM Funcionarios ORDER BY nome_func')
     Left = 448
-    object ADOQueryFuncionarioid_funcionario: TAutoIncField
-      FieldName = 'id_funcionario'
+    object ADOQueryFuncionarioid: TAutoIncField
+      FieldName = 'id'
       ReadOnly = True
     end
     object ADOQueryFuncionarionome_func: TStringField
@@ -4514,17 +4515,18 @@ object FrmManOS: TFrmManOS
     Left = 504
   end
   object ADOQueryProduto: TADOQuery
+    Active = True
     Connection = DM.ADOConnection1
     CursorType = ctStatic
     Parameters = <>
     SQL.Strings = (
       
-        'select id_produto, especificacoes, preco from produtos order by ' +
-        'especificacoes')
+        'select id, especificacoes, preco from produtos order by especifi' +
+        'cacoes')
     Left = 547
     Top = 173
-    object ADOQueryProdutoid_produto: TAutoIncField
-      FieldName = 'id_produto'
+    object ADOQueryProdutoid: TAutoIncField
+      FieldName = 'id'
       ReadOnly = True
     end
     object ADOQueryProdutoespecificacoes: TStringField

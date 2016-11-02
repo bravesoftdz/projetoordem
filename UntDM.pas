@@ -57,7 +57,6 @@ type
     ADODSClientebairro: TStringField;
     ADODSFuncionariobairro: TStringField;
     ADODSProdutosXOrdemid_produto: TIntegerField;
-    ADODSProdutosXOrdemnum_os: TIntegerField;
     ADODSProdutosXOrdemvalor_unit: TFloatField;
     ADODSProdutosXOrdemquant: TIntegerField;
     ADODSProdutosXOrdemvalor_total: TFloatField;
@@ -66,6 +65,7 @@ type
     ADODSProdutoid: TAutoIncField;
     ADODSServicosid: TAutoIncField;
     ADODSProdutosXOrdemNomeProduto2: TStringField;
+    ADODSProdutosXOrdemnum_os: TIntegerField;
     ADODSOrdemServiconumero: TAutoIncField;
     ADODSOrdemServicoid_cliente: TIntegerField;
     ADODSOrdemServicoid_funcionario: TIntegerField;
@@ -168,15 +168,15 @@ end;
 
 procedure TDM.ADODSProdutosXOrdemid_produtoValidate(Sender: TField);
 begin
-  if not FrmManOS.ADOQueryProduto.Locate('id_produto', ADODSProdutosXOrdemid_produto.AsString, []) then
+  if not FrmManOS.ADOQueryProduto.Locate('id', ADODSProdutosXOrdemid_produto.AsString, []) then
     begin
-      MessageDlg('Produto não encontrado ',mtError,[mbOK], 0);
+      MessageDlg('Produto não encontrado.',mtError,[mbOK], 0);
       Abort;
     end
     else
     begin
       ADODSProdutosXOrdemvalor_unit.AsFloat := FrmManOS.ADOQueryProdutopreco.AsFloat;
-      ADODSProdutosXOrdemquant.AsInteger := -1;
+      ADODSProdutosXOrdemquant.AsInteger := 1;
       ADODSProdutosXOrdemvalor_total.AsFloat := FrmManOS.ADOQueryProdutopreco.AsFloat;
       FrmManOS.DBEdit5.SetFocus;
     end;

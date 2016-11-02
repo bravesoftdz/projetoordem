@@ -209,7 +209,7 @@ object FrmManOS: TFrmManOS
       Top = 14
       Width = 65
       Height = 17
-      DataField = 'num_os'
+      DataField = 'numero'
       DataSource = DM.DSOrdemServico
     end
     object Label3: TLabel
@@ -394,7 +394,7 @@ object FrmManOS: TFrmManOS
       Height = 21
       DataField = 'id_cliente'
       DataSource = DM.DSOrdemServico
-      KeyField = 'id_cliente'
+      KeyField = 'id'
       ListField = 'nome_razao'
       ListSource = DM.DSCliente
       TabOrder = 2
@@ -406,7 +406,7 @@ object FrmManOS: TFrmManOS
       Height = 21
       DataField = 'id_funcionario'
       DataSource = DM.DSOrdemServico
-      KeyField = 'id_funcionario'
+      KeyField = 'id'
       ListField = 'nome_func'
       ListSource = DM.DSFuncionario
       TabOrder = 3
@@ -558,9 +558,9 @@ object FrmManOS: TFrmManOS
           Top = 27
           Width = 173
           Height = 21
-          DataField = 'id_produto'
+          DataField = 'id'
           DataSource = DM.DSProduto
-          KeyField = 'id_produto'
+          KeyField = 'id'
           ListField = 'especificacoes'
           ListSource = DSProduto
           TabOrder = 4
@@ -876,7 +876,7 @@ object FrmManOS: TFrmManOS
     Width = 24
     Left = 16
     Bitmap = {
-      494C01010C0020003C0018001800FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      494C01010C002000400018001800FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000600000006000000001002000000000000090
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
@@ -2076,7 +2076,7 @@ object FrmManOS: TFrmManOS
     Width = 24
     Left = 64
     Bitmap = {
-      494C01010C0020003C0018001800FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      494C01010C002000400018001800FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000600000006000000001002000000000000090
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
@@ -3276,7 +3276,7 @@ object FrmManOS: TFrmManOS
     Width = 24
     Left = 112
     Bitmap = {
-      494C01010C002C00540018001800FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      494C01010C002C00580018001800FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000600000006000000001002000000000000090
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
@@ -4476,10 +4476,10 @@ object FrmManOS: TFrmManOS
     CursorType = ctStatic
     Parameters = <>
     SQL.Strings = (
-      'SELECT id_cliente, Nome_razao FROM Clientes ORDER BY nome_razao')
+      'SELECT id, Nome_razao FROM Clientes ORDER BY nome_razao')
     Left = 168
-    object ADOQueryClienteid_cliente: TAutoIncField
-      FieldName = 'id_cliente'
+    object ADOQueryClienteid: TAutoIncField
+      FieldName = 'id'
       ReadOnly = True
     end
     object ADOQueryClienteNome_razao: TStringField
@@ -4496,12 +4496,10 @@ object FrmManOS: TFrmManOS
     CursorType = ctStatic
     Parameters = <>
     SQL.Strings = (
-      
-        'SELECT id_funcionario, nome_func FROM Funcionarios ORDER BY nome' +
-        '_func')
+      'SELECT id, nome_func FROM Funcionarios ORDER BY nome_func')
     Left = 448
-    object ADOQueryFuncionarioid_funcionario: TAutoIncField
-      FieldName = 'id_funcionario'
+    object ADOQueryFuncionarioid: TAutoIncField
+      FieldName = 'id'
       ReadOnly = True
     end
     object ADOQueryFuncionarionome_func: TStringField
@@ -4519,12 +4517,12 @@ object FrmManOS: TFrmManOS
     Parameters = <>
     SQL.Strings = (
       
-        'select id_produto, especificacoes, preco from produtos order by ' +
-        'especificacoes')
+        'select id, especificacoes, preco from produtos order by especifi' +
+        'cacoes')
     Left = 547
     Top = 173
-    object ADOQueryProdutoid_produto: TAutoIncField
-      FieldName = 'id_produto'
+    object ADOQueryProdutoid: TAutoIncField
+      FieldName = 'id'
       ReadOnly = True
     end
     object ADOQueryProdutoespecificacoes: TStringField

@@ -21,7 +21,6 @@ type
     btn_Anterior: TToolButton;
     ToolButton4: TToolButton;
     pnlFicha: TPanel;
-    Label2: TLabel;
     StatusBar1: TStatusBar;
     btn_Proximo: TToolButton;
     btn_Ultimo: TToolButton;
@@ -36,7 +35,6 @@ type
     btn_Imprimir: TToolButton;
     ToolButton13: TToolButton;
     btn_Sair: TToolButton;
-    DBText1: TDBText;
     Label3: TLabel;
     Label4: TLabel;
     Label5: TLabel;
@@ -77,6 +75,11 @@ type
     ADOQueryProdutoid: TAutoIncField;
     ADOQueryProdutoespecificacoes: TStringField;
     ADOQueryProdutopreco: TFloatField;
+    DBText1: TDBText;
+    Label2: TLabel;
+    PageControl1: TPageControl;
+    TabSheet1: TTabSheet;
+    TabSheet2: TTabSheet;
     procedure btn_PrimeiroClick(Sender: TObject);
     procedure btn_AnteriorClick(Sender: TObject);
     procedure btn_SairClick(Sender: TObject);
@@ -336,6 +339,15 @@ DM.ADODSOrdemServico.Open;
 
 DM.ADODSProdutosXOrdem.Close;
 DM.ADODSProdutosXOrdem.Open;
+
+DM.ADODSCliente.Close;
+DM.ADODSCliente.Open;
+
+DM.ADODSFuncionario.Close;
+DM.ADODSFuncionario.Open;
+
+DM.ADODSProduto.Close;
+DM.ADODSProduto.Open;
 
 Botoes(true);
 

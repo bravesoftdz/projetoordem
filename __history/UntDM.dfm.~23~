@@ -3,6 +3,7 @@ object DM: TDM
   Height = 150
   Width = 844
   object ADOConnection1: TADOConnection
+    Connected = True
     ConnectionString = 
       'Provider=SQLOLEDB.1;Integrated Security=SSPI;Persist Security In' +
       'fo=False;Initial Catalog=DB_OS;Data Source=LUCAS-PC\SQLEXPRESS;U' +
@@ -21,10 +22,6 @@ object DM: TDM
     Parameters = <>
     Left = 136
     Top = 16
-    object ADODSClienteid_cliente: TAutoIncField
-      FieldName = 'id_cliente'
-      ReadOnly = True
-    end
     object ADODSClientenome_razao: TStringField
       FieldName = 'nome_razao'
       Size = 50
@@ -78,6 +75,10 @@ object DM: TDM
       FieldName = 'bairro'
       Size = 50
     end
+    object ADODSClienteid: TAutoIncField
+      FieldName = 'id'
+      ReadOnly = True
+    end
   end
   object DSCliente: TDataSource
     DataSet = ADODSCliente
@@ -91,10 +92,6 @@ object DM: TDM
     Parameters = <>
     Left = 232
     Top = 16
-    object ADODSFuncionarioid_funcionario: TAutoIncField
-      FieldName = 'id_funcionario'
-      ReadOnly = True
-    end
     object ADODSFuncionariocargo: TStringField
       FieldName = 'cargo'
       Size = 50
@@ -148,16 +145,20 @@ object DM: TDM
       FieldName = 'bairro'
       Size = 50
     end
+    object ADODSFuncionarioid: TAutoIncField
+      FieldName = 'id'
+      ReadOnly = True
+    end
   end
   object ADODSOrdemServico: TADODataSet
     Connection = ADOConnection1
     CursorType = ctStatic
-    CommandText = 'select * from Ordem_Servicos'#13#10
+    CommandText = 'select * from Ordem_Servicos'
     Parameters = <>
     Left = 336
     Top = 16
-    object ADODSOrdemServiconum_os: TAutoIncField
-      FieldName = 'num_os'
+    object ADODSOrdemServiconumero: TAutoIncField
+      FieldName = 'numero'
       ReadOnly = True
     end
     object ADODSOrdemServicoid_cliente: TIntegerField
@@ -204,10 +205,6 @@ object DM: TDM
     Parameters = <>
     Left = 432
     Top = 16
-    object ADODSProdutoid_produto: TAutoIncField
-      FieldName = 'id_produto'
-      ReadOnly = True
-    end
     object ADODSProdutopreco: TFloatField
       FieldName = 'preco'
     end
@@ -221,6 +218,10 @@ object DM: TDM
     end
     object ADODSProdutoquantidade: TIntegerField
       FieldName = 'quantidade'
+    end
+    object ADODSProdutoid: TAutoIncField
+      FieldName = 'id'
+      ReadOnly = True
     end
   end
   object DSFuncionario: TDataSource
@@ -245,16 +246,16 @@ object DM: TDM
     Parameters = <>
     Left = 512
     Top = 16
-    object ADODSServicosid_servico: TAutoIncField
-      FieldName = 'id_servico'
-      ReadOnly = True
-    end
     object ADODSServicostipo_servico: TStringField
       FieldName = 'tipo_servico'
       Size = 50
     end
     object ADODSServicospreco: TFloatField
       FieldName = 'preco'
+    end
+    object ADODSServicosid: TAutoIncField
+      FieldName = 'id'
+      ReadOnly = True
     end
   end
   object DSServicos: TDataSource
@@ -288,11 +289,11 @@ object DM: TDM
     object ADODSProdutosXOrdemvalor_total: TFloatField
       FieldName = 'valor_total'
     end
-    object ADODSProdutosXOrdemNomeProduto: TStringField
+    object ADODSProdutosXOrdemNomeProduto2: TStringField
       FieldKind = fkLookup
       FieldName = 'NomeProduto'
       LookupDataSet = FrmManOS.ADOQueryProduto
-      LookupKeyFields = 'id_produto'
+      LookupKeyFields = 'id'
       LookupResultField = 'especificacoes'
       KeyFields = 'id_produto'
       Size = 50

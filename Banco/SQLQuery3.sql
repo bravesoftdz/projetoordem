@@ -86,7 +86,7 @@ CREATE TABLE ServicosXOrdem(
 
 CREATE TABLE ProdutosXOrdem(
 	id_produto int not null,
-	num_os int not null,
+	num_os int,
 	valor_unit float not null,
 	quant int not null,
 	valor_total float not null,
