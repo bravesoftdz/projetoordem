@@ -26,6 +26,21 @@ type
     Label3: TLabel;
     Label4: TLabel;
     Quantidade: TLabel;
+    PageControl1: TPageControl;
+    Produtos: TTabSheet;
+    Serviços: TTabSheet;
+    Panel2: TPanel;
+    Label5: TLabel;
+    Label6: TLabel;
+    Label7: TLabel;
+    Label8: TLabel;
+    DBEdit4: TDBEdit;
+    DBMemo2: TDBMemo;
+    DBEdit6: TDBEdit;
+    DBText1: TDBText;
+    Label9: TLabel;
+    DBText2: TDBText;
+    Label10: TLabel;
     procedure btn_salvarClick(Sender: TObject);
     procedure btn_cancelarClick(Sender: TObject);
     procedure btn_sairClick(Sender: TObject);
@@ -46,7 +61,7 @@ uses UntDM, UntManProduto;
 
 procedure TFrmCadProduto.btn_cancelarClick(Sender: TObject);
 begin
-DM.ADODSProduto.Cancel;
+DM.ADODSSolucao.Cancel;
 
 Application.MessageBox('A inclusão o alteração deste registro foi abortada.', 'Atenção', MB_OK+MB_ICONERROR);
 
@@ -63,10 +78,20 @@ end;
 
 procedure TFrmCadProduto.btn_salvarClick(Sender: TObject);
 begin
-DM.ADODSProduto.Post;
 
-Application.MessageBox('O registro foi incluído ou alterado com sucesso.', 'Informação', MB_OK+MB_ICONINFORMATION);
-
+if PageControl1.ActivePage = Produtos then
+  begin
+  DM.ADODSSolucao.Edit;
+  DM.ADODSSolucaotipo.AsString := 'Produto';
+  Application.MessageBox('O registro foi incluído ou alterado com sucesso.', 'Informação', MB_OK+MB_ICONINFORMATION);
+  end
+  else if PageControl1.ActivePage = Serviços then
+  begin
+  DM.ADODSSolucao.Edit;
+  DM.ADODSSolucaotipo.AsString := 'Serviço';
+  Application.MessageBox('O registro foi incluído ou alterado com sucesso.', 'Informação', MB_OK+MB_ICONINFORMATION);
+  end;
+DM.ADODSSolucao.Post;
 btn_salvar.Enabled := false;
 btn_cancelar.Enabled := false;
 btn_sair.Enabled := true;

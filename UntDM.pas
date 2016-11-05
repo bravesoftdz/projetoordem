@@ -12,24 +12,12 @@ type
     DSCliente: TDataSource;
     ADODSFuncionario: TADODataSet;
     ADODSOrdemServico: TADODataSet;
-    ADODSProduto: TADODataSet;
+    ADODSSolucao: TADODataSet;
     DSFuncionario: TDataSource;
     DSOrdemServico: TDataSource;
-    DSProduto: TDataSource;
-    ADODSServicos: TADODataSet;
-    DSServicos: TDataSource;
-    ADODSProdutosXOrdem: TADODataSet;
-    ADODSServicosXOrdem: TADODataSet;
-    DSProdutosXOrdem: TDataSource;
-    DSServicosXOrdem: TDataSource;
-    ADODSServicostipo_servico: TStringField;
-    ADODSServicospreco: TFloatField;
-    ADODSProdutopreco: TFloatField;
-    ADODSProdutoespecificacoes: TStringField;
-    ADODSProdutomarca: TStringField;
-    ADODSProdutoquantidade: TIntegerField;
-    ADODSServicosXOrdemid_servico: TIntegerField;
-    ADODSServicosXOrdemnum_os: TIntegerField;
+    DSSolucao: TDataSource;
+    ADODSSolucaoXOrdem: TADODataSet;
+    DSSolucaoXOrdem: TDataSource;
     ADODSFuncionariocargo: TStringField;
     ADODSFuncionarionome_func: TStringField;
     ADODSFuncionariocpf: TStringField;
@@ -56,16 +44,8 @@ type
     ADODSClientetipo: TStringField;
     ADODSClientebairro: TStringField;
     ADODSFuncionariobairro: TStringField;
-    ADODSProdutosXOrdemid_produto: TIntegerField;
-    ADODSProdutosXOrdemvalor_unit: TFloatField;
-    ADODSProdutosXOrdemquant: TIntegerField;
-    ADODSProdutosXOrdemvalor_total: TFloatField;
     ADODSClienteid: TAutoIncField;
     ADODSFuncionarioid: TAutoIncField;
-    ADODSProdutoid: TAutoIncField;
-    ADODSServicosid: TAutoIncField;
-    ADODSProdutosXOrdemNomeProduto2: TStringField;
-    ADODSProdutosXOrdemnum_os: TIntegerField;
     ADODSOrdemServiconumero: TAutoIncField;
     ADODSOrdemServicoid_cliente: TIntegerField;
     ADODSOrdemServicoid_funcionario: TIntegerField;
@@ -77,10 +57,23 @@ type
     ADODSOrdemServicostatus_ordem: TStringField;
     ADODSOrdemServicovalor_produtos: TFloatField;
     ADODSOrdemServicovalor_total: TFloatField;
-    procedure ADODSProdutosXOrdemid_produtoValidate(Sender: TField);
-    procedure ADODSProdutosXOrdemAfterPost(DataSet: TDataSet);
-    procedure ADODSProdutosXOrdemAfterDelete(DataSet: TDataSet);
-    procedure ADODSProdutosXOrdemNewRecord(DataSet: TDataSet);
+    ADODSSolucaoXOrdemid_solucao: TIntegerField;
+    ADODSSolucaoXOrdemnum_os: TIntegerField;
+    ADODSSolucaoXOrdemvalor_unit: TFloatField;
+    ADODSSolucaoXOrdemquant: TIntegerField;
+    ADODSSolucaoXOrdemvalor_total: TFloatField;
+    ADODSSolucaoXOrdemNomeProduto: TStringField;
+    ADODSSolucaoXOrdemNomeServico: TStringField;
+    ADODSSolucaoid: TAutoIncField;
+    ADODSSolucaopreco: TFloatField;
+    ADODSSolucaoespecificacoes: TStringField;
+    ADODSSolucaomarca: TStringField;
+    ADODSSolucaoquantidade: TIntegerField;
+    ADODSSolucaotipo: TStringField;
+    procedure ADODSSolucaoXOrdemid_produtoValidate(Sender: TField);
+    procedure ADODSSolucaoXOrdemAfterPost(DataSet: TDataSet);
+    procedure ADODSSolucaoXOrdemAfterDelete(DataSet: TDataSet);
+    procedure ADODSSolucaoXOrdemNewRecord(DataSet: TDataSet);
   private
     { Private declarations }
   public
@@ -98,12 +91,12 @@ uses UntManOS;
 
 {$R *.dfm}
 
-procedure TDM.ADODSProdutosXOrdemAfterDelete(DataSet: TDataSet);
+procedure TDM.ADODSSolucaoXOrdemAfterDelete(DataSet: TDataSet);
 var
   bmk: TBookmark;
   valTot: double;
 begin
-with ADODSProdutosXOrdem do
+with ADODSSolucaoXOrdem do
   begin
     bmk := GetBookmark;
     DisableControls;
@@ -112,7 +105,7 @@ with ADODSProdutosXOrdem do
       First;
       while not EOF do
       begin
-        valTot:= valTot + ADODSProdutosXOrdemvalor_total.AsFloat;
+        valTot:= valTot + ADODSSolucaoXOrdemvalor_total.AsFloat;
         Next;
       end;
     finally
@@ -132,12 +125,12 @@ with ADODSProdutosXOrdem do
   end;
 end;
 
-procedure TDM.ADODSProdutosXOrdemAfterPost(DataSet: TDataSet);
+procedure TDM.ADODSSolucaoXOrdemAfterPost(DataSet: TDataSet);
 var
   bmk: TBookmark;
   valTot: double;
 begin
-with ADODSProdutosXOrdem do
+with ADODSSolucaoXOrdem do
   begin
     bmk := GetBookmark;
     DisableControls;
@@ -146,7 +139,7 @@ with ADODSProdutosXOrdem do
       First;
       while not EOF do
       begin
-        valTot:= valTot + ADODSProdutosXOrdemvalor_total.AsFloat;
+        valTot:= valTot + ADODSSolucaoXOrdemvalor_total.AsFloat;
         Next;
       end;
     finally
@@ -166,26 +159,26 @@ with ADODSProdutosXOrdem do
   end;
 end;
 
-procedure TDM.ADODSProdutosXOrdemid_produtoValidate(Sender: TField);
+procedure TDM.ADODSSolucaoXOrdemid_produtoValidate(Sender: TField);
 begin
-  if not FrmManOS.ADOQueryProduto.Locate('id', ADODSProdutosXOrdemid_produto.AsString, []) then
+  if not FrmManOS.ADOQueryProduto.Locate('id', ADODSSolucaoXOrdemid_solucao.AsString, []) then
     begin
       MessageDlg('Produto não encontrado.',mtError,[mbOK], 0);
       Abort;
     end
     else
     begin
-      ADODSProdutosXOrdemvalor_unit.AsFloat := FrmManOS.ADOQueryProdutopreco.AsFloat;
-      ADODSProdutosXOrdemquant.AsInteger := 1;
-      ADODSProdutosXOrdemvalor_total.AsFloat := FrmManOS.ADOQueryProdutopreco.AsFloat;
+      ADODSSolucaoXOrdemvalor_unit.AsFloat := FrmManOS.ADOQueryProdutopreco.AsFloat;
+      ADODSSolucaoXOrdemquant.AsInteger := 1;
+      ADODSSolucaoXOrdemvalor_total.AsFloat := FrmManOS.ADOQueryProdutopreco.AsFloat;
       FrmManOS.DBEdit5.SetFocus;
     end;
 
 end;
 
-procedure TDM.ADODSProdutosXOrdemNewRecord(DataSet: TDataSet);
+procedure TDM.ADODSSolucaoXOrdemNewRecord(DataSet: TDataSet);
 begin
-  ADODSProdutosXOrdemnum_os.AsInteger := ADODSOrdemServiconumero.AsInteger;
+  ADODSSolucaoXOrdemnum_os.AsInteger := ADODSOrdemServiconumero.AsInteger;
 end;
 
 end.

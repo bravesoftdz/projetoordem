@@ -5,7 +5,7 @@ object FrmManProduto: TFrmManProduto
   BorderStyle = bsSingle
   Caption = 'Manuten'#231#227'o no Cadastro de Produtos'
   ClientHeight = 501
-  ClientWidth = 587
+  ClientWidth = 630
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -20,7 +20,7 @@ object FrmManProduto: TFrmManProduto
   object Panel1: TPanel
     Left = 0
     Top = 0
-    Width = 587
+    Width = 630
     Height = 41
     Align = alTop
     Color = clGradientInactiveCaption
@@ -43,7 +43,7 @@ object FrmManProduto: TFrmManProduto
   object ToolBar1: TToolBar
     Left = 0
     Top = 41
-    Width = 587
+    Width = 630
     Height = 49
     BorderWidth = 1
     ButtonHeight = 40
@@ -96,7 +96,7 @@ object FrmManProduto: TFrmManProduto
   object Panel2: TPanel
     Left = 0
     Top = 90
-    Width = 587
+    Width = 630
     Height = 41
     Align = alTop
     TabOrder = 2
@@ -108,18 +108,38 @@ object FrmManProduto: TFrmManProduto
       Caption = 'Pesquisa por C'#243'digo'
     end
     object Edit1: TEdit
-      Left = 119
+      Left = 131
       Top = 11
-      Width = 242
+      Width = 158
       Height = 21
       TabOrder = 0
       OnChange = Edit1Change
+    end
+    object CheckBox1: TCheckBox
+      Left = 309
+      Top = 13
+      Width = 66
+      Height = 17
+      Caption = 'Produtos'
+      Checked = True
+      State = cbChecked
+      TabOrder = 1
+    end
+    object CheckBox2: TCheckBox
+      Left = 387
+      Top = 13
+      Width = 68
+      Height = 17
+      Caption = 'Servi'#231'os'
+      Checked = True
+      State = cbChecked
+      TabOrder = 2
     end
   end
   object StatusBar1: TStatusBar
     Left = 0
     Top = 482
-    Width = 587
+    Width = 630
     Height = 19
     Panels = <
       item
@@ -129,10 +149,10 @@ object FrmManProduto: TFrmManProduto
   object DBGrid1: TDBGrid
     Left = 0
     Top = 131
-    Width = 587
+    Width = 630
     Height = 351
     Align = alClient
-    DataSource = DM.DSProduto
+    DataSource = DM.DSSolucao
     TabOrder = 4
     TitleFont.Charset = DEFAULT_CHARSET
     TitleFont.Color = clWindowText
@@ -172,6 +192,13 @@ object FrmManProduto: TFrmManProduto
         Title.Caption = 'Quantidade'
         Width = 70
         Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'tipo'
+        Title.Caption = 'TIPO'
+        Width = 57
+        Visible = True
       end>
   end
   object ImageList1: TImageList
@@ -180,7 +207,7 @@ object FrmManProduto: TFrmManProduto
     Left = 264
     Top = 240
     Bitmap = {
-      494C010106002400300018001800FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      494C010106002400400018001800FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000600000003000000001002000000000000048
       0000000000000000000000000000000000000000000000000000000000000000
       00000000000000000000000000000000000000009A0000009A0000039D00020D
@@ -787,7 +814,7 @@ object FrmManProduto: TFrmManProduto
     Left = 336
     Top = 240
     Bitmap = {
-      494C010106002400300018001800FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      494C010106002400400018001800FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000600000003000000001002000000000000048
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000009595950095959500969696009999
@@ -1394,7 +1421,7 @@ object FrmManProduto: TFrmManProduto
     Left = 400
     Top = 240
     Bitmap = {
-      494C010106002400300018001800FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      494C010106002400400018001800FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000600000003000000001002000000000000048
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000820000008200000186000005

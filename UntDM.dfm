@@ -6,7 +6,7 @@ object DM: TDM
     Connected = True
     ConnectionString = 
       'Provider=SQLOLEDB.1;Integrated Security=SSPI;Persist Security In' +
-      'fo=False;Initial Catalog=DB_OS;Data Source=NCC01-02\SQLEXPRESS;U' +
+      'fo=False;Initial Catalog=DB_OS;Data Source=LUCAS-PC\SQLEXPRESS;U' +
       'se Procedure for Prepare=1;Auto Translate=True;Packet Size=4096;' +
       'Workstation ID=LUCAS-PC;Use Encryption for Data=False;Tag with c' +
       'olumn collation when possible=False'
@@ -198,30 +198,34 @@ object DM: TDM
       FieldName = 'valor_total'
     end
   end
-  object ADODSProduto: TADODataSet
+  object ADODSSolucao: TADODataSet
     Connection = ADOConnection1
     CursorType = ctStatic
-    CommandText = 'select * from Produtos'
+    CommandText = 'select * from Solucao'
     Parameters = <>
     Left = 432
     Top = 16
-    object ADODSProdutopreco: TFloatField
+    object ADODSSolucaoid: TAutoIncField
+      FieldName = 'id'
+      ReadOnly = True
+    end
+    object ADODSSolucaopreco: TFloatField
       FieldName = 'preco'
     end
-    object ADODSProdutoespecificacoes: TStringField
+    object ADODSSolucaoespecificacoes: TStringField
       FieldName = 'especificacoes'
       Size = 250
     end
-    object ADODSProdutomarca: TStringField
+    object ADODSSolucaomarca: TStringField
       FieldName = 'marca'
       Size = 50
     end
-    object ADODSProdutoquantidade: TIntegerField
+    object ADODSSolucaoquantidade: TIntegerField
       FieldName = 'quantidade'
     end
-    object ADODSProdutoid: TAutoIncField
-      FieldName = 'id'
-      ReadOnly = True
+    object ADODSSolucaotipo: TStringField
+      FieldName = 'tipo'
+      Size = 50
     end
   end
   object DSFuncionario: TDataSource
@@ -234,43 +238,20 @@ object DM: TDM
     Left = 336
     Top = 80
   end
-  object DSProduto: TDataSource
-    DataSet = ADODSProduto
+  object DSSolucao: TDataSource
+    DataSet = ADODSSolucao
     Left = 432
     Top = 80
   end
-  object ADODSServicos: TADODataSet
+  object ADODSSolucaoXOrdem: TADODataSet
     Connection = ADOConnection1
     CursorType = ctStatic
-    CommandText = 'select * from Servicos'
-    Parameters = <>
-    Left = 512
-    Top = 16
-    object ADODSServicostipo_servico: TStringField
-      FieldName = 'tipo_servico'
-      Size = 50
-    end
-    object ADODSServicospreco: TFloatField
-      FieldName = 'preco'
-    end
-    object ADODSServicosid: TAutoIncField
-      FieldName = 'id'
-      ReadOnly = True
-    end
-  end
-  object DSServicos: TDataSource
-    DataSet = ADODSServicos
-    Left = 512
-    Top = 80
-  end
-  object ADODSProdutosXOrdem: TADODataSet
-    Connection = ADOConnection1
-    CursorType = ctStatic
-    AfterPost = ADODSProdutosXOrdemAfterPost
-    AfterDelete = ADODSProdutosXOrdemAfterDelete
-    OnNewRecord = ADODSProdutosXOrdemNewRecord
-    CommandText = 'select * from ProdutosXOrdem'#13#10'where num_os = :numero'
+    AfterPost = ADODSSolucaoXOrdemAfterPost
+    AfterDelete = ADODSSolucaoXOrdemAfterDelete
+    OnNewRecord = ADODSSolucaoXOrdemNewRecord
+    CommandText = 'select * from SolucaoXOrdem'#13#10'where num_os = :numero'
     DataSource = DSOrdemServico
+    MasterFields = 'numero'
     Parameters = <
       item
         Name = 'numero'
@@ -282,55 +263,45 @@ object DM: TDM
       end>
     Left = 624
     Top = 16
-    object ADODSProdutosXOrdemid_produto: TIntegerField
-      FieldName = 'id_produto'
-      OnValidate = ADODSProdutosXOrdemid_produtoValidate
+    object ADODSSolucaoXOrdemid_solucao: TIntegerField
+      FieldName = 'id_solucao'
     end
-    object ADODSProdutosXOrdemvalor_unit: TFloatField
+    object ADODSSolucaoXOrdemnum_os: TIntegerField
+      FieldName = 'num_os'
+    end
+    object ADODSSolucaoXOrdemvalor_unit: TFloatField
       FieldName = 'valor_unit'
     end
-    object ADODSProdutosXOrdemquant: TIntegerField
+    object ADODSSolucaoXOrdemquant: TIntegerField
       FieldName = 'quant'
     end
-    object ADODSProdutosXOrdemvalor_total: TFloatField
+    object ADODSSolucaoXOrdemvalor_total: TFloatField
       FieldName = 'valor_total'
     end
-    object ADODSProdutosXOrdemNomeProduto2: TStringField
+    object ADODSSolucaoXOrdemNomeProduto: TStringField
       FieldKind = fkLookup
       FieldName = 'NomeProduto'
       LookupDataSet = FrmManOS.ADOQueryProduto
       LookupKeyFields = 'id'
       LookupResultField = 'especificacoes'
-      KeyFields = 'id_produto'
+      KeyFields = 'id_solucao'
       Size = 50
       Lookup = True
     end
-    object ADODSProdutosXOrdemnum_os: TIntegerField
-      FieldName = 'num_os'
+    object ADODSSolucaoXOrdemNomeServico: TStringField
+      FieldKind = fkLookup
+      FieldName = 'NomeServico'
+      LookupDataSet = FrmManOS.ADOQueryServico
+      LookupKeyFields = 'id'
+      LookupResultField = 'especificacoes'
+      KeyFields = 'id_solucao'
+      Size = 50
+      Lookup = True
     end
   end
-  object ADODSServicosXOrdem: TADODataSet
-    Connection = ADOConnection1
-    CursorType = ctStatic
-    CommandText = 'select * from ServicosXOrdem'
-    Parameters = <>
-    Left = 752
-    Top = 16
-    object ADODSServicosXOrdemid_servico: TIntegerField
-      FieldName = 'id_servico'
-    end
-    object ADODSServicosXOrdemnum_os: TIntegerField
-      FieldName = 'num_os'
-    end
-  end
-  object DSProdutosXOrdem: TDataSource
-    DataSet = ADODSProdutosXOrdem
+  object DSSolucaoXOrdem: TDataSource
+    DataSet = ADODSSolucaoXOrdem
     Left = 624
-    Top = 80
-  end
-  object DSServicosXOrdem: TDataSource
-    DataSet = ADODSServicosXOrdem
-    Left = 752
     Top = 80
   end
 end

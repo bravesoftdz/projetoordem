@@ -10,9 +10,6 @@ Coordinates=82,500,74,36
 [Label2]
 Coordinates=478,364,53,58
 
-[DM.ADODSProdutosXOrdem]
-Coordinates=616,10,182,58
-
 [Quantidade]
 Coordinates=10,432,81,58
 
@@ -33,9 +30,6 @@ Coordinates=101,432,78,58
 
 [Label4]
 Coordinates=668,364,53,58
-
-[DM.DSProdutosXOrdem]
-Coordinates=547,694,154,36
 
 [btn_cancelar]
 Coordinates=637,432,88,36
@@ -94,4 +88,10 @@ Coordinates=303,10,165,256
 []
 Coordinates=10,364,53,58
 Visible=True
+
+[DM.ADODSSolucaoXOrdem]
+Coordinates=616,10,182,58
+
+[DM.DSSolucaoXOrdem]
+Coordinates=547,694,154,36
 

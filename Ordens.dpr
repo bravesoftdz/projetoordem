@@ -10,8 +10,6 @@ uses
   UntCadProduto in 'UntCadProduto.pas' {FrmCadProduto},
   UntManFuncionario in 'UntManFuncionario.pas' {FrmManFuncionario},
   UntCadFuncionario in 'UntCadFuncionario.pas' {FrmCadFuncionario},
-  UntManServico in 'UntManServico.pas' {FrmManServico},
-  UntCadServico in 'UntCadServico.pas' {FrmCadServico},
   UntManOS in 'UntManOS.pas' {FrmManOS};
 
 {$R *.res}
@@ -28,8 +26,6 @@ begin
   Application.CreateForm(TFrmManFuncionario, FrmManFuncionario);
   Application.CreateForm(TFrmManFuncionario, FrmManFuncionario);
   Application.CreateForm(TFrmCadFuncionario, FrmCadFuncionario);
-  Application.CreateForm(TFrmManServico, FrmManServico);
-  Application.CreateForm(TFrmCadServico, FrmCadServico);
   Application.CreateForm(TFrmManOS, FrmManOS);
   Application.Run;
 end.

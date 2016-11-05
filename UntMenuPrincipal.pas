@@ -13,7 +13,6 @@ type
     ImageList1: TImageList;
     ActionManager1: TActionManager;
     Cad_os: TAction;
-    Cad_Servico: TAction;
     Cad_Cliente: TAction;
     Cad_funcionario: TAction;
     cad_produto: TAction;
@@ -45,8 +44,7 @@ implementation
 
 {$R *.dfm}
 
-uses UntManCliente, UntManFuncionario, UntCadProduto, UntManProduto,
-  UntManServico, UntManOS;
+uses UntManCliente, UntManFuncionario, UntCadProduto, UntManProduto, UntManOS;
 
 procedure TFrmMenuPrincipal.act_sairExecute(Sender: TObject);
 begin
@@ -75,7 +73,7 @@ end;
 
 procedure TFrmMenuPrincipal.Cad_ServicoExecute(Sender: TObject);
 begin
-FrmManServico.ShowModal;
+//FrmManServico.ShowModal;
 end;
 
 procedure TFrmMenuPrincipal.FormActivate(Sender: TObject);
@@ -84,7 +82,6 @@ begin
  StatusBar1.Panels[1].Text:= FormatDateTime(' dddd ", " dd " de " mmmm " de " yyyy', Now);
 
  Cad_os.Enabled:= true;
- Cad_Servico.Enabled:= true;
  Cad_Cliente.Enabled:= true;
  cad_produto.Enabled:= true;
  Cad_funcionario.Enabled:= true;

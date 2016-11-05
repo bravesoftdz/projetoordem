@@ -80,6 +80,22 @@ type
     PageControl1: TPageControl;
     TabSheet1: TTabSheet;
     TabSheet2: TTabSheet;
+    ImageList4: TImageList;
+    Panel2: TPanel;
+    Label10: TLabel;
+    Label11: TLabel;
+    Label12: TLabel;
+    Label13: TLabel;
+    SpeedButton4: TSpeedButton;
+    DBEdit7: TDBEdit;
+    DBEdit8: TDBEdit;
+    DBEdit9: TDBEdit;
+    DBEdit10: TDBEdit;
+    DBLookupComboBox4: TDBLookupComboBox;
+    ADOQueryServico: TADOQuery;
+    ADOQueryServicoid: TAutoIncField;
+    ADOQueryServicoespecificacoes: TStringField;
+    ADOQueryServicopreco: TFloatField;
     procedure btn_PrimeiroClick(Sender: TObject);
     procedure btn_AnteriorClick(Sender: TObject);
     procedure btn_SairClick(Sender: TObject);
@@ -125,7 +141,7 @@ Bbt_Cancelar.Enabled := false;
 Bbt_Confirmar.Enabled := false;
 Bbt_Excluir.Enabled := true;
 pnlItems.Enabled := false;
-DM.ADODSProdutosXOrdem.Cancel;
+DM.ADODSSolucaoXOrdem.Cancel;
 end;
 
 procedure TFrmManOS.Bbt_ConfirmarClick(Sender: TObject);
@@ -148,7 +164,7 @@ Bbt_Cancelar.Enabled := false;
 Bbt_Confirmar.Enabled := false;
 Bbt_Excluir.Enabled := true;
 pnlItems.Enabled := false;
-DM.ADODSProdutosXOrdem.Post;
+DM.ADODSSolucaoXOrdem.Post;
 
 end;
 
@@ -160,7 +176,7 @@ Bbt_Confirmar.Enabled := false;
 Bbt_Excluir.Enabled := true;
 
 pnlItems.Enabled := false;
-DM.ADODSProdutosXOrdem.Delete;
+DM.ADODSSolucaoXOrdem.Delete;
 
 end;
 
@@ -173,7 +189,7 @@ Bbt_Confirmar.Enabled := true;
 Bbt_Excluir.Enabled := false;
 
 pnlItems.Enabled := true;
-DM.ADODSProdutosXOrdem.Insert;
+DM.ADODSSolucaoXOrdem.Insert;
 end;
 
 procedure TFrmManOS.Botoes(Ativa: Boolean);
@@ -316,14 +332,14 @@ end;
 
 procedure TFrmManOS.DBEdit5Exit(Sender: TObject);
 begin
-if DM.ADODSProdutosXOrdemquant.AsInteger < 1 then
+if DM.ADODSSolucaoXOrdemquant.AsInteger < 1 then
   begin
     ShowMessage('A quantidade deve ser maior que 1.');
     DBEdit5.SetFocus;
     Abort;
   end
 else
-  DM.ADODSProdutosXOrdemvalor_total.AsFloat := DM.ADODSProdutosXOrdemvalor_unit.AsFloat * DM.ADODSProdutosXOrdemquant.AsInteger;
+  DM.ADODSSolucaoXOrdemvalor_total.AsFloat := DM.ADODSSolucaoXOrdemvalor_unit.AsFloat * DM.ADODSSolucaoXOrdemquant.AsInteger;
 
 
 end;
@@ -337,8 +353,8 @@ DM.ADODSOrdemServico.CommandText := '';
 DM.ADODSOrdemServico.CommandText := 'select * from ORDEM_SERVICOS order by data_inicio';
 DM.ADODSOrdemServico.Open;
 
-DM.ADODSProdutosXOrdem.Close;
-DM.ADODSProdutosXOrdem.Open;
+DM.ADODSSolucaoXOrdem.Close;
+DM.ADODSSolucaoXOrdem.Open;
 
 DM.ADODSCliente.Close;
 DM.ADODSCliente.Open;
@@ -346,8 +362,8 @@ DM.ADODSCliente.Open;
 DM.ADODSFuncionario.Close;
 DM.ADODSFuncionario.Open;
 
-DM.ADODSProduto.Close;
-DM.ADODSProduto.Open;
+DM.ADODSSolucao.Close;
+DM.ADODSSolucao.Open;
 
 Botoes(true);
 
@@ -370,7 +386,7 @@ end;
 procedure TFrmManOS.FormClose(Sender: TObject; var Action: TCloseAction);
 begin
 dm.ADODSOrdemServico.Close;
-DM.ADODSProdutosXOrdem.Close;
+DM.ADODSSolucaoXOrdem.Close;
 
 ADOQueryCliente.Close;
 ADOQueryFuncionario.Close;
