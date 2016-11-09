@@ -4,8 +4,8 @@ object FrmCadFuncionario: TFrmCadFuncionario
   BorderIcons = []
   BorderStyle = bsSingle
   Caption = 'Manuten'#231#227'o no Cadastro de Funcion'#225'rios'
-  ClientHeight = 497
-  ClientWidth = 528
+  ClientHeight = 630
+  ClientWidth = 476
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -20,21 +20,22 @@ object FrmCadFuncionario: TFrmCadFuncionario
   object Panel1: TPanel
     Left = 0
     Top = 0
-    Width = 528
+    Width = 476
     Height = 41
     Align = alTop
-    Color = clMoneyGreen
+    Color = clHighlight
     ParentBackground = False
     TabOrder = 0
+    ExplicitWidth = 528
     object Label1: TLabel
-      Left = 128
-      Top = 6
-      Width = 305
-      Height = 18
+      Left = 47
+      Top = 8
+      Width = 394
+      Height = 23
       Caption = 'Manuten'#231#227'o no Cadastro de Funcion'#225'rios'
       Font.Charset = DEFAULT_CHARSET
-      Font.Color = clWindowText
-      Font.Height = -15
+      Font.Color = clWhite
+      Font.Height = -19
       Font.Name = 'Tahoma'
       Font.Style = [fsBold]
       ParentFont = False
@@ -43,265 +44,312 @@ object FrmCadFuncionario: TFrmCadFuncionario
   object pnlFicha: TPanel
     Left = 0
     Top = 90
-    Width = 528
-    Height = 388
+    Width = 476
+    Height = 521
     Align = alClient
     ParentShowHint = False
     ShowHint = False
     TabOrder = 1
-    object Label2: TLabel
-      Left = 88
-      Top = 27
-      Width = 27
-      Height = 13
-      Caption = 'Nome'
-    end
-    object Label3: TLabel
-      Left = 96
-      Top = 79
-      Width = 19
-      Height = 13
-      Caption = 'CPF'
-    end
-    object Label4: TLabel
-      Left = 101
-      Top = 106
-      Width = 14
-      Height = 13
-      Caption = 'RG'
-    end
-    object Label6: TLabel
-      Left = 86
-      Top = 52
-      Width = 29
-      Height = 13
-      Caption = 'Cargo'
-    end
-    object Label7: TLabel
-      Left = 16
-      Top = 133
-      Width = 99
-      Height = 13
-      Caption = ' Data de Nascimento'
-    end
-    object Label8: TLabel
-      Left = 70
-      Top = 160
-      Width = 45
-      Height = 13
-      Caption = 'Endere'#231'o'
-    end
-    object Label9: TLabel
-      Left = 96
-      Top = 214
-      Width = 19
-      Height = 13
-      Caption = 'CEP'
-    end
-    object Label10: TLabel
-      Left = 82
-      Top = 241
-      Width = 33
-      Height = 13
-      Caption = 'Cidade'
-    end
-    object Label11: TLabel
-      Left = 82
-      Top = 268
-      Width = 33
-      Height = 13
-      Caption = 'Estado'
-    end
-    object Label12: TLabel
-      Left = 73
-      Top = 295
-      Width = 42
-      Height = 13
-      Caption = 'Telefone'
-    end
-    object Label13: TLabel
-      Left = 91
-      Top = 349
-      Width = 24
-      Height = 13
-      Caption = 'Email'
-    end
-    object Label5: TLabel
-      Left = 82
-      Top = 322
-      Width = 33
-      Height = 13
-      Caption = 'Celular'
-    end
-    object Label14: TLabel
-      Left = 87
-      Top = 187
-      Width = 28
-      Height = 13
-      Caption = 'Bairro'
-    end
-    object DBEdit1: TDBEdit
-      Left = 121
-      Top = 49
-      Width = 171
-      Height = 21
-      DataField = 'cargo'
-      DataSource = DM.DSFuncionario
-      TabOrder = 1
-    end
-    object DBEdit2: TDBEdit
-      Left = 121
-      Top = 22
-      Width = 341
-      Height = 21
-      DataField = 'nome_func'
-      DataSource = DM.DSFuncionario
+    ExplicitTop = 84
+    ExplicitWidth = 514
+    ExplicitHeight = 708
+    object GroupBox1: TGroupBox
+      Left = 2
+      Top = 6
+      Width = 464
+      Height = 187
+      Caption = 'Dados Pessoais:'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -11
+      Font.Name = 'Tahoma'
+      Font.Style = [fsBold]
+      ParentFont = False
       TabOrder = 0
+      object Label3: TLabel
+        Left = 117
+        Top = 84
+        Width = 20
+        Height = 13
+        Caption = 'CPF'
+      end
+      object Label4: TLabel
+        Left = 121
+        Top = 111
+        Width = 16
+        Height = 13
+        Caption = 'RG'
+      end
+      object Label6: TLabel
+        Left = 104
+        Top = 57
+        Width = 33
+        Height = 13
+        Caption = 'Cargo'
+      end
+      object Label7: TLabel
+        Left = 21
+        Top = 138
+        Width = 116
+        Height = 13
+        Caption = ' Data de Nascimento'
+      end
+      object Label13: TLabel
+        Left = 107
+        Top = 164
+        Width = 30
+        Height = 13
+        Caption = 'Email'
+      end
+      object Label2: TLabel
+        Left = 105
+        Top = 30
+        Width = 32
+        Height = 13
+        Caption = 'Nome'
+      end
+      object DBEdit1: TDBEdit
+        Left = 143
+        Top = 54
+        Width = 171
+        Height = 21
+        DataField = 'cargo'
+        DataSource = DM.DSFuncionario
+        TabOrder = 1
+      end
+      object DBEdit2: TDBEdit
+        Left = 143
+        Top = 27
+        Width = 258
+        Height = 21
+        DataField = 'nome_func'
+        DataSource = DM.DSFuncionario
+        TabOrder = 0
+      end
+      object DBEdit3: TDBEdit
+        Left = 143
+        Top = 135
+        Width = 171
+        Height = 21
+        DataField = 'cpf'
+        DataSource = DM.DSFuncionario
+        TabOrder = 4
+        OnExit = DBEdit3Exit
+      end
+      object DBEdit4: TDBEdit
+        Left = 143
+        Top = 81
+        Width = 171
+        Height = 21
+        DataField = 'rg'
+        DataSource = DM.DSFuncionario
+        TabOrder = 2
+      end
+      object DBEdit5: TDBEdit
+        Left = 143
+        Top = 108
+        Width = 107
+        Height = 21
+        DataField = 'data_nasc'
+        DataSource = DM.DSFuncionario
+        TabOrder = 3
+        OnExit = DBEdit5Exit
+      end
+      object DBEdit12: TDBEdit
+        Left = 143
+        Top = 161
+        Width = 280
+        Height = 21
+        DataField = 'email'
+        DataSource = DM.DSFuncionario
+        TabOrder = 5
+      end
     end
-    object DBEdit3: TDBEdit
-      Left = 121
-      Top = 76
-      Width = 171
-      Height = 21
-      DataField = 'cpf'
-      DataSource = DM.DSFuncionario
+    object GroupBox2: TGroupBox
+      Left = 2
+      Top = 190
+      Width = 464
+      Height = 184
+      Caption = 'Endere'#231'o:'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -11
+      Font.Name = 'Tahoma'
+      Font.Style = [fsBold]
+      ParentFont = False
+      TabOrder = 1
+      object Label10: TLabel
+        Left = 99
+        Top = 118
+        Width = 38
+        Height = 13
+        Caption = 'Cidade'
+      end
+      object Label11: TLabel
+        Left = 101
+        Top = 144
+        Width = 36
+        Height = 13
+        Caption = 'Estado'
+      end
+      object Label14: TLabel
+        Left = 103
+        Top = 89
+        Width = 34
+        Height = 13
+        Caption = 'Bairro'
+      end
+      object Label8: TLabel
+        Left = 85
+        Top = 62
+        Width = 52
+        Height = 13
+        Caption = 'Endere'#231'o'
+      end
+      object Label9: TLabel
+        Left = 117
+        Top = 37
+        Width = 20
+        Height = 13
+        Caption = 'CEP'
+      end
+      object DBComboBox1: TDBComboBox
+        Left = 143
+        Top = 140
+        Width = 56
+        Height = 21
+        DataField = 'estado'
+        DataSource = DM.DSFuncionario
+        Items.Strings = (
+          'AC'
+          'AL'
+          'AP'
+          'AM'
+          'BA'
+          'CE'
+          'DF'
+          'ES'
+          'GO'
+          'MA'
+          'MT'
+          'MS'
+          'MG'
+          'PA'
+          'PB'
+          'PR'
+          'PE'
+          'PI'
+          'RJ'
+          'RN'
+          'RS'
+          'RO'
+          'RR'
+          'SC'
+          'SP'
+          'SE'
+          'TO')
+        TabOrder = 4
+      end
+      object DBEdit6: TDBEdit
+        Left = 143
+        Top = 59
+        Width = 258
+        Height = 21
+        DataField = 'endereco'
+        DataSource = DM.DSFuncionario
+        TabOrder = 1
+      end
+      object DBEdit7: TDBEdit
+        Left = 143
+        Top = 32
+        Width = 127
+        Height = 21
+        DataField = 'cep'
+        DataSource = DM.DSFuncionario
+        TabOrder = 0
+      end
+      object DBEdit8: TDBEdit
+        Left = 143
+        Top = 113
+        Width = 258
+        Height = 21
+        DataField = 'cidade'
+        DataSource = DM.DSFuncionario
+        TabOrder = 3
+      end
+      object DBEdit9: TDBEdit
+        Left = 143
+        Top = 86
+        Width = 121
+        Height = 21
+        DataField = 'bairro'
+        DataSource = DM.DSFuncionario
+        TabOrder = 2
+      end
+    end
+    object GroupBox3: TGroupBox
+      Left = 0
+      Top = 366
+      Width = 466
+      Height = 147
+      Caption = 'Contato:'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -11
+      Font.Name = 'Tahoma'
+      Font.Style = [fsBold]
+      ParentFont = False
       TabOrder = 2
-      OnExit = DBEdit3Exit
-    end
-    object DBEdit4: TDBEdit
-      Left = 121
-      Top = 103
-      Width = 171
-      Height = 21
-      DataField = 'rg'
-      DataSource = DM.DSFuncionario
-      TabOrder = 3
-    end
-    object DBEdit5: TDBEdit
-      Left = 121
-      Top = 130
-      Width = 107
-      Height = 21
-      DataField = 'data_nasc'
-      DataSource = DM.DSFuncionario
-      TabOrder = 4
-      OnExit = DBEdit5Exit
-    end
-    object DBEdit6: TDBEdit
-      Left = 121
-      Top = 157
-      Width = 341
-      Height = 21
-      DataField = 'endereco'
-      DataSource = DM.DSFuncionario
-      TabOrder = 5
-    end
-    object DBEdit7: TDBEdit
-      Left = 121
-      Top = 211
-      Width = 127
-      Height = 21
-      DataField = 'cep'
-      DataSource = DM.DSFuncionario
-      TabOrder = 7
-    end
-    object DBEdit8: TDBEdit
-      Left = 121
-      Top = 238
-      Width = 341
-      Height = 21
-      DataField = 'cidade'
-      DataSource = DM.DSFuncionario
-      TabOrder = 8
-    end
-    object DBEdit10: TDBEdit
-      Left = 121
-      Top = 292
-      Width = 133
-      Height = 21
-      DataField = 'telefone'
-      DataSource = DM.DSFuncionario
-      TabOrder = 10
-    end
-    object DBEdit11: TDBEdit
-      Left = 121
-      Top = 319
-      Width = 133
-      Height = 21
-      DataField = 'celular'
-      DataSource = DM.DSFuncionario
-      TabOrder = 11
-    end
-    object DBEdit12: TDBEdit
-      Left = 121
-      Top = 346
-      Width = 341
-      Height = 21
-      DataField = 'email'
-      DataSource = DM.DSFuncionario
-      TabOrder = 12
-    end
-    object DBComboBox1: TDBComboBox
-      Left = 121
-      Top = 265
-      Width = 56
-      Height = 21
-      DataField = 'estado'
-      DataSource = DM.DSFuncionario
-      Items.Strings = (
-        'AC'
-        'AL'
-        'AP'
-        'AM'
-        'BA'
-        'CE'
-        'DF'
-        'ES'
-        'GO'
-        'MA'
-        'MT'
-        'MS'
-        'MG'
-        'PA'
-        'PB'
-        'PR'
-        'PE'
-        'PI'
-        'RJ'
-        'RN'
-        'RS'
-        'RO'
-        'RR'
-        'SC'
-        'SP'
-        'SE'
-        'TO')
-      TabOrder = 9
-    end
-    object DBEdit9: TDBEdit
-      Left = 121
-      Top = 184
-      Width = 121
-      Height = 21
-      DataField = 'bairro'
-      DataSource = DM.DSFuncionario
-      TabOrder = 6
+      object Label12: TLabel
+        Left = 90
+        Top = 49
+        Width = 49
+        Height = 13
+        Caption = 'Telefone'
+      end
+      object Label5: TLabel
+        Left = 100
+        Top = 76
+        Width = 39
+        Height = 13
+        Caption = 'Celular'
+      end
+      object DBEdit10: TDBEdit
+        Left = 145
+        Top = 46
+        Width = 133
+        Height = 21
+        DataField = 'telefone'
+        DataSource = DM.DSFuncionario
+        TabOrder = 0
+      end
+      object DBEdit11: TDBEdit
+        Left = 145
+        Top = 73
+        Width = 133
+        Height = 21
+        DataField = 'celular'
+        DataSource = DM.DSFuncionario
+        TabOrder = 1
+      end
     end
   end
   object StatusBar1: TStatusBar
     Left = 0
-    Top = 478
-    Width = 528
+    Top = 611
+    Width = 476
     Height = 19
     Panels = <
       item
         Width = 50
       end>
+    ExplicitTop = 478
+    ExplicitWidth = 528
   end
   object ToolBar1: TToolBar
     Left = 0
     Top = 41
-    Width = 528
+    Width = 476
     Height = 49
     BorderWidth = 1
     ButtonHeight = 40
@@ -314,6 +362,7 @@ object FrmCadFuncionario: TFrmCadFuncionario
     ParentShowHint = False
     ShowHint = True
     TabOrder = 3
+    ExplicitWidth = 528
     object btn_salvar: TToolButton
       Left = 0
       Top = 0

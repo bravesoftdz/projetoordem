@@ -23,18 +23,18 @@ object FrmManProduto: TFrmManProduto
     Width = 630
     Height = 41
     Align = alTop
-    Color = clGradientInactiveCaption
+    Color = clHighlight
     ParentBackground = False
     TabOrder = 0
     object Label1: TLabel
-      Left = 200
-      Top = 10
-      Width = 276
-      Height = 18
+      Left = 154
+      Top = 9
+      Width = 358
+      Height = 23
       Caption = 'Manuten'#231#227'o no Cadastro de Produtos'
       Font.Charset = DEFAULT_CHARSET
-      Font.Color = clBlue
-      Font.Height = -15
+      Font.Color = clWhite
+      Font.Height = -19
       Font.Name = 'Tahoma'
       Font.Style = [fsBold]
       ParentFont = False
@@ -49,10 +49,12 @@ object FrmManProduto: TFrmManProduto
     ButtonHeight = 40
     ButtonWidth = 43
     Caption = 'ToolBar1'
+    Color = clBtnFace
     DisabledImages = ImageList2
     EdgeBorders = [ebTop, ebBottom]
     HotImages = ImageList3
     Images = ImageList1
+    ParentColor = False
     ParentShowHint = False
     ShowHint = True
     TabOrder = 1
@@ -176,7 +178,7 @@ object FrmManProduto: TFrmManProduto
         Expanded = False
         FieldName = 'especificacoes'
         Title.Caption = 'Especifica'#231#245'es'
-        Width = 258
+        Width = 234
         Visible = True
       end
       item
@@ -207,7 +209,7 @@ object FrmManProduto: TFrmManProduto
     Left = 264
     Top = 240
     Bitmap = {
-      494C010106002400400018001800FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      494C010106002400440018001800FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000600000003000000001002000000000000048
       0000000000000000000000000000000000000000000000000000000000000000
       00000000000000000000000000000000000000009A0000009A0000039D00020D
@@ -814,7 +816,7 @@ object FrmManProduto: TFrmManProduto
     Left = 336
     Top = 240
     Bitmap = {
-      494C010106002400400018001800FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      494C010106002400440018001800FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000600000003000000001002000000000000048
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000009595950095959500969696009999
@@ -1421,7 +1423,7 @@ object FrmManProduto: TFrmManProduto
     Left = 400
     Top = 240
     Bitmap = {
-      494C010106002400400018001800FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      494C010106002400440018001800FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000600000003000000001002000000000000048
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000820000008200000186000005

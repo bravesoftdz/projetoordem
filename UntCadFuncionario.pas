@@ -44,6 +44,9 @@ type
     DBComboBox1: TDBComboBox;
     DBEdit9: TDBEdit;
     Label14: TLabel;
+    GroupBox1: TGroupBox;
+    GroupBox2: TGroupBox;
+    GroupBox3: TGroupBox;
     procedure btn_salvarClick(Sender: TObject);
     procedure btn_cancelarClick(Sender: TObject);
     procedure btn_sairClick(Sender: TObject);

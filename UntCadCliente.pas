@@ -44,6 +44,9 @@ type
     Label13: TLabel;
     Label14: TLabel;
     PnlFicha: TPanel;
+    GroupBox1: TGroupBox;
+    gb_ed: TGroupBox;
+    GroupBox2: TGroupBox;
     procedure btn_salvarClick(Sender: TObject);
     procedure btn_sairClick(Sender: TObject);
     procedure btn_CancelarClick(Sender: TObject);

@@ -4,8 +4,8 @@
   BorderIcons = []
   BorderStyle = bsSingle
   Caption = 'Manuten'#231#227'o no Cadastro de Produtos'
-  ClientHeight = 329
-  ClientWidth = 372
+  ClientHeight = 517
+  ClientWidth = 383
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -19,30 +19,33 @@
   object Panel1: TPanel
     Left = 0
     Top = 0
-    Width = 372
+    Width = 383
     Height = 41
     Align = alTop
-    Color = clMoneyGreen
+    Color = clHighlight
     ParentBackground = False
     TabOrder = 0
+    ExplicitWidth = 372
     object Label1: TLabel
-      Left = 10
-      Top = 10
-      Width = 350
-      Height = 18
+      Left = 38
+      Top = 12
+      Width = 309
+      Height = 16
       Caption = 'Manuten'#231#227'o no Cadastro de Produtos/Servi'#231'os'
+      Color = clHighlight
       Font.Charset = DEFAULT_CHARSET
-      Font.Color = clBlack
-      Font.Height = -15
+      Font.Color = clWhite
+      Font.Height = -13
       Font.Name = 'Tahoma'
       Font.Style = [fsBold]
+      ParentColor = False
       ParentFont = False
     end
   end
   object ToolBar1: TToolBar
     Left = 0
     Top = 41
-    Width = 372
+    Width = 383
     Height = 49
     BorderWidth = 1
     ButtonHeight = 40
@@ -55,6 +58,7 @@
     ParentShowHint = False
     ShowHint = True
     TabOrder = 1
+    ExplicitWidth = 372
     object btn_salvar: TToolButton
       Left = 0
       Top = 0
@@ -87,57 +91,70 @@
   end
   object StatusBar1: TStatusBar
     Left = 0
-    Top = 310
-    Width = 372
+    Top = 498
+    Width = 383
     Height = 19
     Panels = <
       item
         Width = 50
       end>
+    ExplicitTop = 310
+    ExplicitWidth = 372
   end
   object PageControl1: TPageControl
     Left = 0
     Top = 90
-    Width = 372
-    Height = 220
+    Width = 383
+    Height = 408
     ActivePage = Produtos
     Align = alClient
     TabOrder = 2
+    ExplicitWidth = 372
+    ExplicitHeight = 220
     object Produtos: TTabSheet
       Caption = 'Produtos'
+      ExplicitWidth = 364
+      ExplicitHeight = 192
       object pnlFicha: TPanel
         Left = 0
         Top = 0
-        Width = 364
-        Height = 192
+        Width = 375
+        Height = 380
         Align = alClient
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -11
+        Font.Name = 'Tahoma'
+        Font.Style = [fsBold]
+        ParentFont = False
         TabOrder = 0
-        ExplicitTop = -2
+        ExplicitWidth = 364
+        ExplicitHeight = 192
         object Label2: TLabel
           Left = 144
           Top = 73
-          Width = 27
+          Width = 32
           Height = 13
           Caption = 'Pre'#231'o'
         end
         object Label3: TLabel
           Left = 144
           Top = 14
-          Width = 29
+          Width = 35
           Height = 13
           Caption = 'Marca'
         end
         object Label4: TLabel
           Left = 8
           Top = 123
-          Width = 69
+          Width = 81
           Height = 13
           Caption = 'Especifica'#231#245'es'
         end
         object Quantidade: TLabel
           Left = 8
           Top = 72
-          Width = 56
+          Width = 65
           Height = 13
           Caption = 'Quantidade'
         end
@@ -151,8 +168,8 @@
         end
         object Label9: TLabel
           Left = 8
-          Top = 14
-          Width = 33
+          Top = 18
+          Width = 38
           Height = 13
           Caption = 'C'#243'digo'
         end
@@ -178,7 +195,7 @@
           Left = 8
           Top = 142
           Width = 232
-          Height = 21
+          Height = 179
           DataField = 'especificacoes'
           DataSource = DM.DSSolucao
           TabOrder = 3
@@ -197,13 +214,17 @@
     object Serviços: TTabSheet
       Caption = 'Servi'#231'os'
       ImageIndex = 1
+      ExplicitWidth = 364
+      ExplicitHeight = 192
       object Panel2: TPanel
         Left = 0
         Top = 0
-        Width = 364
-        Height = 192
+        Width = 375
+        Height = 380
         Align = alClient
         TabOrder = 0
+        ExplicitWidth = 364
+        ExplicitHeight = 192
         object Label5: TLabel
           Left = 15
           Top = 112

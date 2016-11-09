@@ -6,7 +6,7 @@ object DM: TDM
     Connected = True
     ConnectionString = 
       'Provider=SQLOLEDB.1;Integrated Security=SSPI;Persist Security In' +
-      'fo=False;Initial Catalog=DB_OS;Data Source=LUCAS-PC\SQLEXPRESS;U' +
+      'fo=False;Initial Catalog=DB_OS;Data Source=NCC01-02\SQLEXPRESS;U' +
       'se Procedure for Prepare=1;Auto Translate=True;Packet Size=4096;' +
       'Workstation ID=LUCAS-PC;Use Encryption for Data=False;Tag with c' +
       'olumn collation when possible=False'
@@ -265,6 +265,7 @@ object DM: TDM
     Top = 16
     object ADODSSolucaoXOrdemid_solucao: TIntegerField
       FieldName = 'id_solucao'
+      OnValidate = ADODSSolucaoXOrdemid_produtoValidate
     end
     object ADODSSolucaoXOrdemnum_os: TIntegerField
       FieldName = 'num_os'
@@ -278,20 +279,10 @@ object DM: TDM
     object ADODSSolucaoXOrdemvalor_total: TFloatField
       FieldName = 'valor_total'
     end
-    object ADODSSolucaoXOrdemNomeProduto: TStringField
+    object ADODSSolucaoXOrdemNomeProduto2: TStringField
       FieldKind = fkLookup
       FieldName = 'NomeProduto'
       LookupDataSet = FrmManOS.ADOQueryProduto
-      LookupKeyFields = 'id'
-      LookupResultField = 'especificacoes'
-      KeyFields = 'id_solucao'
-      Size = 50
-      Lookup = True
-    end
-    object ADODSSolucaoXOrdemNomeServico: TStringField
-      FieldKind = fkLookup
-      FieldName = 'NomeServico'
-      LookupDataSet = FrmManOS.ADOQueryServico
       LookupKeyFields = 'id'
       LookupResultField = 'especificacoes'
       KeyFields = 'id_solucao'

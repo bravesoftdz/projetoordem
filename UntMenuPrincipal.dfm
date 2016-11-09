@@ -1,7 +1,7 @@
 object FrmMenuPrincipal: TFrmMenuPrincipal
   Left = 0
   Top = 0
-  Caption = 'Sistema de Gerenciamento de Ordem de Servi'#231'o'
+  Caption = 'Sistema de Gerenciamento de Ordem de Servi'#231'o - COALA'
   ClientHeight = 328
   ClientWidth = 531
   Color = clAppWorkSpace
@@ -812,14 +812,17 @@ object FrmMenuPrincipal: TFrmMenuPrincipal
     Top = 0
     Width = 531
     Height = 31
+    UseSystemFont = False
     ActionManager = ActionManager1
     Caption = 'ActionMainMenuBar1'
-    ColorMap.HighlightColor = 14410210
-    ColorMap.BtnSelectedColor = clBtnFace
-    ColorMap.UnusedColor = 14410210
+    Color = clMenuBar
+    ColorMap.DisabledFontColor = 7171437
+    ColorMap.HighlightColor = clWhite
+    ColorMap.BtnSelectedFont = clBlack
+    ColorMap.UnusedColor = clWhite
     EdgeBorders = [ebTop, ebBottom]
     Font.Charset = DEFAULT_CHARSET
-    Font.Color = clWindowText
+    Font.Color = clBlack
     Font.Height = -13
     Font.Name = 'Segoe UI'
     Font.Style = []
@@ -832,12 +835,14 @@ object FrmMenuPrincipal: TFrmMenuPrincipal
     Height = 44
     ActionManager = ActionManager1
     Caption = 'ActionToolBar1'
-    ColorMap.HighlightColor = 14410210
-    ColorMap.BtnSelectedColor = clBtnFace
-    ColorMap.UnusedColor = 14410210
+    Color = clMenuBar
+    ColorMap.DisabledFontColor = 7171437
+    ColorMap.HighlightColor = clWhite
+    ColorMap.BtnSelectedFont = clBlack
+    ColorMap.UnusedColor = clWhite
     EdgeBorders = [ebTop, ebBottom]
     Font.Charset = DEFAULT_CHARSET
-    Font.Color = clWindowText
+    Font.Color = clBlack
     Font.Height = -11
     Font.Name = 'Tahoma'
     Font.Style = []
@@ -869,7 +874,7 @@ object FrmMenuPrincipal: TFrmMenuPrincipal
     Left = 168
     Top = 152
     Bitmap = {
-      494C010106005400600018001800FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      494C010106005400640018001800FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000600000003000000001002000000000000048
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
