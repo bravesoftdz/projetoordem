@@ -1,0 +1,92 @@
+unit UntRelCliente;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.ExtCtrls, Vcl.StdCtrls, Vcl.Buttons,
+  frxClass, frxDBSet, Data.DB, Data.Win.ADODB;
+
+type
+  TFrmRelCliente = class(TForm)
+    Panel1: TPanel;
+    EdtCodigoDe: TLabeledEdit;
+    EdtCodigoAte: TLabeledEdit;
+    EdtNomeDe: TLabeledEdit;
+    EdtCidade: TLabeledEdit;
+    EdtNomeAte: TLabeledEdit;
+    RadioGroup1: TRadioGroup;
+    ADOQryCliente: TADOQuery;
+    frxDBDataset1: TfrxDBDataset;
+    frxReport1: TfrxReport;
+    BitBtn1: TBitBtn;
+    BitBtn2: TBitBtn;
+    procedure BitBtn1Click(Sender: TObject);
+    procedure BitBtn2Click(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  FrmRelCliente: TFrmRelCliente;
+
+implementation
+
+{$R *.dfm}
+
+uses UntDM;
+
+procedure TFrmRelCliente.BitBtn1Click(Sender: TObject);
+ var strliga: string;
+begin
+  strliga := 'where ';
+  ADOQryCliente.Close;
+  with ADOQryCliente.SQL do
+  begin
+    clear;
+    Add('select * from clientes ');
+    if EdtCodigoDe.Text <> '' then
+    try
+      strtoint(EdtCodigoDe.Text);
+      Add(strliga+'ID >= '+ EdtCodigoDe.Text);
+      strliga:= ' and ';
+    except
+      on EConvertError do;
+    end;
+      if EdtCodigoAte.Text <> '' then
+      try
+        strtoint(EdtCodigoAte.Text);
+        Add(strliga+'ID <= '+EdtCodigoAte.Text);
+        strliga:= ' and ';
+      except
+      on EConvertError do;
+      end;
+      if EdtNomeDe.Text <> '' then
+      begin
+        Add(strliga+'Nome <= ''' + EdtNomeAte.Text + 'zzz''');
+        strliga := ' and ';
+      end;
+      if EdtCidade.Text <> '' then
+      begin
+        Add(strliga+'Cidade = ''' + EdtCidade.Text + '''');
+        strliga := ' and ';
+      end;
+        case RadioGroup1.ItemIndex of
+        0: Add(' order by Id');
+        1: Add(' order by Nome');
+        2: Add(' order by Cidade');
+        3: Add(' order by Estado');
+        end;
+  end;
+  ADOQryCliente.Open;
+  frxReport1.ShowReport();
+end;
+
+procedure TFrmRelCliente.BitBtn2Click(Sender: TObject);
+begin
+Close;
+end;
+
+end.

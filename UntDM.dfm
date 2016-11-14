@@ -260,7 +260,7 @@ object DM: TDM
         Size = 4
         Value = Null
       end>
-    Left = 624
+    Left = 536
     Top = 16
     object ADODSSolucaoXOrdemid_solucao: TIntegerField
       FieldName = 'id_solucao'
@@ -291,7 +291,7 @@ object DM: TDM
   end
   object DSSolucaoXOrdem: TDataSource
     DataSet = ADODSSolucaoXOrdem
-    Left = 624
+    Left = 536
     Top = 80
   end
 end

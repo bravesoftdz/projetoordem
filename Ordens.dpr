@@ -11,15 +11,16 @@ uses
   UntManFuncionario in 'UntManFuncionario.pas' {FrmManFuncionario},
   UntCadFuncionario in 'UntCadFuncionario.pas' {FrmCadFuncionario},
   UntManOS in 'UntManOS.pas' {FrmManOS},
-  FrmRel_Cliente in 'FrmRel_Cliente.pas' {Form1};
+  FrmRel_Cliente in 'FrmRel_Cliente.pas' {Form1},
+  UntRelCliente in 'UntRelCliente.pas' {FrmRelCliente};
 
 {$R *.res}
 
 begin
   Application.Initialize;
   Application.MainFormOnTaskbar := True;
-  AApplication.CreateForm(TFrmMenuPrincipal, FrmMenuPrincipal);
-  AApplication.CreateForm(TFrmManCliente, FrmManCliente);
+  Application.CreateForm(TFrmMenuPrincipal, FrmMenuPrincipal);
+  Application.CreateForm(TFrmManCliente, FrmManCliente);
   Application.CreateForm(TFrmCadCliente, FrmCadCliente);
   Application.CreateForm(TDM, DM);
   Application.CreateForm(TFrmManProduto, FrmManProduto);
@@ -29,5 +30,6 @@ begin
   Application.CreateForm(TFrmCadFuncionario, FrmCadFuncionario);
   Application.CreateForm(TFrmManOS, FrmManOS);
   Application.CreateForm(TForm1, Form1);
-  plication.Run;
+  Application.CreateForm(TFrmRelCliente, FrmRelCliente);
+  Application.Run;
 end.
