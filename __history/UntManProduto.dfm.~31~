@@ -27,11 +27,11 @@ object FrmManProduto: TFrmManProduto
     ParentBackground = False
     TabOrder = 0
     object Label1: TLabel
-      Left = 88
-      Top = 6
-      Width = 449
+      Left = 154
+      Top = 9
+      Width = 358
       Height = 23
-      Caption = 'Manuten'#231#227'o no Cadastro de Produtos/Servi'#231'os'
+      Caption = 'Manuten'#231#227'o no Cadastro de Produtos'
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWhite
       Font.Height = -19
