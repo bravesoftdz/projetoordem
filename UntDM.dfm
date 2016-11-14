@@ -3,10 +3,9 @@ object DM: TDM
   Height = 150
   Width = 844
   object ADOConnection1: TADOConnection
-    Connected = True
     ConnectionString = 
       'Provider=SQLOLEDB.1;Integrated Security=SSPI;Persist Security In' +
-      'fo=False;Initial Catalog=DB_OS;Data Source=NCC01-02\SQLEXPRESS;U' +
+      'fo=False;Initial Catalog=DB_OS;Data Source=LUCAS-PC\SQLEXPRESS;U' +
       'se Procedure for Prepare=1;Auto Translate=True;Packet Size=4096;' +
       'Workstation ID=LUCAS-PC;Use Encryption for Data=False;Tag with c' +
       'olumn collation when possible=False'
