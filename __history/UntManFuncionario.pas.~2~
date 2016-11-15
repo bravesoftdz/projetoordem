@@ -1,0 +1,113 @@
+unit UntManFuncionario;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, System.ImageList, Vcl.ImgList,
+  Vcl.ExtCtrls, Vcl.ToolWin, Vcl.ComCtrls, Vcl.StdCtrls, DB, Vcl.Grids,
+  Vcl.DBGrids;
+
+type
+  TFrmManFuncionario = class(TForm)
+    ImageList1: TImageList;
+    ImageList2: TImageList;
+    ImageList3: TImageList;
+    Panel1: TPanel;
+    Label1: TLabel;
+    ToolBar1: TToolBar;
+    btn_inserir: TToolButton;
+    btn_alterar: TToolButton;
+    btn_excluir: TToolButton;
+    ToolButton4: TToolButton;
+    btn_imprimir: TToolButton;
+    ToolButton6: TToolButton;
+    btn_sair: TToolButton;
+    Panel2: TPanel;
+    Edit1: TEdit;
+    StatusBar1: TStatusBar;
+    DBGrid1: TDBGrid;
+    procedure Edit1Change(Sender: TObject);
+    procedure btn_inserirClick(Sender: TObject);
+    procedure btn_alterarClick(Sender: TObject);
+    procedure btn_excluirClick(Sender: TObject);
+    procedure btn_sairClick(Sender: TObject);
+    procedure FormActivate(Sender: TObject);
+    procedure btn_imprimirClick(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  FrmManFuncionario: TFrmManFuncionario;
+
+implementation
+
+{$R *.dfm}
+
+uses UntDM, UntCadCliente, UntCadFuncionario, UntRelFuncionario;
+
+procedure TFrmManFuncionario.btn_alterarClick(Sender: TObject);
+begin
+  DM.ADODSFuncionario.Edit;
+  FrmCadFuncionario.btn_salvar.enabled := true;
+  FrmCadFuncionario.btn_cancelar.Enabled := true;
+  FrmcadFuncionario.btn_sair.Enabled := false;
+  FrmCadFuncionario.Pnlficha.Enabled := true;
+  FrmcadFuncionario.showmodal;
+
+end;
+
+procedure TFrmManFuncionario.btn_imprimirClick(Sender: TObject);
+begin
+  unt
+end;
+
+procedure TFrmManFuncionario.btn_inserirClick(Sender: TObject);
+  begin
+    DM.ADODSFuncionario.Insert;
+    FrmCadFuncionario.btn_salvar.enabled := true;
+    frmCadFuncionario.btn_cancelar.Enabled := true;
+    frmCadFuncionario.btn_sair.Enabled := false;
+    frmCadFuncionario.Pnlficha.Enabled := true;
+    FrmCadFuncionario.showmodal;
+end;
+
+procedure TFrmManFuncionario.btn_excluirClick(Sender: TObject);
+  var confExcl : integer;
+begin
+  confExcl := Application.MessageBox('Confirma a exclusão deste registro?'
+  ,'Atenção', MB_YESNO+MB_DEFBUTTON2+MB_ICONQUESTION);
+
+  if confExcl = IDYES then
+  begin
+    DM.ADODSFuncionario.Delete;
+    Application.MessageBox('O Registro foi excluido com exito.', 'Informação',
+    MB_OK+MB_ICONQUESTION);
+  end
+    else
+    Application.MessageBox('A exclusão do registro foi abortada.',
+    'Informação', MB_OK+MB_ICONINFORMATION);
+end;
+
+procedure TFrmManFuncionario.btn_sairClick(Sender: TObject);
+begin
+  close;
+end;
+
+procedure TFrmManFuncionario.Edit1Change(Sender: TObject);
+begin
+  DM.ADODSfuncionario.locate('Nome_func', edit1.Text, [loCaseInsensitive, loPartialKey]);
+end;
+
+procedure TFrmManFuncionario.FormActivate(Sender: TObject);
+begin
+  DM.ADODSFuncionario.Close;
+  DM.ADODSFuncionario.CommandText := '';
+  DM.ADODSFuncionario.CommandText := 'select * from Funcionarios order by NOME_func';
+  DM.ADODSFuncionario.Open;
+end;
+
+end.

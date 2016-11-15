@@ -1,8 +1,11 @@
 program Ordens;
 
+
+
 uses
   Vcl.Forms,
   UntMenuPrincipal in 'UntMenuPrincipal.pas' {FrmMenuPrincipal},
+  UntRelCliente in 'UntRelCliente.pas' {FrmRelCliente},
   UntManCliente in 'UntManCliente.pas' {FrmManCliente},
   UntCadCliente in 'UntCadCliente.pas' {FrmCadCliente},
   UntDM in 'UntDM.pas' {DM: TDataModule},
@@ -11,8 +14,7 @@ uses
   UntManFuncionario in 'UntManFuncionario.pas' {FrmManFuncionario},
   UntCadFuncionario in 'UntCadFuncionario.pas' {FrmCadFuncionario},
   UntManOS in 'UntManOS.pas' {FrmManOS},
-  FrmRel_Cliente in 'FrmRel_Cliente.pas' {Form1},
-  UntRelCliente in 'UntRelCliente.pas' {FrmRelCliente};
+  UntRelFuncionario in 'UntRelFuncionario.pas' {FrmRelFuncionario};
 
 {$R *.res}
 
@@ -29,7 +31,7 @@ begin
   Application.CreateForm(TFrmManFuncionario, FrmManFuncionario);
   Application.CreateForm(TFrmCadFuncionario, FrmCadFuncionario);
   Application.CreateForm(TFrmManOS, FrmManOS);
-  Application.CreateForm(TForm1, Form1);
+  Application.CreateForm(TFrmRelFuncionario, FrmRelFuncionario);
   Application.CreateForm(TFrmRelCliente, FrmRelCliente);
   Application.Run;
 end.

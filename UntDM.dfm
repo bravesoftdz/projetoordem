@@ -91,6 +91,10 @@ object DM: TDM
     Parameters = <>
     Left = 232
     Top = 16
+    object ADODSFuncionarioid: TAutoIncField
+      FieldName = 'id'
+      ReadOnly = True
+    end
     object ADODSFuncionariocargo: TStringField
       FieldName = 'cargo'
       Size = 50
@@ -119,6 +123,10 @@ object DM: TDM
       FieldName = 'cep'
       Size = 9
     end
+    object ADODSFuncionariobairro: TStringField
+      FieldName = 'bairro'
+      Size = 50
+    end
     object ADODSFuncionariocidade: TStringField
       FieldName = 'cidade'
       Size = 50
@@ -139,14 +147,6 @@ object DM: TDM
     object ADODSFuncionarioemail: TStringField
       FieldName = 'email'
       Size = 50
-    end
-    object ADODSFuncionariobairro: TStringField
-      FieldName = 'bairro'
-      Size = 50
-    end
-    object ADODSFuncionarioid: TAutoIncField
-      FieldName = 'id'
-      ReadOnly = True
     end
   end
   object ADODSOrdemServico: TADODataSet

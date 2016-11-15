@@ -116,7 +116,6 @@ type
     procedure SpeedButton1Click(Sender: TObject);
     procedure SpeedButton2Click(Sender: TObject);
     procedure SpeedButton3Click(Sender: TObject);
-    procedure btn_ImprimirClick(Sender: TObject);
   private
     { Private declarations }
     procedure Botoes(Ativa: Boolean);
@@ -133,7 +132,7 @@ implementation
 
 {$R *.dfm}
 
-uses UntDM, UntManCliente, UntManFuncionario, UntManProduto, UntRelCliente;
+uses UntDM, UntManCliente, UntManFuncionario, UntManProduto;
 
 procedure TFrmManOS.Bbt_CancelarClick(Sender: TObject);
 begin
@@ -290,11 +289,6 @@ begin
     ShowMessage('Registro nº '+DM.ADODSOrdemServiconumero.AsString+ ' com sucesso.');
     DM.ADODSOrdemServico.Delete;
   end;
-end;
-
-procedure TFrmManOS.btn_ImprimirClick(Sender: TObject);
-begin
-  FrmRelCliente.ShowModal;
 end;
 
 procedure TFrmManOS.btn_InserirClick(Sender: TObject);
