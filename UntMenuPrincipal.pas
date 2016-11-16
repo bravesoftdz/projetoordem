@@ -21,6 +21,9 @@ type
     ActionToolBar1: TActionToolBar;
     StatusBar1: TStatusBar;
     Timer1: TTimer;
+    RelClientes: TAction;
+    RelFunc: TAction;
+    act_Servico: TAction;
     procedure Cad_ClienteExecute(Sender: TObject);
     procedure act_sairExecute(Sender: TObject);
     procedure FormActivate(Sender: TObject);
@@ -31,6 +34,8 @@ type
     procedure Cad_funcionarioExecute(Sender: TObject);
     procedure Cad_ServicoExecute(Sender: TObject);
     procedure Cad_osExecute(Sender: TObject);
+    procedure RelClientesExecute(Sender: TObject);
+    procedure RelFuncExecute(Sender: TObject);
   private
     { Private declarations }
   public
@@ -44,7 +49,18 @@ implementation
 
 {$R *.dfm}
 
-uses UntManCliente, UntManFuncionario, UntCadProduto, UntManProduto, UntManOS;
+uses UntManCliente, UntManFuncionario, UntCadProduto, UntManProduto, UntManOS,
+  UntRelCliente, UntRelFuncionario;
+
+procedure TFrmMenuPrincipal.RelClientesExecute(Sender: TObject);
+begin
+  FrmRelCliente.ShowModal;
+end;
+
+procedure TFrmMenuPrincipal.RelFuncExecute(Sender: TObject);
+begin
+  FrmRelFuncionario.ShowModal;
+end;
 
 procedure TFrmMenuPrincipal.act_sairExecute(Sender: TObject);
 begin

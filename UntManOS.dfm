@@ -4,7 +4,7 @@ object FrmManOS: TFrmManOS
   BorderIcons = []
   BorderStyle = bsSingle
   Caption = 'Controle de Ordens de Servi'#231'os - COALA'
-  ClientHeight = 479
+  ClientHeight = 623
   ClientWidth = 628
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
@@ -202,7 +202,7 @@ object FrmManOS: TFrmManOS
     Left = 0
     Top = 90
     Width = 628
-    Height = 370
+    Height = 514
     Align = alClient
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
@@ -211,6 +211,7 @@ object FrmManOS: TFrmManOS
     Font.Style = []
     ParentFont = False
     TabOrder = 2
+    ExplicitHeight = 370
     object Label3: TLabel
       Left = 16
       Top = 39
@@ -226,14 +227,14 @@ object FrmManOS: TFrmManOS
       Caption = 'Funcion'#225'rio'
     end
     object Label5: TLabel
-      Left = 413
+      Left = 220
       Top = 14
       Width = 53
       Height = 13
       Caption = 'Data Inicial'
     end
     object DBText2: TDBText
-      Left = 493
+      Left = 300
       Top = 14
       Width = 65
       Height = 17
@@ -420,6 +421,20 @@ object FrmManOS: TFrmManOS
       Width = 100
       Height = 13
       Caption = 'N'#186' Ordem de Servi'#231'o'
+    end
+    object Label14: TLabel
+      Left = 399
+      Top = 11
+      Width = 31
+      Height = 13
+      Caption = 'Status'
+    end
+    object Label15: TLabel
+      Left = 8
+      Top = 368
+      Width = 63
+      Height = 13
+      Caption = 'Observa'#231#245'es'
     end
     object DBEdit1: TDBEdit
       Left = 93
@@ -1076,23 +1091,46 @@ object FrmManOS: TFrmManOS
         end
       end
     end
+    object DBComboBox1: TDBComboBox
+      Left = 456
+      Top = 9
+      Width = 102
+      Height = 21
+      Style = csDropDownList
+      DataField = 'status_ordem'
+      DataSource = DM.DSOrdemServico
+      Items.Strings = (
+        'Aberto'
+        'Em Andamento'
+        'Finalizado'
+        'Cancelado')
+      TabOrder = 6
+    end
+    object DBMemo1: TDBMemo
+      Left = 4
+      Top = 387
+      Width = 315
+      Height = 89
+      TabOrder = 7
+    end
   end
   object StatusBar1: TStatusBar
     Left = 0
-    Top = 460
+    Top = 604
     Width = 628
     Height = 19
     Panels = <
       item
         Width = 50
       end>
+    ExplicitTop = 460
   end
   object ImageList1: TImageList
     Height = 24
     Width = 24
     Left = 16
     Bitmap = {
-      494C01010C0020008C0018001800FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      494C01010C002000900018001800FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000600000006000000001002000000000000090
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
@@ -2292,7 +2330,7 @@ object FrmManOS: TFrmManOS
     Width = 24
     Left = 64
     Bitmap = {
-      494C01010C002000800018001800FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      494C01010C002000840018001800FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000600000006000000001002000000000000090
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
@@ -3492,7 +3530,7 @@ object FrmManOS: TFrmManOS
     Width = 24
     Left = 112
     Bitmap = {
-      494C01010C002C00980018001800FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      494C01010C002C009C0018001800FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000600000006000000001002000000000000090
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
@@ -4759,7 +4797,7 @@ object FrmManOS: TFrmManOS
     Left = 568
     Top = 249
     Bitmap = {
-      494C010102001400440010001800FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      494C010102001400480010001800FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000400000001800000001002000000000000018
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000

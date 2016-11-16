@@ -96,6 +96,10 @@ type
     ADOQueryServicoid: TAutoIncField;
     ADOQueryServicoespecificacoes: TStringField;
     ADOQueryServicopreco: TFloatField;
+    DBComboBox1: TDBComboBox;
+    Label14: TLabel;
+    DBMemo1: TDBMemo;
+    Label15: TLabel;
     procedure btn_PrimeiroClick(Sender: TObject);
     procedure btn_AnteriorClick(Sender: TObject);
     procedure btn_SairClick(Sender: TObject);

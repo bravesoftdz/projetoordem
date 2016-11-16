@@ -6,7 +6,7 @@ uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.ComCtrls, Vcl.ToolWin,
   Vcl.ExtCtrls, System.ImageList, Vcl.ImgList, DB, Vcl.Grids, Vcl.DBGrids,
-  Vcl.DBCtrls, Data.Win.ADODB;
+  Vcl.DBCtrls, Data.Win.ADODB, Vcl.Buttons;
 
 type
   TFrmManProduto = class(TForm)
@@ -28,12 +28,20 @@ type
     Label1: TLabel;
     CheckBox1: TCheckBox;
     CheckBox2: TCheckBox;
+    ADOQrySolucao: TADOQuery;
+    ADOQrySolucaoid: TAutoIncField;
+    ADOQrySolucaopreco: TFloatField;
+    ADOQrySolucaoespecificacoes: TStringField;
+    ADOQrySolucaomarca: TStringField;
+    ADOQrySolucaoquantidade: TIntegerField;
+    ADOQrySolucaotipo: TStringField;
+    SpeedButton1: TSpeedButton;
     procedure btn_InserirClick(Sender: TObject);
     procedure btn_AlterarClick(Sender: TObject);
     procedure btn_ExcluirClick(Sender: TObject);
     procedure btn_SairClick(Sender: TObject);
     procedure FormActivate(Sender: TObject);
-    procedure Edit1Change(Sender: TObject);
+    procedure SpeedButton1Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -89,32 +97,62 @@ begin
 close;
 end;
 
-
-procedure TFrmManProduto.Edit1Change(Sender: TObject);
-begin
-  DM.ADODSSolucao.Locate('id',Edit1.Text,[loCaseInsensitive,loPartialKey]);
-
-  {if CheckBox1.Checked = true then
-  begin
-  DM.ADODSSolucao.CommandText := 'SELECT id, especificacoes, preco FROM solucao WHERE tipo = "Produto" ORDER BY especificacoes';
-  end
-  else if CheckBox2.Checked = true then
-  begin
-  DM.ADODSSolucao.CommandText := 'SELECT id, especificacoes, preco FROM solucao WHERE tipo = "Serviço" ORDER BY especificacoes';
-  end
-  else if (CheckBox1.Checked = true) and (CheckBox2.Checked = true) then
-  begin
-  DM.ADODSSolucao.CommandText := 'SELECT id, especificacoes, preco FROM solucao ORDER BY especificacoes';
-  end;}
-
-end;
-
 procedure TFrmManProduto.FormActivate(Sender: TObject);
 begin
 DM.ADODSSolucao.Close;
 DM.ADODSSolucao.CommandText:= '';
 DM.ADODSSolucao.CommandText:= 'select * from SOLUCAO order by id';
 DM.ADODSSolucao.Open;
+end;
+
+
+
+procedure TFrmManProduto.SpeedButton1Click(Sender: TObject);
+    var strliga: string;
+  begin
+    strliga := 'where ';
+    ADOQrySolucao.Close;
+    with ADOQrySolucao.SQL do
+    begin
+      clear;
+      Add('select * from solucao ');
+      if Edit1.Text <> '' then
+      try
+        strtoint(Edit1.Text);
+        Add(strliga+'id >= '+ Edit1.Text);
+        strliga:= ' and ';
+        if CheckBox1.Checked = true then
+        begin
+        Add(strliga+'tipo = "Produtos"');
+        end
+        else if CheckBox2.Checked = true then
+        begin
+        Add(strliga+'tipo = "Serviços"');
+        end
+        else if (CheckBox1.Checked = true) and (CheckBox2.Checked = true) then
+        begin
+        Add(strliga+'tipo = "Produtos" and "Serviços"');
+        end;
+      except
+        on EConvertError do;
+      end;
+      if Edit1.Text = '' then
+      begin
+        if CheckBox1.Checked = true then
+        begin
+        Add('where tipo = "Produtos"');
+        end
+        else if CheckBox2.Checked = true then
+        begin
+        Add('where tipo = "Serviços"');
+        end
+        else if (CheckBox1.Checked = true) and (CheckBox2.Checked = true) then
+        begin
+        Add('where tipo = "Produtos" and "Serviços"');
+        end;
+      end;
+    end;
+    ADOQrySolucao.Open;
 end;
 
 end.

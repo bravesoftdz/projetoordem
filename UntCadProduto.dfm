@@ -4,7 +4,7 @@
   BorderIcons = []
   BorderStyle = bsSingle
   Caption = 'Manuten'#231#227'o no Cadastro de Produtos'
-  ClientHeight = 517
+  ClientHeight = 481
   ClientWidth = 383
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
@@ -25,7 +25,6 @@
     Color = clHighlight
     ParentBackground = False
     TabOrder = 0
-    ExplicitWidth = 372
     object Label1: TLabel
       Left = 38
       Top = 12
@@ -58,7 +57,6 @@
     ParentShowHint = False
     ShowHint = True
     TabOrder = 1
-    ExplicitWidth = 372
     object btn_salvar: TToolButton
       Left = 0
       Top = 0
@@ -91,70 +89,66 @@
   end
   object StatusBar1: TStatusBar
     Left = 0
-    Top = 498
+    Top = 462
     Width = 383
     Height = 19
     Panels = <
       item
         Width = 50
       end>
-    ExplicitTop = 310
-    ExplicitWidth = 372
+    ExplicitTop = 498
   end
   object PageControl1: TPageControl
     Left = 0
     Top = 90
     Width = 383
-    Height = 408
+    Height = 372
     ActivePage = Produtos
     Align = alClient
     TabOrder = 2
-    ExplicitWidth = 372
-    ExplicitHeight = 220
+    ExplicitHeight = 408
     object Produtos: TTabSheet
       Caption = 'Produtos'
-      ExplicitWidth = 364
-      ExplicitHeight = 192
+      ExplicitHeight = 380
       object pnlFicha: TPanel
         Left = 0
         Top = 0
         Width = 375
-        Height = 380
+        Height = 344
         Align = alClient
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
         Font.Height = -11
         Font.Name = 'Tahoma'
-        Font.Style = [fsBold]
+        Font.Style = []
         ParentFont = False
         TabOrder = 0
-        ExplicitWidth = 364
-        ExplicitHeight = 192
+        ExplicitHeight = 380
         object Label2: TLabel
           Left = 144
           Top = 73
-          Width = 32
+          Width = 27
           Height = 13
           Caption = 'Pre'#231'o'
         end
         object Label3: TLabel
           Left = 144
           Top = 14
-          Width = 35
+          Width = 29
           Height = 13
           Caption = 'Marca'
         end
         object Label4: TLabel
           Left = 8
           Top = 123
-          Width = 81
+          Width = 69
           Height = 13
           Caption = 'Especifica'#231#245'es'
         end
         object Quantidade: TLabel
           Left = 8
           Top = 72
-          Width = 65
+          Width = 56
           Height = 13
           Caption = 'Quantidade'
         end
@@ -169,7 +163,7 @@
         object Label9: TLabel
           Left = 8
           Top = 18
-          Width = 38
+          Width = 33
           Height = 13
           Caption = 'C'#243'digo'
         end
@@ -214,17 +208,15 @@
     object Serviços: TTabSheet
       Caption = 'Servi'#231'os'
       ImageIndex = 1
-      ExplicitWidth = 364
-      ExplicitHeight = 192
+      ExplicitHeight = 380
       object Panel2: TPanel
         Left = 0
         Top = 0
         Width = 375
-        Height = 380
+        Height = 344
         Align = alClient
         TabOrder = 0
-        ExplicitWidth = 364
-        ExplicitHeight = 192
+        ExplicitHeight = 380
         object Label5: TLabel
           Left = 15
           Top = 112
