@@ -26,7 +26,6 @@ object FrmCadFuncionario: TFrmCadFuncionario
     Color = clHighlight
     ParentBackground = False
     TabOrder = 0
-    ExplicitWidth = 528
     object Label1: TLabel
       Left = 47
       Top = 8
@@ -50,9 +49,6 @@ object FrmCadFuncionario: TFrmCadFuncionario
     ParentShowHint = False
     ShowHint = False
     TabOrder = 1
-    ExplicitTop = 84
-    ExplicitWidth = 514
-    ExplicitHeight = 708
     object GroupBox1: TGroupBox
       Left = 2
       Top = 6
@@ -63,48 +59,48 @@ object FrmCadFuncionario: TFrmCadFuncionario
       Font.Color = clWindowText
       Font.Height = -11
       Font.Name = 'Tahoma'
-      Font.Style = [fsBold]
+      Font.Style = []
       ParentFont = False
       TabOrder = 0
       object Label3: TLabel
-        Left = 117
+        Left = 118
         Top = 84
-        Width = 20
+        Width = 19
         Height = 13
         Caption = 'CPF'
       end
       object Label4: TLabel
-        Left = 121
+        Left = 123
         Top = 111
-        Width = 16
+        Width = 14
         Height = 13
         Caption = 'RG'
       end
       object Label6: TLabel
-        Left = 104
+        Left = 108
         Top = 57
-        Width = 33
+        Width = 29
         Height = 13
         Caption = 'Cargo'
       end
       object Label7: TLabel
-        Left = 21
+        Left = 38
         Top = 138
-        Width = 116
+        Width = 99
         Height = 13
         Caption = ' Data de Nascimento'
       end
       object Label13: TLabel
-        Left = 107
+        Left = 113
         Top = 164
-        Width = 30
+        Width = 24
         Height = 13
         Caption = 'Email'
       end
       object Label2: TLabel
-        Left = 105
+        Left = 110
         Top = 30
-        Width = 32
+        Width = 27
         Height = 13
         Caption = 'Nome'
       end
@@ -128,37 +124,37 @@ object FrmCadFuncionario: TFrmCadFuncionario
       end
       object DBEdit3: TDBEdit
         Left = 143
-        Top = 135
+        Top = 81
         Width = 171
         Height = 21
         DataField = 'cpf'
         DataSource = DM.DSFuncionario
-        TabOrder = 4
+        TabOrder = 2
         OnExit = DBEdit3Exit
       end
       object DBEdit4: TDBEdit
         Left = 143
-        Top = 81
+        Top = 108
         Width = 171
         Height = 21
         DataField = 'rg'
         DataSource = DM.DSFuncionario
-        TabOrder = 2
+        TabOrder = 3
       end
       object DBEdit5: TDBEdit
         Left = 143
-        Top = 108
+        Top = 135
         Width = 107
         Height = 21
         DataField = 'data_nasc'
         DataSource = DM.DSFuncionario
-        TabOrder = 3
+        TabOrder = 4
         OnExit = DBEdit5Exit
       end
       object DBEdit12: TDBEdit
         Left = 143
-        Top = 161
-        Width = 280
+        Top = 162
+        Width = 264
         Height = 21
         DataField = 'email'
         DataSource = DM.DSFuncionario
@@ -175,41 +171,41 @@ object FrmCadFuncionario: TFrmCadFuncionario
       Font.Color = clWindowText
       Font.Height = -11
       Font.Name = 'Tahoma'
-      Font.Style = [fsBold]
+      Font.Style = []
       ParentFont = False
       TabOrder = 1
       object Label10: TLabel
         Left = 99
         Top = 118
-        Width = 38
+        Width = 33
         Height = 13
         Caption = 'Cidade'
       end
       object Label11: TLabel
         Left = 101
         Top = 144
-        Width = 36
+        Width = 33
         Height = 13
         Caption = 'Estado'
       end
       object Label14: TLabel
         Left = 103
         Top = 89
-        Width = 34
+        Width = 28
         Height = 13
         Caption = 'Bairro'
       end
       object Label8: TLabel
         Left = 85
         Top = 62
-        Width = 52
+        Width = 45
         Height = 13
         Caption = 'Endere'#231'o'
       end
       object Label9: TLabel
         Left = 117
         Top = 37
-        Width = 20
+        Width = 19
         Height = 13
         Caption = 'CEP'
       end
@@ -297,20 +293,20 @@ object FrmCadFuncionario: TFrmCadFuncionario
       Font.Color = clWindowText
       Font.Height = -11
       Font.Name = 'Tahoma'
-      Font.Style = [fsBold]
+      Font.Style = []
       ParentFont = False
       TabOrder = 2
       object Label12: TLabel
         Left = 90
         Top = 49
-        Width = 49
+        Width = 42
         Height = 13
         Caption = 'Telefone'
       end
       object Label5: TLabel
         Left = 100
         Top = 76
-        Width = 39
+        Width = 33
         Height = 13
         Caption = 'Celular'
       end
@@ -343,8 +339,6 @@ object FrmCadFuncionario: TFrmCadFuncionario
       item
         Width = 50
       end>
-    ExplicitTop = 478
-    ExplicitWidth = 528
   end
   object ToolBar1: TToolBar
     Left = 0
@@ -362,7 +356,6 @@ object FrmCadFuncionario: TFrmCadFuncionario
     ParentShowHint = False
     ShowHint = True
     TabOrder = 3
-    ExplicitWidth = 528
     object btn_salvar: TToolButton
       Left = 0
       Top = 0

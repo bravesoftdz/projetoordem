@@ -4,8 +4,6 @@ drop database DB_OS
 
 use DB_OS
 
-use master
-
 CREATE TABLE Clientes(
 	tipo varchar(50) not null,
 	id integer identity(1,1),
@@ -48,8 +46,8 @@ CREATE TABLE Ordem_Servicos(
 	id_cliente int,
 	id_funcionario int,
 	descri_equipamento varchar(250),
-	data_inicio varchar(9),
-	data_termino varchar(9),
+	data_inicio varchar(10),
+	data_termino varchar(10),
 	observacoes varchar(250),
 	serie_equipamento varchar(50),
 	status_ordem varchar(50),
@@ -74,8 +72,9 @@ CREATE TABLE SolucaoXOrdem(
 	id_solucao int not null,
 	num_os int,
 	valor_unit float not null,
-	quant int not null,
 	valor_total float not null,
+	quant int not null,
+	descricao varchar,
 	CONSTRAINT PK_ProdutoXOrdem PRIMARY KEY (id_solucao, num_os),
 	CONSTRAINT FK_ProdutoXOrdem2 FOREIGN KEY (id_solucao) REFERENCES solucao (id),
 	CONSTRAINT FK_ProdutoXOrdem3 FOREIGN KEY (num_os) REFERENCES Ordem_Servicos (numero),

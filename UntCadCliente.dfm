@@ -25,7 +25,6 @@ object FrmCadCliente: TFrmCadCliente
     Color = clHighlight
     ParentBackground = False
     TabOrder = 0
-    ExplicitTop = -6
     object Label1: TLabel
       Left = 129
       Top = 9
@@ -56,7 +55,6 @@ object FrmCadCliente: TFrmCadCliente
     ParentShowHint = False
     ShowHint = True
     TabOrder = 1
-    ExplicitWidth = 591
     object btn_salvar: TToolButton
       Left = 0
       Top = 0
@@ -96,8 +94,6 @@ object FrmCadCliente: TFrmCadCliente
       item
         Width = 50
       end>
-    ExplicitTop = 347
-    ExplicitWidth = 591
   end
   object PnlFicha: TPanel
     Left = 0
@@ -106,9 +102,6 @@ object FrmCadCliente: TFrmCadCliente
     Height = 503
     Align = alClient
     TabOrder = 3
-    ExplicitTop = 84
-    ExplicitWidth = 600
-    ExplicitHeight = 512
     object GroupBox1: TGroupBox
       Left = 2
       Top = 15
@@ -119,48 +112,49 @@ object FrmCadCliente: TFrmCadCliente
       Font.Color = clWindowText
       Font.Height = -11
       Font.Name = 'Tahoma'
-      Font.Style = [fsBold]
+      Font.Style = []
       ParentFont = False
       TabOrder = 0
       object Label5: TLabel
-        Left = 83
+        Left = 58
         Top = 57
-        Width = 32
+        Width = 56
         Height = 13
+        Alignment = taRightJustify
         Caption = 'Nome'
       end
       object Label3: TLabel
-        Left = 101
+        Left = 95
         Top = 85
-        Width = 20
+        Width = 19
         Height = 13
         Caption = 'CPF'
       end
       object Label4: TLabel
         Left = 373
         Top = 85
-        Width = 16
+        Width = 14
         Height = 13
         Caption = 'RG'
       end
       object Label14: TLabel
-        Left = 8
+        Left = 18
         Top = 111
-        Width = 113
+        Width = 96
         Height = 13
         Caption = 'Data de Nascimento'
       end
       object Label13: TLabel
         Left = 86
         Top = 138
-        Width = 35
+        Width = 28
         Height = 13
         Caption = 'E-mail'
       end
       object Label2: TLabel
-        Left = 69
+        Left = 72
         Top = 30
-        Width = 52
+        Width = 43
         Height = 13
         Caption = 'Tipo[F/J]'
       end
@@ -236,41 +230,41 @@ object FrmCadCliente: TFrmCadCliente
       Font.Color = clWindowText
       Font.Height = -11
       Font.Name = 'Tahoma'
-      Font.Style = [fsBold]
+      Font.Style = []
       ParentFont = False
       TabOrder = 1
       object Label10: TLabel
-        Left = 103
+        Left = 98
         Top = 30
-        Width = 20
+        Width = 19
         Height = 13
         Caption = 'CEP'
       end
       object Label6: TLabel
         Left = 71
         Top = 56
-        Width = 52
+        Width = 45
         Height = 13
         Caption = 'Endere'#231'o'
       end
       object Label7: TLabel
-        Left = 85
+        Left = 84
         Top = 113
-        Width = 38
+        Width = 33
         Height = 13
         Caption = 'Cidade'
       end
       object Label9: TLabel
-        Left = 85
+        Left = 84
         Top = 144
-        Width = 38
+        Width = 33
         Height = 13
         Caption = 'Estado'
       end
       object Label8: TLabel
         Left = 89
-        Top = 84
-        Width = 34
+        Top = 83
+        Width = 28
         Height = 13
         Caption = 'Bairro'
       end
@@ -358,20 +352,20 @@ object FrmCadCliente: TFrmCadCliente
       Font.Color = clWindowText
       Font.Height = -11
       Font.Name = 'Tahoma'
-      Font.Style = [fsBold]
+      Font.Style = []
       ParentFont = False
       TabOrder = 2
       object Label11: TLabel
         Left = 74
         Top = 26
-        Width = 49
+        Width = 42
         Height = 13
         Caption = 'Telefone'
       end
       object Label12: TLabel
         Left = 84
         Top = 60
-        Width = 39
+        Width = 33
         Height = 13
         Caption = 'Celular'
       end

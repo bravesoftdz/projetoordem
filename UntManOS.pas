@@ -51,7 +51,6 @@ type
     DataSource2: TDataSource;
     GroupBox1: TGroupBox;
     pnlItems: TPanel;
-    Label6: TLabel;
     Label7: TLabel;
     Label8: TLabel;
     Label9: TLabel;
@@ -77,29 +76,16 @@ type
     ADOQueryProdutopreco: TFloatField;
     DBText1: TDBText;
     Label2: TLabel;
-    PageControl1: TPageControl;
-    TabSheet1: TTabSheet;
-    TabSheet2: TTabSheet;
     ImageList4: TImageList;
-    Panel2: TPanel;
-    Label10: TLabel;
-    Label11: TLabel;
-    Label12: TLabel;
-    Label13: TLabel;
-    SpeedButton4: TSpeedButton;
-    DBEdit7: TDBEdit;
-    DBEdit8: TDBEdit;
-    DBEdit9: TDBEdit;
-    DBEdit10: TDBEdit;
-    DBLookupComboBox4: TDBLookupComboBox;
-    ADOQueryServico: TADOQuery;
-    ADOQueryServicoid: TAutoIncField;
-    ADOQueryServicoespecificacoes: TStringField;
-    ADOQueryServicopreco: TFloatField;
     DBComboBox1: TDBComboBox;
     Label14: TLabel;
     DBMemo1: TDBMemo;
     Label15: TLabel;
+    Label16: TLabel;
+    DBEdit11: TDBEdit;
+    Panel3: TPanel;
+    DBText3: TDBText;
+    Label17: TLabel;
     procedure btn_PrimeiroClick(Sender: TObject);
     procedure btn_AnteriorClick(Sender: TObject);
     procedure btn_SairClick(Sender: TObject);
@@ -299,9 +285,11 @@ procedure TFrmManOS.btn_InserirClick(Sender: TObject);
 begin
   DM.ADODSOrdemServico.Insert;
   DM.ADODSOrdemServicodata_inicio.AsDateTime:= date;
-  DM.ADODSOrdemServicostatus_ordem.AsString := 'S';
+  DM.ADODSOrdemServicostatus_ordem.AsString := 'Aberto';
   DM.ADODSOrdemServico.Post;
   DM.ADODSOrdemServico.Edit;
+
+  DM.ADODSOrdemServico.FieldByName('data_termino').EditMask:= '99/99/9999;1;_';
 
   Botoes(false);
   operacao:= 0;
