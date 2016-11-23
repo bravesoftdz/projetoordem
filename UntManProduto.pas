@@ -26,22 +26,12 @@ type
     StatusBar1: TStatusBar;
     DBGrid1: TDBGrid;
     Label1: TLabel;
-    CheckBox1: TCheckBox;
-    CheckBox2: TCheckBox;
-    ADOQrySolucao: TADOQuery;
-    ADOQrySolucaoid: TAutoIncField;
-    ADOQrySolucaopreco: TFloatField;
-    ADOQrySolucaoespecificacoes: TStringField;
-    ADOQrySolucaomarca: TStringField;
-    ADOQrySolucaoquantidade: TIntegerField;
-    ADOQrySolucaotipo: TStringField;
-    SpeedButton1: TSpeedButton;
     procedure btn_InserirClick(Sender: TObject);
     procedure btn_AlterarClick(Sender: TObject);
     procedure btn_ExcluirClick(Sender: TObject);
     procedure btn_SairClick(Sender: TObject);
     procedure FormActivate(Sender: TObject);
-    procedure SpeedButton1Click(Sender: TObject);
+    procedure Edit1Change(Sender: TObject);
   private
     { Private declarations }
   public
@@ -97,6 +87,11 @@ begin
 close;
 end;
 
+procedure TFrmManProduto.Edit1Change(Sender: TObject);
+begin
+  DM.ADODSSolucao.Locate('id', Edit1.Text,[loCaseInSensitive,loPartialKey]);
+end;
+
 procedure TFrmManProduto.FormActivate(Sender: TObject);
 begin
 DM.ADODSSolucao.Close;
@@ -106,53 +101,5 @@ DM.ADODSSolucao.Open;
 end;
 
 
-
-procedure TFrmManProduto.SpeedButton1Click(Sender: TObject);
-    var strliga: string;
-  begin
-    strliga := 'where ';
-    ADOQrySolucao.Close;
-    with ADOQrySolucao.SQL do
-    begin
-      clear;
-      Add('select * from solucao ');
-      if Edit1.Text <> '' then
-      try
-        strtoint(Edit1.Text);
-        Add(strliga+'id >= '+ Edit1.Text);
-        strliga:= ' and ';
-        if CheckBox1.Checked = true then
-        begin
-        Add(strliga+'tipo = "Produtos"');
-        end
-        else if CheckBox2.Checked = true then
-        begin
-        Add(strliga+'tipo = "Serviços"');
-        end
-        else if (CheckBox1.Checked = true) and (CheckBox2.Checked = true) then
-        begin
-        Add(strliga+'tipo = "Produtos" and "Serviços"');
-        end;
-      except
-        on EConvertError do;
-      end;
-      if Edit1.Text = '' then
-      begin
-        if CheckBox1.Checked = true then
-        begin
-        Add('where tipo = "Produtos"');
-        end
-        else if CheckBox2.Checked = true then
-        begin
-        Add('where tipo = "Serviços"');
-        end
-        else if (CheckBox1.Checked = true) and (CheckBox2.Checked = true) then
-        begin
-        Add('where tipo = "Produtos" and "Serviços"');
-        end;
-      end;
-    end;
-    ADOQrySolucao.Open;
-end;
 
 end.

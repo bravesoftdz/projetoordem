@@ -812,6 +812,7 @@ object FrmMenuPrincipal: TFrmMenuPrincipal
     Top = 0
     Width = 531
     Height = 31
+    UseSystemFont = False
     ActionManager = ActionManager1
     Caption = 'ActionMainMenuBar1'
     Color = clMenuBar
@@ -821,12 +822,11 @@ object FrmMenuPrincipal: TFrmMenuPrincipal
     ColorMap.UnusedColor = clWhite
     EdgeBorders = [ebTop, ebBottom]
     Font.Charset = DEFAULT_CHARSET
-    Font.Color = clWindowText
+    Font.Color = clBlack
     Font.Height = -13
     Font.Name = 'Segoe UI'
     Font.Style = []
     Spacing = 0
-    ExplicitTop = -6
   end
   object ActionToolBar1: TActionToolBar
     Left = 0
@@ -874,7 +874,7 @@ object FrmMenuPrincipal: TFrmMenuPrincipal
     Left = 168
     Top = 152
     Bitmap = {
-      494C010109005400980018001800FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      494C010109005400A00018001800FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       000000000000360000002800000060000000480000000100200000000000006C
       0000000000000000000000000000000000000000000000000000000000000000
       00000000000000000000FDFAF709F1DFCA41E0B88992D29956D0CB893BF2C983
@@ -1795,10 +1795,12 @@ object FrmMenuPrincipal: TFrmMenuPrincipal
               end
               item
                 Action = cad_produto
+                Caption = '&Produtos'
                 ImageIndex = 4
               end
               item
                 Action = act_Servico
+                Caption = '&Servi'#231'os'
                 ImageIndex = 1
               end
               item
@@ -1848,10 +1850,12 @@ object FrmMenuPrincipal: TFrmMenuPrincipal
           end
           item
             Action = act_Servico
+            Caption = '&Servi'#231'os'
             ImageIndex = 1
           end
           item
             Action = cad_produto
+            Caption = '&Produtos'
             ImageIndex = 4
           end
           item
@@ -1913,6 +1917,7 @@ object FrmMenuPrincipal: TFrmMenuPrincipal
       Category = 'Cadastro'
       Caption = 'Servi'#231'os'
       ImageIndex = 1
+      OnExecute = act_ServicoExecute
     end
     object act_sair: TAction
       Category = 'Cadastro'

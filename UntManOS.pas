@@ -86,6 +86,7 @@ type
     Panel3: TPanel;
     DBText3: TDBText;
     Label17: TLabel;
+    Label6: TLabel;
     procedure btn_PrimeiroClick(Sender: TObject);
     procedure btn_AnteriorClick(Sender: TObject);
     procedure btn_SairClick(Sender: TObject);
@@ -248,7 +249,7 @@ procedure TFrmManOS.btn_AlterarClick(Sender: TObject);
 begin
 DM.ADODSOrdemServico.Edit;
 DM.ADODSOrdemServicodata_inicio.AsDateTime:= date;
-
+DM.ADODSOrdemServico.FieldByName('data_termino').EditMask:= '99/99/9999;1;_';
 operacao:= 0;
 Botoes(false);
 end;
@@ -342,7 +343,7 @@ operacao := 1;
 
 DM.ADODSOrdemServico.Close;
 DM.ADODSOrdemServico.CommandText := '';
-DM.ADODSOrdemServico.CommandText := 'select * from ORDEM_SERVICOS order by data_inicio';
+DM.ADODSOrdemServico.CommandText := 'select * from ORDEM_SERVICOS order by numero';
 DM.ADODSOrdemServico.Open;
 
 DM.ADODSSolucaoXOrdem.Close;

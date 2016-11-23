@@ -1,11 +1,11 @@
-﻿object FrmCadProduto: TFrmCadProduto
+object FrmCadProduto: TFrmCadProduto
   Left = 0
   Top = 0
   BorderIcons = []
   BorderStyle = bsSingle
   Caption = 'Manuten'#231#227'o no Cadastro de Produtos'
-  ClientHeight = 481
-  ClientWidth = 383
+  ClientHeight = 460
+  ClientWidth = 340
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -19,18 +19,19 @@
   object Panel1: TPanel
     Left = 0
     Top = 0
-    Width = 383
+    Width = 340
     Height = 41
     Align = alTop
     Color = clHighlight
     ParentBackground = False
     TabOrder = 0
+    ExplicitWidth = 383
     object Label1: TLabel
-      Left = 38
+      Left = 45
       Top = 12
-      Width = 309
+      Width = 246
       Height = 16
-      Caption = 'Manuten'#231#227'o no Cadastro de Produtos/Servi'#231'os'
+      Caption = 'Manuten'#231#227'o no Cadastro de Produtos'
       Color = clHighlight
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWhite
@@ -44,7 +45,7 @@
   object ToolBar1: TToolBar
     Left = 0
     Top = 41
-    Width = 383
+    Width = 340
     Height = 49
     BorderWidth = 1
     ButtonHeight = 40
@@ -57,6 +58,7 @@
     ParentShowHint = False
     ShowHint = True
     TabOrder = 1
+    ExplicitWidth = 383
     object btn_salvar: TToolButton
       Left = 0
       Top = 0
@@ -89,204 +91,110 @@
   end
   object StatusBar1: TStatusBar
     Left = 0
-    Top = 462
-    Width = 383
+    Top = 441
+    Width = 340
     Height = 19
     Panels = <
       item
         Width = 50
       end>
-    ExplicitTop = 498
+    ExplicitTop = 462
+    ExplicitWidth = 383
   end
-  object PageControl1: TPageControl
+  object pnlFicha: TPanel
     Left = 0
     Top = 90
-    Width = 383
-    Height = 372
-    ActivePage = Produtos
+    Width = 340
+    Height = 351
     Align = alClient
-    TabOrder = 2
-    ExplicitHeight = 408
-    object Produtos: TTabSheet
-      Caption = 'Produtos'
-      ExplicitHeight = 380
-      object pnlFicha: TPanel
-        Left = 0
-        Top = 0
-        Width = 375
-        Height = 344
-        Align = alClient
-        Font.Charset = DEFAULT_CHARSET
-        Font.Color = clWindowText
-        Font.Height = -11
-        Font.Name = 'Tahoma'
-        Font.Style = []
-        ParentFont = False
-        TabOrder = 0
-        ExplicitHeight = 380
-        object Label2: TLabel
-          Left = 144
-          Top = 73
-          Width = 27
-          Height = 13
-          Caption = 'Pre'#231'o'
-        end
-        object Label3: TLabel
-          Left = 144
-          Top = 14
-          Width = 29
-          Height = 13
-          Caption = 'Marca'
-        end
-        object Label4: TLabel
-          Left = 8
-          Top = 123
-          Width = 69
-          Height = 13
-          Caption = 'Especifica'#231#245'es'
-        end
-        object Quantidade: TLabel
-          Left = 8
-          Top = 72
-          Width = 56
-          Height = 13
-          Caption = 'Quantidade'
-        end
-        object DBText1: TDBText
-          Left = 8
-          Top = 37
-          Width = 65
-          Height = 17
-          DataField = 'id'
-          DataSource = DM.DSSolucao
-        end
-        object Label9: TLabel
-          Left = 8
-          Top = 18
-          Width = 33
-          Height = 13
-          Caption = 'C'#243'digo'
-        end
-        object DBEdit1: TDBEdit
-          Left = 144
-          Top = 91
-          Width = 96
-          Height = 21
-          DataField = 'preco'
-          DataSource = DM.DSSolucao
-          TabOrder = 2
-        end
-        object DBEdit2: TDBEdit
-          Left = 144
-          Top = 34
-          Width = 96
-          Height = 21
-          DataField = 'marca'
-          DataSource = DM.DSSolucao
-          TabOrder = 0
-        end
-        object DBMemo1: TDBMemo
-          Left = 8
-          Top = 142
-          Width = 232
-          Height = 179
-          DataField = 'especificacoes'
-          DataSource = DM.DSSolucao
-          TabOrder = 3
-        end
-        object DBEdit3: TDBEdit
-          Left = 8
-          Top = 91
-          Width = 96
-          Height = 21
-          DataField = 'quantidade'
-          DataSource = DM.DSSolucao
-          TabOrder = 1
-        end
-      end
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -11
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentFont = False
+    TabOrder = 3
+    ExplicitTop = 0
+    ExplicitWidth = 265
+    ExplicitHeight = 300
+    object Label2: TLabel
+      Left = 190
+      Top = 73
+      Width = 27
+      Height = 13
+      Caption = 'Pre'#231'o'
     end
-    object Serviços: TTabSheet
-      Caption = 'Servi'#231'os'
-      ImageIndex = 1
-      ExplicitHeight = 380
-      object Panel2: TPanel
-        Left = 0
-        Top = 0
-        Width = 375
-        Height = 344
-        Align = alClient
-        TabOrder = 0
-        ExplicitHeight = 380
-        object Label5: TLabel
-          Left = 15
-          Top = 112
-          Width = 50
-          Height = 13
-          Caption = 'Pre'#231'o - R$'
-        end
-        object Label6: TLabel
-          Left = 48
-          Top = 30
-          Width = 3
-          Height = 13
-        end
-        object Label7: TLabel
-          Left = 15
-          Top = 56
-          Width = 69
-          Height = 13
-          Caption = 'Especifica'#231#245'es'
-        end
-        object Label8: TLabel
-          Left = 239
-          Top = 56
-          Width = 56
-          Height = 13
-          Caption = 'Quantidade'
-        end
-        object DBText2: TDBText
-          Left = 15
-          Top = 30
-          Width = 65
-          Height = 17
-          DataField = 'id'
-          DataSource = DM.DSSolucao
-        end
-        object Label10: TLabel
-          Left = 15
-          Top = 11
-          Width = 33
-          Height = 13
-          Caption = 'C'#243'digo'
-        end
-        object DBEdit4: TDBEdit
-          Left = 15
-          Top = 131
-          Width = 96
-          Height = 21
-          DataField = 'preco'
-          DataSource = DM.DSSolucao
-          TabOrder = 2
-        end
-        object DBMemo2: TDBMemo
-          Left = 15
-          Top = 75
-          Width = 202
-          Height = 21
-          DataField = 'especificacoes'
-          DataSource = DM.DSSolucao
-          TabOrder = 0
-        end
-        object DBEdit6: TDBEdit
-          Left = 239
-          Top = 75
-          Width = 96
-          Height = 21
-          DataField = 'quantidade'
-          DataSource = DM.DSSolucao
-          TabOrder = 1
-        end
-      end
+    object Label3: TLabel
+      Left = 190
+      Top = 14
+      Width = 29
+      Height = 13
+      Caption = 'Marca'
+    end
+    object Label4: TLabel
+      Left = 54
+      Top = 123
+      Width = 69
+      Height = 13
+      Caption = 'Especifica'#231#245'es'
+    end
+    object Quantidade: TLabel
+      Left = 54
+      Top = 72
+      Width = 56
+      Height = 13
+      Caption = 'Quantidade'
+    end
+    object DBText1: TDBText
+      Left = 54
+      Top = 37
+      Width = 65
+      Height = 17
+      DataField = 'id'
+      DataSource = DM.DSSolucao
+    end
+    object Label9: TLabel
+      Left = 54
+      Top = 18
+      Width = 33
+      Height = 13
+      Caption = 'C'#243'digo'
+    end
+    object DBEdit1: TDBEdit
+      Left = 190
+      Top = 91
+      Width = 96
+      Height = 21
+      DataField = 'preco'
+      DataSource = DM.DSSolucao
+      TabOrder = 2
+    end
+    object DBEdit2: TDBEdit
+      Left = 190
+      Top = 34
+      Width = 96
+      Height = 21
+      DataField = 'marca'
+      DataSource = DM.DSSolucao
+      TabOrder = 0
+    end
+    object DBMemo1: TDBMemo
+      Left = 54
+      Top = 142
+      Width = 232
+      Height = 179
+      DataField = 'especificacoes'
+      DataSource = DM.DSSolucao
+      TabOrder = 3
+    end
+    object DBEdit3: TDBEdit
+      Left = 54
+      Top = 91
+      Width = 96
+      Height = 21
+      DataField = 'quantidade'
+      DataSource = DM.DSSolucao
+      TabOrder = 1
     end
   end
 end

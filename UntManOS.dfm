@@ -35,7 +35,7 @@ object FrmManOS: TFrmManOS
     TabOrder = 0
     object Label1: TLabel
       Left = 154
-      Top = 4
+      Top = 6
       Width = 300
       Height = 23
       Caption = 'Controle de Ordens de Servi'#231'os'
@@ -211,7 +211,6 @@ object FrmManOS: TFrmManOS
     Font.Style = []
     ParentFont = False
     TabOrder = 2
-    ExplicitHeight = 575
     object Label3: TLabel
       Left = 14
       Top = 74
@@ -486,7 +485,7 @@ object FrmManOS: TFrmManOS
       TabOrder = 3
     end
     object GroupBox1: TGroupBox
-      Left = 7
+      Left = 5
       Top = 135
       Width = 573
       Height = 226
@@ -793,9 +792,6 @@ object FrmManOS: TFrmManOS
         Height = 58
         Align = alTop
         TabOrder = 5
-        ExplicitLeft = 3
-        ExplicitTop = 0
-        ExplicitWidth = 555
         object Label7: TLabel
           Left = 295
           Top = 8
@@ -880,6 +876,13 @@ object FrmManOS: TFrmManOS
             FFFF00FF1AA5D51EA8D621A9D723AAD723AAD722A9D720A8D61CA5D4FF00FFFF
             00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF}
           OnClick = SpeedButton3Click
+        end
+        object Label6: TLabel
+          Left = 11
+          Top = 8
+          Width = 33
+          Height = 13
+          Caption = 'C'#243'digo'
         end
         object DBEdit3: TDBEdit
           Left = 11
@@ -974,7 +977,6 @@ object FrmManOS: TFrmManOS
       Color = cl3DLight
       ParentBackground = False
       TabOrder = 8
-      ExplicitTop = 528
       object DBText3: TDBText
         Left = 441
         Top = 11
@@ -1013,14 +1015,13 @@ object FrmManOS: TFrmManOS
       item
         Width = 50
       end>
-    ExplicitTop = 665
   end
   object ImageList1: TImageList
     Height = 24
     Width = 24
     Left = 16
     Bitmap = {
-      494C01010C002000980018001800FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      494C01010C0020009C0018001800FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000600000006000000001002000000000000090
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
@@ -2220,7 +2221,7 @@ object FrmManOS: TFrmManOS
     Width = 24
     Left = 64
     Bitmap = {
-      494C01010C0020008C0018001800FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      494C01010C002000900018001800FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000600000006000000001002000000000000090
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
@@ -3420,7 +3421,7 @@ object FrmManOS: TFrmManOS
     Width = 24
     Left = 112
     Bitmap = {
-      494C01010C002C00A40018001800FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      494C01010C002C00A80018001800FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000600000006000000001002000000000000090
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
@@ -4660,11 +4661,9 @@ object FrmManOS: TFrmManOS
     CursorType = ctStatic
     Parameters = <>
     SQL.Strings = (
-      'SELECT id, especificacoes, preco FROM solucao '
-      'WHERE tipo = '#39'Produto'#39
-      'ORDER BY especificacoes')
-    Left = 371
-    Top = 205
+      'SELECT id, especificacoes, preco FROM solucao')
+    Left = 275
+    Top = 213
     object ADOQueryProdutoid: TAutoIncField
       FieldName = 'id'
       ReadOnly = True
@@ -4680,14 +4679,14 @@ object FrmManOS: TFrmManOS
   object DSProduto: TDataSource
     DataSet = ADOQueryProduto
     Left = 203
-    Top = 205
+    Top = 214
   end
   object ImageList4: TImageList
     Height = 24
-    Left = 464
-    Top = 201
+    Left = 368
+    Top = 217
     Bitmap = {
-      494C010102005C00680010001800FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      494C010102005C006C0010001800FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000400000001800000001002000000000000018
       0000000000000000000000000000000000000000000000000000000000000000
       00000000000000000000F8FCFD0A7CC8E5C083CFECB8FAFDFE07000000000000

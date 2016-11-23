@@ -1,4 +1,4 @@
-unit UntManProduto;
+unit UntManServico;
 
 interface
 
@@ -9,7 +9,7 @@ uses
   Vcl.DBCtrls, Data.Win.ADODB, Vcl.Buttons;
 
 type
-  TFrmManProduto = class(TForm)
+  TFrmManServico = class(TForm)
     ImageList1: TImageList;
     ImageList2: TImageList;
     ImageList3: TImageList;
@@ -26,22 +26,12 @@ type
     StatusBar1: TStatusBar;
     DBGrid1: TDBGrid;
     Label1: TLabel;
-    CheckBox1: TCheckBox;
-    CheckBox2: TCheckBox;
-    ADOQrySolucao: TADOQuery;
-    ADOQrySolucaoid: TAutoIncField;
-    ADOQrySolucaopreco: TFloatField;
-    ADOQrySolucaoespecificacoes: TStringField;
-    ADOQrySolucaomarca: TStringField;
-    ADOQrySolucaoquantidade: TIntegerField;
-    ADOQrySolucaotipo: TStringField;
-    SpeedButton1: TSpeedButton;
     procedure btn_InserirClick(Sender: TObject);
     procedure btn_AlterarClick(Sender: TObject);
     procedure btn_ExcluirClick(Sender: TObject);
     procedure btn_SairClick(Sender: TObject);
     procedure FormActivate(Sender: TObject);
-    procedure SpeedButton1Click(Sender: TObject);
+    procedure Edit1Change(Sender: TObject);
   private
     { Private declarations }
   public
@@ -49,25 +39,25 @@ type
   end;
 
 var
-  FrmManProduto: TFrmManProduto;
+  FrmManServico: TFrmManServico;
 
 implementation
 
 {$R *.dfm}
 
-uses UntDM, UntCadProduto;
+uses UntDM, UntCadProduto, UntCadServico;
 
-procedure TFrmManProduto.btn_AlterarClick(Sender: TObject);
+procedure TFrmManServico.btn_AlterarClick(Sender: TObject);
 begin
 DM.ADODSSolucao.Edit;
 FrmCadProduto.btn_Salvar.Enabled:= true;
-FrmCadProduto.btn_Cancelar.Enabled:= true;
-FrmCadProduto.btn_Sair.Enabled:= false;
-FrmCadProduto.pnlFicha.Enabled:= true;
-FrmCadProduto.ShowModal;
+FrmCadServico.btn_Cancelar.Enabled:= true;
+FrmCadServico.btn_Sair.Enabled:= false;
+FrmCadServico.pnlFicha.Enabled:= true;
+FrmCadServico.ShowModal;
 end;
 
-procedure TFrmManProduto.btn_ExcluirClick(Sender: TObject);
+procedure TFrmManServico.btn_ExcluirClick(Sender: TObject);
 var
   confExcl: integer;
 begin
@@ -82,77 +72,34 @@ begin
 
 end;
 
-procedure TFrmManProduto.btn_InserirClick(Sender: TObject);
+procedure TFrmManServico.btn_InserirClick(Sender: TObject);
 begin
 DM.ADODSSolucao.Insert;
-FrmCadProduto.btn_Salvar.Enabled:= true;
-FrmCadProduto.btn_Cancelar.Enabled:= true;
-FrmCadProduto.btn_Sair.Enabled:= false;
-FrmCadProduto.pnlFicha.Enabled:= true;
-FrmCadProduto.ShowModal;
+FrmCadServico.btn_Salvar.Enabled:= true;
+FrmCadServico.btn_Cancelar.Enabled:= true;
+FrmCadServico.btn_Sair.Enabled:= false;
+FrmCadServico.pnlFicha.Enabled:= true;
+FrmCadServico.ShowModal;
 end;
 
-procedure TFrmManProduto.btn_SairClick(Sender: TObject);
+procedure TFrmManServico.btn_SairClick(Sender: TObject);
 begin
 close;
 end;
 
-procedure TFrmManProduto.FormActivate(Sender: TObject);
+procedure TFrmManServico.Edit1Change(Sender: TObject);
+begin
+  DM.ADODSSolucao.Locate('id', Edit1.Text,[loCaseInSensitive,loPartialKey]);
+end;
+
+procedure TFrmManServico.FormActivate(Sender: TObject);
 begin
 DM.ADODSSolucao.Close;
 DM.ADODSSolucao.CommandText:= '';
-DM.ADODSSolucao.CommandText:= 'select * from SOLUCAO order by id';
+DM.ADODSSolucao.CommandText:= 'SELECT * FROM solucao WHERE tipo=:produto';
 DM.ADODSSolucao.Open;
 end;
 
 
-
-procedure TFrmManProduto.SpeedButton1Click(Sender: TObject);
-    var strliga: string;
-  begin
-    strliga := 'where ';
-    ADOQrySolucao.Close;
-    with ADOQrySolucao.SQL do
-    begin
-      clear;
-      Add('select * from solucao ');
-      if Edit1.Text <> '' then
-      try
-        strtoint(Edit1.Text);
-        Add(strliga+'id >= '+ Edit1.Text);
-        strliga:= ' and ';
-        if CheckBox1.Checked = true then
-        begin
-        Add(strliga+'tipo = "Produtos"');
-        end
-        else if CheckBox2.Checked = true then
-        begin
-        Add(strliga+'tipo = "Serviços"');
-        end
-        else if (CheckBox1.Checked = true) and (CheckBox2.Checked = true) then
-        begin
-        Add(strliga+'tipo = "Produtos" and "Serviços"');
-        end;
-      except
-        on EConvertError do;
-      end;
-      if Edit1.Text = '' then
-      begin
-        if CheckBox1.Checked = true then
-        begin
-        Add('where tipo = "Produtos"');
-        end
-        else if CheckBox2.Checked = true then
-        begin
-        Add('where tipo = "Serviços"');
-        end
-        else if (CheckBox1.Checked = true) and (CheckBox2.Checked = true) then
-        begin
-        Add('where tipo = "Produtos" and "Serviços"');
-        end;
-      end;
-    end;
-    ADOQrySolucao.Open;
-end;
 
 end.

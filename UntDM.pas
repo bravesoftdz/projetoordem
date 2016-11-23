@@ -36,8 +36,6 @@ type
     ADODSOrdemServicoid_cliente: TIntegerField;
     ADODSOrdemServicoid_funcionario: TIntegerField;
     ADODSOrdemServicodescri_equipamento: TStringField;
-    ADODSOrdemServicodata_inicio: TStringField;
-    ADODSOrdemServicodata_termino: TStringField;
     ADODSOrdemServicoobservacoes: TStringField;
     ADODSOrdemServicoserie_equipamento: TStringField;
     ADODSOrdemServicostatus_ordem: TStringField;
@@ -69,6 +67,9 @@ type
     ADODSFuncionariotelefone: TStringField;
     ADODSFuncionariocelular: TStringField;
     ADODSFuncionarioemail: TStringField;
+    ADODSSolucaoXOrdemdescricao: TStringField;
+    ADODSOrdemServicodata_inicio: TStringField;
+    ADODSOrdemServicodata_termino: TStringField;
     procedure ADODSSolucaoXOrdemid_produtoValidate(Sender: TField);
     procedure ADODSSolucaoXOrdemAfterPost(DataSet: TDataSet);
     procedure ADODSSolucaoXOrdemAfterDelete(DataSet: TDataSet);

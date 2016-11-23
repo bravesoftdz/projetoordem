@@ -1,0 +1,128 @@
+unit UntMenuPrincipal;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, System.ImageList, Vcl.ImgList,
+  System.Actions, Vcl.ActnList, Vcl.PlatformDefaultStyleActnCtrls, Vcl.ActnMan,
+  Vcl.ToolWin, Vcl.ActnCtrls, Vcl.ActnMenus, Vcl.ComCtrls, Vcl.ExtCtrls;
+
+type
+  TFrmMenuPrincipal = class(TForm)
+    ImageList1: TImageList;
+    ActionManager1: TActionManager;
+    Cad_os: TAction;
+    Cad_Cliente: TAction;
+    Cad_funcionario: TAction;
+    cad_produto: TAction;
+    act_sair: TAction;
+    ActionMainMenuBar1: TActionMainMenuBar;
+    ActionToolBar1: TActionToolBar;
+    StatusBar1: TStatusBar;
+    Timer1: TTimer;
+    RelClientes: TAction;
+    RelFunc: TAction;
+    act_Servico: TAction;
+    procedure Cad_ClienteExecute(Sender: TObject);
+    procedure act_sairExecute(Sender: TObject);
+    procedure FormActivate(Sender: TObject);
+    procedure FormCloseQuery(Sender: TObject; var CanClose: Boolean);
+    procedure FormClose(Sender: TObject; var Action: TCloseAction);
+    procedure Timer1Timer(Sender: TObject);
+    procedure cad_produtoExecute(Sender: TObject);
+    procedure Cad_funcionarioExecute(Sender: TObject);
+    procedure Cad_ServicoExecute(Sender: TObject);
+    procedure Cad_osExecute(Sender: TObject);
+    procedure RelClientesExecute(Sender: TObject);
+    procedure RelFuncExecute(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  FrmMenuPrincipal: TFrmMenuPrincipal;
+
+implementation
+
+{$R *.dfm}
+
+uses UntManCliente, UntManFuncionario, UntCadProduto, UntManProduto, UntManOS,
+  UntRelCliente, UntRelFuncionario;
+
+procedure TFrmMenuPrincipal.RelClientesExecute(Sender: TObject);
+begin
+  FrmRelCliente.ShowModal;
+end;
+
+procedure TFrmMenuPrincipal.RelFuncExecute(Sender: TObject);
+begin
+  FrmRelFuncionario.ShowModal;
+end;
+
+procedure TFrmMenuPrincipal.act_sairExecute(Sender: TObject);
+begin
+  close;
+end;
+
+procedure TFrmMenuPrincipal.Cad_ClienteExecute(Sender: TObject);
+begin
+  FrmManCliente.ShowModal;
+end;
+
+procedure TFrmMenuPrincipal.Cad_funcionarioExecute(Sender: TObject);
+begin
+  FrmManFuncionario.ShowModal;
+end;
+
+procedure TFrmMenuPrincipal.Cad_osExecute(Sender: TObject);
+begin
+FrmManOS.ShowModal;
+end;
+
+procedure TFrmMenuPrincipal.cad_produtoExecute(Sender: TObject);
+begin
+FrmManProduto.ShowModal;
+end;
+
+procedure TFrmMenuPrincipal.Cad_ServicoExecute(Sender: TObject);
+begin
+//FrmManServico.ShowModal;
+end;
+
+procedure TFrmMenuPrincipal.FormActivate(Sender: TObject);
+begin
+ WindowState := wsMaximized;
+ StatusBar1.Panels[1].Text:= FormatDateTime(' dddd ", " dd " de " mmmm " de " yyyy', Now);
+
+ Cad_os.Enabled:= true;
+ Cad_Cliente.Enabled:= true;
+ cad_produto.Enabled:= true;
+ Cad_funcionario.Enabled:= true;
+end;
+
+procedure TFrmMenuPrincipal.FormClose(Sender: TObject;
+  var Action: TCloseAction);
+begin
+  close;
+end;
+
+procedure TFrmMenuPrincipal.FormCloseQuery(Sender: TObject;
+  var CanClose: Boolean);
+  var confSaida: Integer;
+begin
+  confSaida := Application.MessageBox('Deseja realmente sair do sistema?', 'ATENÇÃO', MB_YESNO+MB_DEFBUTTON2+MB_ICONQUESTION);
+  if confSaida = IDYES then
+  Application.Terminate
+  else
+  CanClose:=False;
+end;
+
+procedure TFrmMenuPrincipal.Timer1Timer(Sender: TObject);
+begin
+  StatusBar1.Panels[0].Text := TimetoStr(time);
+end;
+
+end.
