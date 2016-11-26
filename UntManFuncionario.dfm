@@ -4,8 +4,8 @@ object FrmManFuncionario: TFrmManFuncionario
   BorderIcons = []
   BorderStyle = bsSingle
   Caption = 'Manuten'#231#227'o no cadastro de funcion'#225'rios - COALA'
-  ClientHeight = 277
-  ClientWidth = 393
+  ClientHeight = 424
+  ClientWidth = 540
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -20,12 +20,13 @@ object FrmManFuncionario: TFrmManFuncionario
   object Panel1: TPanel
     Left = 0
     Top = 0
-    Width = 393
+    Width = 540
     Height = 41
     Align = alTop
     Color = clHotLight
     ParentBackground = False
     TabOrder = 0
+    ExplicitWidth = 393
     object Label1: TLabel
       Left = 77
       Top = 10
@@ -43,7 +44,7 @@ object FrmManFuncionario: TFrmManFuncionario
   object ToolBar1: TToolBar
     Left = 0
     Top = 41
-    Width = 393
+    Width = 540
     Height = 49
     BorderWidth = 1
     ButtonHeight = 40
@@ -56,6 +57,7 @@ object FrmManFuncionario: TFrmManFuncionario
     ParentShowHint = False
     ShowHint = True
     TabOrder = 1
+    ExplicitWidth = 393
     object btn_inserir: TToolButton
       Left = 0
       Top = 0
@@ -113,14 +115,15 @@ object FrmManFuncionario: TFrmManFuncionario
     end
   end
   object Panel2: TPanel
-    Left = -3
-    Top = 88
-    Width = 403
-    Height = 41
+    Left = 0
+    Top = 90
+    Width = 540
+    Height = 47
+    Align = alTop
     TabOrder = 2
     object TLabel
       Left = 12
-      Top = 12
+      Top = 19
       Width = 118
       Height = 13
       Caption = 'Pesquisar por nome: '
@@ -133,7 +136,7 @@ object FrmManFuncionario: TFrmManFuncionario
     end
     object Edit1: TEdit
       Left = 131
-      Top = 7
+      Top = 14
       Width = 250
       Height = 21
       TabOrder = 0
@@ -142,21 +145,24 @@ object FrmManFuncionario: TFrmManFuncionario
   end
   object StatusBar1: TStatusBar
     Left = 0
-    Top = 258
-    Width = 393
+    Top = 405
+    Width = 540
     Height = 19
     Panels = <
       item
         Width = 50
       end>
+    ExplicitTop = 258
+    ExplicitWidth = 393
   end
   object DBGrid1: TDBGrid
     Left = 0
-    Top = 90
-    Width = 393
-    Height = 168
-    Align = alClient
+    Top = 140
+    Width = 540
+    Height = 265
+    Align = alBottom
     DataSource = DM.DSFuncionario
+    Options = [dgTitles, dgIndicator, dgColumnResize, dgColLines, dgRowLines, dgTabs, dgConfirmDelete, dgCancelOnExit, dgTitleClick, dgTitleHotTrack]
     TabOrder = 4
     TitleFont.Charset = DEFAULT_CHARSET
     TitleFont.Color = clWindowText
@@ -175,6 +181,13 @@ object FrmManFuncionario: TFrmManFuncionario
         FieldName = 'nome_func'
         Title.Caption = 'Nome funcion'#225'rio'
         Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'cargo'
+        Title.Caption = 'Cargo'
+        Width = 120
+        Visible = True
       end>
   end
   object ImageList1: TImageList
@@ -183,7 +196,7 @@ object FrmManFuncionario: TFrmManFuncionario
     Left = 40
     Top = 216
     Bitmap = {
-      494C0101070030004C0018001800FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      494C010107003000500018001800FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000600000003000000001002000000000000048
       0000000000000000000000000000000000000000000000000000000000000000
       00000000000000000000FDFAF709F1DFCA41E0B88992D29956D0CB893BF2C983
@@ -790,7 +803,7 @@ object FrmManFuncionario: TFrmManFuncionario
     Left = 88
     Top = 216
     Bitmap = {
-      494C010107001800400018001800FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      494C010107001800440018001800FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000600000003000000001002000000000000048
       0000000000000000000000000000000000000000000000000000000000000000
       00000000000000000000FDFDFD09F5F5F541E8E8E892DFDFDFD0D9D9D9F2D8D8
@@ -1397,7 +1410,7 @@ object FrmManFuncionario: TFrmManFuncionario
     Left = 136
     Top = 216
     Bitmap = {
-      494C010107000C004C0018001800FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      494C010107000C00500018001800FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000600000003000000001002000000000000048
       0000000000000000000000000000000000000000000000000000000000000000
       00000000000000000000FCF9F609EED8BF41D9A86F92C98333D0C06F11F2BD68

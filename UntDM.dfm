@@ -185,9 +185,11 @@ object DM: TDM
     end
     object ADODSOrdemServicovalor_produtos: TFloatField
       FieldName = 'valor_produtos'
+      DisplayFormat = ',#0.00'
     end
     object ADODSOrdemServicovalor_total: TFloatField
       FieldName = 'valor_total'
+      DisplayFormat = ',#0.00'
     end
     object ADODSOrdemServicodata_inicio: TStringField
       FieldName = 'data_inicio'
@@ -211,6 +213,7 @@ object DM: TDM
     end
     object ADODSSolucaopreco: TFloatField
       FieldName = 'preco'
+      DisplayFormat = ',#0.00'
     end
     object ADODSSolucaoespecificacoes: TStringField
       FieldName = 'especificacoes'
@@ -272,12 +275,14 @@ object DM: TDM
     end
     object ADODSSolucaoXOrdemvalor_unit: TFloatField
       FieldName = 'valor_unit'
+      DisplayFormat = ',#0.00'
     end
     object ADODSSolucaoXOrdemquant: TIntegerField
       FieldName = 'quant'
     end
     object ADODSSolucaoXOrdemvalor_total: TFloatField
       FieldName = 'valor_total'
+      DisplayFormat = ',#0.00'
     end
     object ADODSSolucaoXOrdemNomeProduto2: TStringField
       FieldKind = fkLookup

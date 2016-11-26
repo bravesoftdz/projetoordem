@@ -6,7 +6,7 @@ uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.ComCtrls, Vcl.ToolWin,
   Vcl.ExtCtrls, System.ImageList, Vcl.ImgList, DB, Vcl.Grids, Vcl.DBGrids,
-  Vcl.DBCtrls, Data.Win.ADODB, Vcl.Buttons;
+  Vcl.DBCtrls, Data.Win.ADODB, Vcl.Buttons, Vcl.AppEvnts;
 
 type
   TFrmManServico = class(TForm)
@@ -26,12 +26,19 @@ type
     StatusBar1: TStatusBar;
     DBGrid1: TDBGrid;
     Label1: TLabel;
+    ApplicationEvents1: TApplicationEvents;
+    DS: TDataSource;
+    ADODataSet1: TADODataSet;
+    ADODataSet1preco: TFloatField;
+    ADODataSet1id: TAutoIncField;
+    ADODataSet1especificacoes: TStringField;
     procedure btn_InserirClick(Sender: TObject);
     procedure btn_AlterarClick(Sender: TObject);
     procedure btn_ExcluirClick(Sender: TObject);
     procedure btn_SairClick(Sender: TObject);
     procedure FormActivate(Sender: TObject);
     procedure Edit1Change(Sender: TObject);
+    procedure ApplicationEvents1Exception(Sender: TObject; E: Exception);
   private
     { Private declarations }
   public
@@ -46,6 +53,12 @@ implementation
 {$R *.dfm}
 
 uses UntDM, UntCadProduto, UntCadServico;
+
+procedure TFrmManServico.ApplicationEvents1Exception(Sender: TObject;
+  E: Exception);
+begin
+  ShowMessage('Não é possivel excluir este produto, pois está vinculado à uma Ordem de Serviço.');
+end;
 
 procedure TFrmManServico.btn_AlterarClick(Sender: TObject);
 begin

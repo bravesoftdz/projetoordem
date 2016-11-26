@@ -742,6 +742,7 @@ object FrmManOS: TFrmManOS
         Height = 112
         Align = alBottom
         DataSource = DM.DSSolucaoXOrdem
+        Options = [dgTitles, dgIndicator, dgColumnResize, dgColLines, dgRowLines, dgTabs, dgConfirmDelete, dgCancelOnExit, dgTitleClick, dgTitleHotTrack]
         TabOrder = 4
         TitleFont.Charset = DEFAULT_CHARSET
         TitleFont.Color = clWindowText
@@ -751,15 +752,15 @@ object FrmManOS: TFrmManOS
         Columns = <
           item
             Expanded = False
-            FieldName = 'id_produto'
-            Title.Caption = 'C'#243'd. Produto'
+            FieldName = 'id_solucao'
+            Title.Caption = 'C'#243'digo'
             Width = 71
             Visible = True
           end
           item
             Expanded = False
             FieldName = 'NomeProduto'
-            Title.Caption = 'Descri'#231#227'o do Produto'
+            Title.Caption = 'Descri'#231#227'o'
             Width = 224
             Visible = True
           end
@@ -992,14 +993,14 @@ object FrmManOS: TFrmManOS
         ParentFont = False
       end
       object Label17: TLabel
-        Left = 406
-        Top = 16
-        Width = 29
-        Height = 13
-        Caption = 'Total'
+        Left = 365
+        Top = 11
+        Width = 70
+        Height = 19
+        Caption = 'Total R$'
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
-        Font.Height = -11
+        Font.Height = -16
         Font.Name = 'Tahoma'
         Font.Style = [fsBold]
         ParentFont = False
@@ -1021,7 +1022,7 @@ object FrmManOS: TFrmManOS
     Width = 24
     Left = 16
     Bitmap = {
-      494C01010C0020009C0018001800FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      494C01010C002000AC0018001800FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000600000006000000001002000000000000090
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
@@ -2221,7 +2222,7 @@ object FrmManOS: TFrmManOS
     Width = 24
     Left = 64
     Bitmap = {
-      494C01010C002000900018001800FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      494C01010C002000A00018001800FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000600000006000000001002000000000000090
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
@@ -3421,7 +3422,7 @@ object FrmManOS: TFrmManOS
     Width = 24
     Left = 112
     Bitmap = {
-      494C01010C002C00A80018001800FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      494C01010C002C00B80018001800FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000600000006000000001002000000000000090
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
@@ -4674,6 +4675,7 @@ object FrmManOS: TFrmManOS
     end
     object ADOQueryProdutopreco: TFloatField
       FieldName = 'preco'
+      DisplayFormat = ',#0.00'
     end
   end
   object DSProduto: TDataSource
@@ -4686,7 +4688,7 @@ object FrmManOS: TFrmManOS
     Left = 368
     Top = 217
     Bitmap = {
-      494C010102005C006C0010001800FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      494C010102005C007C0010001800FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000400000001800000001002000000000000018
       0000000000000000000000000000000000000000000000000000000000000000
       00000000000000000000F8FCFD0A7CC8E5C083CFECB8FAFDFE07000000000000

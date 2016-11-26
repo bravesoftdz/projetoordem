@@ -134,7 +134,8 @@ object FrmManProduto: TFrmManProduto
     Width = 630
     Height = 351
     Align = alClient
-    DataSource = DM.DSSolucao
+    DataSource = DS
+    Options = [dgTitles, dgIndicator, dgColumnResize, dgColLines, dgRowLines, dgTabs, dgConfirmDelete, dgCancelOnExit, dgTitleClick, dgTitleHotTrack]
     TabOrder = 4
     TitleFont.Charset = DEFAULT_CHARSET
     TitleFont.Color = clWindowText
@@ -150,36 +151,30 @@ object FrmManProduto: TFrmManProduto
       end
       item
         Expanded = False
-        FieldName = 'preco'
-        Title.Caption = 'Pre'#231'o'
-        Visible = True
-      end
-      item
-        Expanded = False
         FieldName = 'especificacoes'
         Title.Caption = 'Especifica'#231#245'es'
-        Width = 234
+        Width = 197
         Visible = True
       end
       item
         Expanded = False
         FieldName = 'marca'
         Title.Caption = 'Marca'
-        Width = 109
+        Width = 116
         Visible = True
       end
       item
         Expanded = False
         FieldName = 'quantidade'
         Title.Caption = 'Quantidade'
-        Width = 70
+        Width = 91
         Visible = True
       end
       item
         Expanded = False
-        FieldName = 'tipo'
-        Title.Caption = 'TIPO'
-        Width = 57
+        FieldName = 'preco'
+        Title.Caption = 'Pre'#231'o - R$'
+        Width = 115
         Visible = True
       end>
   end
@@ -189,7 +184,7 @@ object FrmManProduto: TFrmManProduto
     Left = 264
     Top = 240
     Bitmap = {
-      494C010107002400640018001800FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      494C0101070024006C0018001800FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000600000003000000001002000000000000048
       0000000000000000000000000000000000000000000000000000000000000000
       00000000000000000000FDFAF709F1DFCA41E0B88992D29956D0CB893BF2C983
@@ -796,7 +791,7 @@ object FrmManProduto: TFrmManProduto
     Left = 336
     Top = 240
     Bitmap = {
-      494C010107002400700018001800FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      494C010107002400780018001800FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000600000003000000001002000000000000048
       0000000000000000000000000000000000000000000000000000000000000000
       00000000000000000000FDFDFD09F5F5F541E8E8E892DFDFDFD0D9D9D9F2D8D8
@@ -1403,7 +1398,7 @@ object FrmManProduto: TFrmManProduto
     Left = 400
     Top = 240
     Bitmap = {
-      494C010107002400640018001800FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      494C0101070024006C0018001800FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000600000003000000001002000000000000048
       0000000000000000000000000000000000000000000000000000000000000000
       00000000000000000000FCF9F609EED8BF41D9A86F92C98333D0C06F11F2BD68
@@ -2003,5 +1998,43 @@ object FrmManProduto: TFrmManProduto
       C00003C00003C00003C00003E00007E00007E00007E00007F0000FF0000FF000
       0FF0000FFC003FFC003FFC003FFC003F00000000000000000000000000000000
       000000000000}
+  end
+  object ApplicationEvents1: TApplicationEvents
+    OnException = ApplicationEvents1Exception
+    Left = 472
+    Top = 41
+  end
+  object DS: TDataSource
+    DataSet = ADODataSet1
+    Left = 336
+    Top = 41
+  end
+  object ADODataSet1: TADODataSet
+    Active = True
+    Connection = DM.ADOConnection1
+    CursorType = ctStatic
+    CommandText = 'select * from Solucao where tipo='#39'produto'#39
+    Parameters = <>
+    Left = 400
+    Top = 41
+    object ADODataSet1id: TAutoIncField
+      FieldName = 'id'
+      ReadOnly = True
+    end
+    object ADODataSet1preco: TFloatField
+      FieldName = 'preco'
+      DisplayFormat = ',#0.00'
+    end
+    object ADODataSet1especificacoes: TStringField
+      FieldName = 'especificacoes'
+      Size = 250
+    end
+    object ADODataSet1marca: TStringField
+      FieldName = 'marca'
+      Size = 50
+    end
+    object ADODataSet1quantidade: TIntegerField
+      FieldName = 'quantidade'
+    end
   end
 end

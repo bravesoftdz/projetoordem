@@ -69,11 +69,11 @@ CREATE TABLE Solucao(
 )
 
 CREATE TABLE SolucaoXOrdem(
-	id_solucao int not null,
+	id_solucao int,
 	num_os int,
-	valor_unit float not null,
-	valor_total float not null,
-	quant int not null,
+	valor_unit float,
+	valor_total float,
+	quant int,
 	descricao varchar,
 	CONSTRAINT PK_ProdutoXOrdem PRIMARY KEY (id_solucao, num_os),
 	CONSTRAINT FK_ProdutoXOrdem2 FOREIGN KEY (id_solucao) REFERENCES solucao (id),

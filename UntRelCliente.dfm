@@ -251,7 +251,7 @@ object FrmRelCliente: TFrmRelCliente
           Highlight.Fill.BackColor = 15000804
         end
         object frxDBDataset1id: TfrxMemoView
-          Left = 3.779530000000000000
+          Left = 11.779530000000000000
           Top = 3.779530000000000000
           Width = 52.913420000000000000
           Height = 18.897650000000000000
@@ -262,9 +262,9 @@ object FrmRelCliente: TFrmRelCliente
             '[frxDBDataset1."id"]')
         end
         object frxDBDataset1nome_razao: TfrxMemoView
-          Left = 64.252010000000000000
+          Left = 74.252010000000000000
           Top = 3.779530000000000000
-          Width = 113.385900000000000000
+          Width = 132.283550000000000000
           Height = 18.897650000000000000
           DataField = 'nome_razao'
           DataSet = frxDBDataset1
@@ -273,9 +273,9 @@ object FrmRelCliente: TFrmRelCliente
             '[frxDBDataset1."nome_razao"]')
         end
         object frxDBDataset1cidade: TfrxMemoView
-          Left = 192.756030000000000000
+          Left = 212.196970000000000000
           Top = 3.779530000000000000
-          Width = 105.826840000000000000
+          Width = 113.385900000000000000
           Height = 18.897650000000000000
           DataField = 'cidade'
           DataSet = frxDBDataset1
@@ -284,7 +284,7 @@ object FrmRelCliente: TFrmRelCliente
             '[frxDBDataset1."cidade"]')
         end
         object frxDBDataset1estado: TfrxMemoView
-          Left = 325.039580000000000000
+          Left = 335.362400000000000000
           Top = 3.779530000000000000
           Width = 52.913420000000000000
           Height = 18.897650000000000000
@@ -295,9 +295,9 @@ object FrmRelCliente: TFrmRelCliente
             '[frxDBDataset1."estado"]')
         end
         object frxDBDataset1telefone: TfrxMemoView
-          Left = 423.307360000000000000
+          Left = 395.055350000000000000
           Top = 3.779530000000000000
-          Width = 98.267780000000000000
+          Width = 154.960730000000000000
           Height = 18.897650000000000000
           DataField = 'telefone'
           DataSet = frxDBDataset1
@@ -306,9 +306,9 @@ object FrmRelCliente: TFrmRelCliente
             '[frxDBDataset1."telefone"]')
         end
         object frxDBDataset1celular: TfrxMemoView
-          Left = 544.252320000000000000
+          Left = 553.795610000000000000
           Top = 3.779530000000000000
-          Width = 98.267780000000000000
+          Width = 151.181200000000000000
           Height = 18.897650000000000000
           DataField = 'celular'
           DataSet = frxDBDataset1
@@ -319,11 +319,12 @@ object FrmRelCliente: TFrmRelCliente
       end
       object PageFooter1: TfrxPageFooter
         FillType = ftBrush
-        Height = 22.677180000000000000
+        Height = 41.574830000000000000
         Top = 374.173470000000000000
         Width = 718.110700000000000000
         object Memo1: TfrxMemoView
-          Left = 514.016080000000000000
+          Left = 476.220780000000000000
+          Top = 11.338590000000000000
           Width = 200.315090000000000000
           Height = 18.897650000000000000
           HAlign = haRight
@@ -337,11 +338,17 @@ object FrmRelCliente: TFrmRelCliente
         end
         object Memo12: TfrxMemoView
           Left = 37.795300000000000000
-          Top = 3.779530000000000000
+          Top = 11.338590000000000000
           Width = 181.417440000000000000
           Height = 18.897650000000000000
           Memo.UTF8W = (
             '[Date] - [Time]')
+        end
+        object Line2: TfrxLineView
+          Top = 3.779530000000000000
+          Width = 718.110700000000000000
+          Color = clBlack
+          Diagonal = True
         end
       end
       object PageHeader1: TfrxPageHeader
@@ -350,9 +357,9 @@ object FrmRelCliente: TFrmRelCliente
         Top = 18.897650000000000000
         Width = 718.110700000000000000
         object Memo2: TfrxMemoView
-          Left = 132.283550000000000000
+          Left = 151.181200000000000000
           Top = 26.456710000000000000
-          Width = 464.882190000000000000
+          Width = 370.393940000000000000
           Height = 22.677180000000000000
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clBlack
@@ -360,12 +367,12 @@ object FrmRelCliente: TFrmRelCliente
           Font.Name = 'Arial'
           Font.Style = [fsBold]
           Memo.UTF8W = (
-            'Sistema de Gerenciamento de Ordem de Servi'#231'os')
+            'COALA - Gest'#227'o de Ordem de Servi'#231'os')
           ParentFont = False
         end
         object Memo3: TfrxMemoView
           Left = 272.126160000000000000
-          Top = 52.913420000000000000
+          Top = 60.472480000000000000
           Width = 158.740260000000000000
           Height = 18.897650000000000000
           Font.Charset = DEFAULT_CHARSET
@@ -378,7 +385,7 @@ object FrmRelCliente: TFrmRelCliente
           ParentFont = False
         end
         object Picture1: TfrxPictureView
-          Left = 60.472480000000000000
+          Left = 71.811070000000000000
           Top = 7.559060000000000000
           Width = 94.488250000000000000
           Height = 60.472480000000000000
@@ -4216,6 +4223,12 @@ object FrmRelCliente: TFrmRelCliente
           Transparent = False
           TransparentColor = clWhite
         end
+        object Line1: TfrxLineView
+          Top = 94.488250000000000000
+          Width = 718.110700000000000000
+          Color = clBlack
+          Diagonal = True
+        end
       end
       object ColumnHeader1: TfrxColumnHeader
         FillType = ftBrush
@@ -4223,7 +4236,7 @@ object FrmRelCliente: TFrmRelCliente
         Top = 147.401670000000000000
         Width = 718.110700000000000000
         object Memo4: TfrxMemoView
-          Left = 3.779530000000000000
+          Left = 10.779530000000000000
           Width = 52.913420000000000000
           Height = 18.897650000000000000
           Font.Charset = DEFAULT_CHARSET
@@ -4236,8 +4249,8 @@ object FrmRelCliente: TFrmRelCliente
           ParentFont = False
         end
         object Memo5: TfrxMemoView
-          Left = 64.252010000000000000
-          Width = 113.385900000000000000
+          Left = 73.252010000000000000
+          Width = 132.283550000000000000
           Height = 18.897650000000000000
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clBlack
@@ -4249,8 +4262,8 @@ object FrmRelCliente: TFrmRelCliente
           ParentFont = False
         end
         object Memo6: TfrxMemoView
-          Left = 192.756030000000000000
-          Width = 105.826840000000000000
+          Left = 213.196970000000000000
+          Width = 113.385900000000000000
           Height = 18.897650000000000000
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clBlack
@@ -4262,7 +4275,7 @@ object FrmRelCliente: TFrmRelCliente
           ParentFont = False
         end
         object Memo7: TfrxMemoView
-          Left = 325.039580000000000000
+          Left = 335.362400000000000000
           Width = 52.913420000000000000
           Height = 18.897650000000000000
           Font.Charset = DEFAULT_CHARSET
@@ -4275,8 +4288,8 @@ object FrmRelCliente: TFrmRelCliente
           ParentFont = False
         end
         object Memo8: TfrxMemoView
-          Left = 423.307360000000000000
-          Width = 98.267780000000000000
+          Left = 394.055350000000000000
+          Width = 154.960730000000000000
           Height = 18.897650000000000000
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clBlack
@@ -4288,8 +4301,8 @@ object FrmRelCliente: TFrmRelCliente
           ParentFont = False
         end
         object Memo9: TfrxMemoView
-          Left = 544.252320000000000000
-          Width = 98.267780000000000000
+          Left = 554.795610000000000000
+          Width = 151.181200000000000000
           Height = 18.897650000000000000
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clBlack
@@ -4307,7 +4320,7 @@ object FrmRelCliente: TFrmRelCliente
         Top = 317.480520000000000000
         Width = 718.110700000000000000
         object SysMemo1: TfrxSysMemoView
-          Left = 177.637910000000000000
+          Left = 206.637910000000000000
           Top = 11.338590000000000000
           Width = 94.488250000000000000
           Height = 18.897650000000000000
@@ -4315,7 +4328,7 @@ object FrmRelCliente: TFrmRelCliente
             '[COUNT(MasterData1)]')
         end
         object Memo10: TfrxMemoView
-          Left = 11.338590000000000000
+          Left = 40.338590000000000000
           Top = 11.338590000000000000
           Width = 162.519790000000000000
           Height = 18.897650000000000000

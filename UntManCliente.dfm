@@ -158,6 +158,7 @@ object FrmManCliente: TFrmManCliente
     Height = 244
     Align = alClient
     DataSource = DM.DSCliente
+    Options = [dgTitles, dgIndicator, dgColumnResize, dgColLines, dgRowLines, dgTabs, dgConfirmDelete, dgCancelOnExit, dgTitleClick, dgTitleHotTrack]
     TabOrder = 4
     TitleFont.Charset = DEFAULT_CHARSET
     TitleFont.Color = clWindowText
@@ -175,7 +176,21 @@ object FrmManCliente: TFrmManCliente
         Expanded = False
         FieldName = 'nome_razao'
         Title.Caption = 'Nome / R. Social'
-        Width = 375
+        Width = 187
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'telefone'
+        Title.Caption = 'Telefone'
+        Width = 110
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'celular'
+        Title.Caption = 'Celular'
+        Width = 108
         Visible = True
       end>
   end
@@ -183,7 +198,7 @@ object FrmManCliente: TFrmManCliente
     Height = 24
     Width = 24
     Bitmap = {
-      494C010107000C004C0018001800FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      494C010107000C00540018001800FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000600000003000000001002000000000000048
       0000000000000000000000000000000000000000000000000000000000000000
       00000000000000000000FDFAF709F1DFCA41E0B88992D29956D0CB893BF2C983
@@ -789,7 +804,7 @@ object FrmManCliente: TFrmManCliente
     Width = 24
     Left = 40
     Bitmap = {
-      494C0101070018004C0018001800FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      494C010107001800540018001800FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000600000003000000001002000000000000048
       0000000000000000000000000000000000000000000000000000000000000000
       00000000000000000000FDFDFD09F5F5F541E8E8E892DFDFDFD0D9D9D9F2D8D8
@@ -1395,7 +1410,7 @@ object FrmManCliente: TFrmManCliente
     Width = 24
     Left = 80
     Bitmap = {
-      494C0101070088004C0018001800FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      494C010107008800540018001800FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000600000003000000001002000000000000048
       0000000000000000000000000000000000000000000000000000000000000000
       00000000000000000000FCF9F609EED8BF41D9A86F92C98333D0C06F11F2BD68
