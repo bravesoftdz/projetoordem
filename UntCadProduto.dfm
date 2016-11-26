@@ -25,7 +25,6 @@ object FrmCadProduto: TFrmCadProduto
     Color = clHighlight
     ParentBackground = False
     TabOrder = 0
-    ExplicitWidth = 383
     object Label1: TLabel
       Left = 45
       Top = 12
@@ -58,7 +57,6 @@ object FrmCadProduto: TFrmCadProduto
     ParentShowHint = False
     ShowHint = True
     TabOrder = 1
-    ExplicitWidth = 383
     object btn_salvar: TToolButton
       Left = 0
       Top = 0
@@ -98,8 +96,6 @@ object FrmCadProduto: TFrmCadProduto
       item
         Width = 50
       end>
-    ExplicitTop = 462
-    ExplicitWidth = 383
   end
   object pnlFicha: TPanel
     Left = 0
@@ -114,9 +110,6 @@ object FrmCadProduto: TFrmCadProduto
     Font.Style = []
     ParentFont = False
     TabOrder = 3
-    ExplicitTop = 0
-    ExplicitWidth = 265
-    ExplicitHeight = 300
     object Label2: TLabel
       Left = 190
       Top = 73
@@ -125,7 +118,7 @@ object FrmCadProduto: TFrmCadProduto
       Caption = 'Pre'#231'o'
     end
     object Label3: TLabel
-      Left = 190
+      Left = 54
       Top = 14
       Width = 29
       Height = 13
@@ -145,21 +138,6 @@ object FrmCadProduto: TFrmCadProduto
       Height = 13
       Caption = 'Quantidade'
     end
-    object DBText1: TDBText
-      Left = 54
-      Top = 37
-      Width = 65
-      Height = 17
-      DataField = 'id'
-      DataSource = DM.DSSolucao
-    end
-    object Label9: TLabel
-      Left = 54
-      Top = 18
-      Width = 33
-      Height = 13
-      Caption = 'C'#243'digo'
-    end
     object DBEdit1: TDBEdit
       Left = 190
       Top = 91
@@ -170,7 +148,7 @@ object FrmCadProduto: TFrmCadProduto
       TabOrder = 2
     end
     object DBEdit2: TDBEdit
-      Left = 190
+      Left = 54
       Top = 34
       Width = 96
       Height = 21

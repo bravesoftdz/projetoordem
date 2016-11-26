@@ -24,8 +24,6 @@ type
     DBEdit4: TDBEdit;
     DBMemo2: TDBMemo;
     DBEdit6: TDBEdit;
-    DBText2: TDBText;
-    Label10: TLabel;
     pnlFicha: TPanel;
     procedure btn_salvarClick(Sender: TObject);
     procedure btn_cancelarClick(Sender: TObject);

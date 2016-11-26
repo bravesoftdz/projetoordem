@@ -22,8 +22,6 @@ type
     Label3: TLabel;
     Label4: TLabel;
     Quantidade: TLabel;
-    DBText1: TDBText;
-    Label9: TLabel;
     DBEdit1: TDBEdit;
     DBEdit2: TDBEdit;
     DBMemo1: TDBMemo;

@@ -16,7 +16,8 @@ uses
   UntRelCliente in 'UntRelCliente.pas' {FrmRelCliente},
   UntRelFuncionario in 'UntRelFuncionario.pas' {FrmRelFuncionario},
   UntManServico in 'UntManServico.pas' {FrmManServico},
-  UntCadServico in 'UntCadServico.pas' {FrmCadServico};
+  UntCadServico in 'UntCadServico.pas' {FrmCadServico},
+  UntRelOrdem in 'UntRelOrdem.pas' {ImpRelOrdem};
 
 {$R *.res}
 
@@ -36,5 +37,6 @@ begin
   Application.CreateForm(TFrmRelFuncionario, FrmRelFuncionario);
   Application.CreateForm(TFrmManServico, FrmManServico);
   Application.CreateForm(TFrmCadServico, FrmCadServico);
+  Application.CreateForm(TImpRelOrdem, ImpRelOrdem);
   Application.Run;
 end.

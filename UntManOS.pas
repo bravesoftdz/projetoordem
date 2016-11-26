@@ -6,7 +6,8 @@ uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.ExtCtrls,
   System.ImageList, Vcl.ImgList, Vcl.ToolWin, Vcl.ComCtrls, DB, Vcl.Grids,
-  Vcl.DBGrids, Vcl.Buttons, Vcl.DBCtrls, Vcl.Mask, Data.Win.ADODB;
+  Vcl.DBGrids, Vcl.Buttons, Vcl.DBCtrls, Vcl.Mask, Data.Win.ADODB, frxClass,
+  frxDBSet;
 
 type
   TFrmManOS = class(TForm)
@@ -87,6 +88,39 @@ type
     DBText3: TDBText;
     Label17: TLabel;
     Label6: TLabel;
+    Label10: TLabel;
+    ADOQryOrdem: TADOQuery;
+    DSControla: TDataSource;
+    frxDBDataset1: TfrxDBDataset;
+    frxReport1: TfrxReport;
+    ADOQryOrdemnumero: TAutoIncField;
+    ADOQryOrdemid_cliente: TIntegerField;
+    ADOQryOrdemid_funcionario: TIntegerField;
+    ADOQryOrdemdescri_equipamento: TStringField;
+    ADOQryOrdemdata_inicio: TStringField;
+    ADOQryOrdemdata_termino: TStringField;
+    ADOQryOrdemobservacoes: TStringField;
+    ADOQryOrdemserie_equipamento: TStringField;
+    ADOQryOrdemstatus_ordem: TStringField;
+    ADOQryOrdemvalor_produtos: TFloatField;
+    ADOQryOrdemvalor_total: TFloatField;
+    ADOQryOrdemnome_razao: TStringField;
+    ADOQryOrdemendereco: TStringField;
+    ADOQryOrdemcidade: TStringField;
+    ADOQryOrdembairro: TStringField;
+    ADOQryOrdemestado: TStringField;
+    ADOQryOrdemcep: TStringField;
+    ADOQryOrdemfunc_nome: TStringField;
+    ADOQrySolucaoXOrdem: TADOQuery;
+    ADOQrySolucaoXOrdemid_solucao: TIntegerField;
+    ADOQrySolucaoXOrdemnum_os: TIntegerField;
+    ADOQrySolucaoXOrdemvalor_unit: TFloatField;
+    ADOQrySolucaoXOrdemvalor_total: TFloatField;
+    ADOQrySolucaoXOrdemquant: TIntegerField;
+    ADOQrySolucaoXOrdemdescricao: TStringField;
+    ADOQrySolucaoXOrdemespecificacoes: TStringField;
+    frxDBDataset2: TfrxDBDataset;
+    ADOQryOrdemcargo: TStringField;
     procedure btn_PrimeiroClick(Sender: TObject);
     procedure btn_AnteriorClick(Sender: TObject);
     procedure btn_SairClick(Sender: TObject);
@@ -107,6 +141,7 @@ type
     procedure SpeedButton1Click(Sender: TObject);
     procedure SpeedButton2Click(Sender: TObject);
     procedure SpeedButton3Click(Sender: TObject);
+    procedure btn_ImprimirClick(Sender: TObject);
   private
     { Private declarations }
     procedure Botoes(Ativa: Boolean);
@@ -123,7 +158,7 @@ implementation
 
 {$R *.dfm}
 
-uses UntDM, UntManCliente, UntManFuncionario, UntManProduto;
+uses UntDM, UntManCliente, UntManFuncionario, UntManProduto, UntRelOrdem;
 
 procedure TFrmManOS.Bbt_CancelarClick(Sender: TObject);
 begin
@@ -280,6 +315,12 @@ begin
     ShowMessage('Registro nº '+DM.ADODSOrdemServiconumero.AsString+ ' com sucesso.');
     DM.ADODSOrdemServico.Delete;
   end;
+end;
+
+procedure TFrmManOS.btn_ImprimirClick(Sender: TObject);
+begin
+ ImpRelOrdem.Edit1.Text := dm.ADODSOrdemServiconumero.AsString;
+ ImpRelOrdem.ShowModal();
 end;
 
 procedure TFrmManOS.btn_InserirClick(Sender: TObject);

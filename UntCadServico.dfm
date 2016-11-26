@@ -104,24 +104,9 @@ object FrmCadServico: TFrmCadServico
     Height = 192
     Align = alClient
     TabOrder = 3
-    object DBText2: TDBText
-      Left = 12
-      Top = 31
-      Width = 65
-      Height = 17
-      DataField = 'id'
-      DataSource = DM.DSSolucao
-    end
-    object Label10: TLabel
-      Left = 12
-      Top = 12
-      Width = 33
-      Height = 13
-      Caption = 'C'#243'digo'
-    end
     object Label5: TLabel
       Left = 12
-      Top = 109
+      Top = 67
       Width = 50
       Height = 13
       Caption = 'Pre'#231'o - R$'
@@ -134,30 +119,30 @@ object FrmCadServico: TFrmCadServico
     end
     object Label7: TLabel
       Left = 12
-      Top = 57
+      Top = 15
       Width = 69
       Height = 13
       Caption = 'Especifica'#231#245'es'
     end
     object Label8: TLabel
       Left = 246
-      Top = 57
+      Top = 15
       Width = 56
       Height = 13
       Caption = 'Quantidade'
     end
     object DBEdit4: TDBEdit
       Left = 12
-      Top = 128
+      Top = 86
       Width = 96
       Height = 21
       DataField = 'preco'
       DataSource = DM.DSSolucao
-      TabOrder = 0
+      TabOrder = 2
     end
     object DBEdit6: TDBEdit
       Left = 246
-      Top = 76
+      Top = 34
       Width = 96
       Height = 21
       DataField = 'quantidade'
@@ -166,12 +151,12 @@ object FrmCadServico: TFrmCadServico
     end
     object DBMemo2: TDBMemo
       Left = 12
-      Top = 76
+      Top = 34
       Width = 202
       Height = 21
       DataField = 'especificacoes'
       DataSource = DM.DSSolucao
-      TabOrder = 2
+      TabOrder = 0
     end
   end
 end
