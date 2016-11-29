@@ -1096,7 +1096,7 @@ object FrmManOS: TFrmManOS
     Width = 24
     Left = 16
     Bitmap = {
-      494C01010C002000B80018001800FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      494C01010C002000BC0018001800FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000600000006000000001002000000000000090
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
@@ -2296,7 +2296,7 @@ object FrmManOS: TFrmManOS
     Width = 24
     Left = 64
     Bitmap = {
-      494C01010C002000AC0018001800FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      494C01010C002000B00018001800FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000600000006000000001002000000000000090
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
@@ -3496,7 +3496,7 @@ object FrmManOS: TFrmManOS
     Width = 24
     Left = 112
     Bitmap = {
-      494C01010C002C00C40018001800FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      494C01010C002C00C80018001800FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000600000006000000001002000000000000090
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
@@ -4762,7 +4762,7 @@ object FrmManOS: TFrmManOS
     Left = 392
     Top = 217
     Bitmap = {
-      494C010102005C00880010001800FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      494C010102005C008C0010001800FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000400000001800000001002000000000000018
       0000000000000000000000000000000000000000000000000000000000000000
       00000000000000000000F8FCFD0A7CC8E5C083CFECB8FAFDFE07000000000000
@@ -5160,7 +5160,7 @@ object FrmManOS: TFrmManOS
         end
         object Picture1: TfrxPictureView
           Left = 15.118120000000000000
-          Top = 7.559059999999999000
+          Top = 7.559060000000000000
           Width = 211.653680000000000000
           Height = 90.708720000000000000
           Picture.Data = {
@@ -5391,7 +5391,7 @@ object FrmManOS: TFrmManOS
       object PageFooter1: TfrxPageFooter
         FillType = ftBrush
         Height = 22.677180000000000000
-        Top = 585.827150000000000000
+        Top = 597.165740000000000000
         Width = 718.110700000000000000
         object Memo21: TfrxMemoView
           Left = 11.338590000000000000
@@ -5425,11 +5425,11 @@ object FrmManOS: TFrmManOS
       object ReportSummary1: TfrxReportSummary
         FillType = ftBrush
         Height = 30.236240000000000000
-        Top = 532.913730000000000000
+        Top = 544.252320000000000000
         Width = 718.110700000000000000
         object Memo22: TfrxMemoView
           Left = 188.976500000000000000
-          Top = 7.559060000000045000
+          Top = 7.559060000000050000
           Width = 102.047310000000000000
           Height = 18.897650000000000000
           Font.Charset = DEFAULT_CHARSET
@@ -5444,7 +5444,7 @@ object FrmManOS: TFrmManOS
         end
         object SysMemo1: TfrxSysMemoView
           Left = 298.582870000000000000
-          Top = 7.559060000000045000
+          Top = 7.559060000000000000
           Width = 139.842610000000000000
           Height = 18.897650000000000000
           Font.Charset = DEFAULT_CHARSET
@@ -5453,11 +5453,13 @@ object FrmManOS: TFrmManOS
           Font.Name = 'Arial'
           Font.Style = []
           HAlign = haCenter
+          Memo.UTF8W = (
+            '[SUM(<frxDBDataset2."quant">,DetailData1)]')
           ParentFont = False
         end
         object Memo24: TfrxMemoView
           Left = 514.016080000000000000
-          Top = 7.559060000000045000
+          Top = 7.559060000000050000
           Width = 71.811070000000000000
           Height = 18.897650000000000000
           Font.Charset = DEFAULT_CHARSET
@@ -5472,7 +5474,7 @@ object FrmManOS: TFrmManOS
         end
         object frxDBDataset1valor_total: TfrxMemoView
           Left = 593.386210000000000000
-          Top = 7.559060000000045000
+          Top = 7.559060000000000000
           Width = 117.165430000000000000
           Height = 18.897650000000000000
           DataField = 'valor_total'
@@ -5498,27 +5500,38 @@ object FrmManOS: TFrmManOS
         Font.Height = -13
         Font.Name = 'Arial'
         Font.Style = []
-        Height = 257.008040000000000000
+        Height = 268.346630000000000000
         ParentFont = False
         Top = 170.078850000000000000
         Width = 718.110700000000000000
         DataSet = frxDBDataset1
         DataSetName = 'frxDBDataset1'
         RowCount = 0
+        object Shape1: TfrxShapeView
+          Top = 104.047310000000000000
+          Width = 718.110700000000000000
+          Height = 124.724490000000000000
+        end
         object frxDBDataset1numero: TfrxMemoView
           Left = 109.606370000000000000
-          Top = 11.338590000000010000
+          Top = 11.338590000000000000
           Width = 79.370130000000000000
           Height = 18.897650000000000000
           DataField = 'numero'
           DataSet = frxDBDataset1
           DataSetName = 'frxDBDataset1'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -13
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
           Memo.UTF8W = (
             '[frxDBDataset1."numero"]')
+          ParentFont = False
         end
         object frxDBDataset1data_inicio: TfrxMemoView
           Left = 109.606370000000000000
-          Top = 49.133890000000010000
+          Top = 49.133890000000000000
           Width = 79.370130000000000000
           Height = 18.897650000000000000
           DataField = 'data_inicio'
@@ -5529,7 +5542,7 @@ object FrmManOS: TFrmManOS
         end
         object frxDBDataset1data_termino: TfrxMemoView
           Left = 298.582870000000000000
-          Top = 49.133890000000010000
+          Top = 49.133890000000000000
           Width = 79.370130000000000000
           Height = 18.897650000000000000
           DataField = 'data_termino'
@@ -5539,8 +5552,8 @@ object FrmManOS: TFrmManOS
             '[frxDBDataset1."data_termino"]')
         end
         object frxDBDataset1status_ordem: TfrxMemoView
-          Left = 498.897960000000000000
-          Top = 49.133890000000010000
+          Left = 491.338900000000000000
+          Top = 49.133890000000000000
           Width = 147.401670000000000000
           Height = 18.897650000000000000
           DataField = 'status_ordem'
@@ -5562,7 +5575,7 @@ object FrmManOS: TFrmManOS
         end
         object frxDBDataset1id_funcionario: TfrxMemoView
           Left = 109.606370000000000000
-          Top = 75.590600000000000000
+          Top = 83.149660000000000000
           Width = 56.692950000000000000
           Height = 18.897650000000000000
           DataField = 'id_funcionario'
@@ -5574,7 +5587,7 @@ object FrmManOS: TFrmManOS
         object frxDBDataset1nome_razao: TfrxMemoView
           Left = 170.078850000000000000
           Top = 108.047310000000000000
-          Width = 196.535560000000000000
+          Width = 487.559370000000000000
           Height = 18.897650000000000000
           DataField = 'nome_razao'
           DataSet = frxDBDataset1
@@ -5584,7 +5597,7 @@ object FrmManOS: TFrmManOS
         end
         object frxDBDataset1func_nome: TfrxMemoView
           Left = 170.078850000000000000
-          Top = 75.590600000000000000
+          Top = 83.149660000000000000
           Width = 200.315090000000000000
           Height = 18.897650000000000000
           DataField = 'func_nome'
@@ -5594,8 +5607,8 @@ object FrmManOS: TFrmManOS
             '[frxDBDataset1."func_nome"]')
         end
         object frxDBDataset1cargo: TfrxMemoView
-          Left = 506.457020000000000000
-          Top = 75.590600000000000000
+          Left = 570.709030000000000000
+          Top = 83.149660000000000000
           Width = 147.401670000000000000
           Height = 18.897650000000000000
           DataField = 'cargo'
@@ -5607,7 +5620,7 @@ object FrmManOS: TFrmManOS
         object frxDBDataset1endereco: TfrxMemoView
           Left = 109.606370000000000000
           Top = 130.724490000000000000
-          Width = 253.228510000000000000
+          Width = 260.787570000000000000
           Height = 18.897650000000000000
           DataField = 'endereco'
           DataSet = frxDBDataset1
@@ -5627,7 +5640,7 @@ object FrmManOS: TFrmManOS
             '[frxDBDataset1."bairro"]')
         end
         object frxDBDataset1estado: TfrxMemoView
-          Left = 661.417750000000000000
+          Left = 650.079160000000000000
           Top = 130.724490000000000000
           Width = 41.574830000000000000
           Height = 18.897650000000000000
@@ -5650,7 +5663,7 @@ object FrmManOS: TFrmManOS
         end
         object frxDBDataset1email: TfrxMemoView
           Left = 109.606370000000000000
-          Top = 179.858380000000000000
+          Top = 178.858380000000000000
           Width = 253.228510000000000000
           Height = 18.897650000000000000
           DataField = 'email'
@@ -5661,7 +5674,7 @@ object FrmManOS: TFrmManOS
         end
         object Memo1: TfrxMemoView
           Left = 11.338590000000000000
-          Top = 11.338590000000010000
+          Top = 11.338590000000000000
           Width = 94.488250000000000000
           Height = 18.897650000000000000
           Font.Charset = DEFAULT_CHARSET
@@ -5671,12 +5684,12 @@ object FrmManOS: TFrmManOS
           Font.Style = [fsBold]
           HAlign = haRight
           Memo.UTF8W = (
-            'N'#250'mero')
+            'OS N'#250'mero')
           ParentFont = False
         end
         object Memo2: TfrxMemoView
           Left = 11.338590000000000000
-          Top = 49.133890000000010000
+          Top = 49.133890000000000000
           Width = 94.488250000000000000
           Height = 18.897650000000000000
           Font.Charset = DEFAULT_CHARSET
@@ -5691,7 +5704,7 @@ object FrmManOS: TFrmManOS
         end
         object Memo3: TfrxMemoView
           Left = 200.315090000000000000
-          Top = 49.133890000000010000
+          Top = 49.133890000000000000
           Width = 94.488250000000000000
           Height = 18.897650000000000000
           Font.Charset = DEFAULT_CHARSET
@@ -5706,7 +5719,7 @@ object FrmManOS: TFrmManOS
         end
         object Memo4: TfrxMemoView
           Left = 393.071120000000000000
-          Top = 49.133890000000010000
+          Top = 49.133890000000000000
           Width = 94.488250000000000000
           Height = 18.897650000000000000
           Font.Charset = DEFAULT_CHARSET
@@ -5765,7 +5778,7 @@ object FrmManOS: TFrmManOS
           ParentFont = False
         end
         object Memo8: TfrxMemoView
-          Left = 604.724800000000000000
+          Left = 597.165740000000000000
           Top = 130.724490000000000000
           Width = 49.133890000000000000
           Height = 18.897650000000000000
@@ -5796,7 +5809,7 @@ object FrmManOS: TFrmManOS
         end
         object Memo10: TfrxMemoView
           Left = 11.338590000000000000
-          Top = 179.858380000000000000
+          Top = 178.858380000000000000
           Width = 94.488250000000000000
           Height = 18.897650000000000000
           Font.Charset = DEFAULT_CHARSET
@@ -5811,7 +5824,7 @@ object FrmManOS: TFrmManOS
         end
         object Memo11: TfrxMemoView
           Left = 11.338590000000000000
-          Top = 75.590600000000000000
+          Top = 83.149660000000000000
           Width = 94.488250000000000000
           Height = 18.897650000000000000
           Font.Charset = DEFAULT_CHARSET
@@ -5825,9 +5838,9 @@ object FrmManOS: TFrmManOS
           ParentFont = False
         end
         object Memo12: TfrxMemoView
-          Left = 408.189240000000000000
-          Top = 75.590600000000000000
-          Width = 94.488250000000000000
+          Left = 510.236550000000000000
+          Top = 83.149660000000000000
+          Width = 56.692950000000000000
           Height = 18.897650000000000000
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clBlack
@@ -5873,7 +5886,7 @@ object FrmManOS: TFrmManOS
         end
         object Memo14: TfrxMemoView
           Left = 15.118120000000000000
-          Top = 232.551330000000000000
+          Top = 246.551330000000000000
           Width = 94.488250000000000000
           Height = 18.897650000000000000
           Font.Charset = DEFAULT_CHARSET
@@ -5887,7 +5900,7 @@ object FrmManOS: TFrmManOS
         end
         object Memo15: TfrxMemoView
           Left = 166.299320000000000000
-          Top = 234.330860000000000000
+          Top = 247.330860000000000000
           Width = 94.488250000000000000
           Height = 18.897650000000000000
           Font.Charset = DEFAULT_CHARSET
@@ -5901,7 +5914,7 @@ object FrmManOS: TFrmManOS
         end
         object Memo16: TfrxMemoView
           Left = 430.866420000000000000
-          Top = 234.330860000000000000
+          Top = 247.330860000000000000
           Width = 94.488250000000000000
           Height = 18.897650000000000000
           Font.Charset = DEFAULT_CHARSET
@@ -5915,7 +5928,7 @@ object FrmManOS: TFrmManOS
         end
         object Memo17: TfrxMemoView
           Left = 544.252320000000000000
-          Top = 234.330860000000000000
+          Top = 247.330860000000000000
           Width = 79.370130000000000000
           Height = 18.897650000000000000
           Font.Charset = DEFAULT_CHARSET
@@ -5929,7 +5942,7 @@ object FrmManOS: TFrmManOS
         end
         object Memo20: TfrxMemoView
           Left = 634.961040000000000000
-          Top = 234.330860000000000000
+          Top = 247.330860000000000000
           Width = 83.149660000000000000
           Height = 18.897650000000000000
           Font.Charset = DEFAULT_CHARSET
@@ -5941,15 +5954,106 @@ object FrmManOS: TFrmManOS
             'Valor Total')
           ParentFont = False
         end
+        object Line1: TfrxLineView
+          Left = 0.779530000000000000
+          Top = 151.960730000000000000
+          Width = 718.110700000000000000
+          Color = clBlack
+          Frame.Typ = [ftTop]
+        end
+        object Line2: TfrxLineView
+          Top = 173.858380000000000000
+          Width = 718.110700000000000000
+          Color = clBlack
+          Frame.Typ = [ftTop]
+        end
+        object Line3: TfrxLineView
+          Top = 200.315090000000000000
+          Width = 718.110700000000000000
+          Color = clBlack
+          Frame.Typ = [ftTop]
+        end
+        object Line5: TfrxLineView
+          Left = 105.826840000000000000
+          Top = 78.267780000000000000
+          Height = 151.181200000000000000
+          Color = clBlack
+          Frame.Typ = [ftLeft]
+        end
+        object Line4: TfrxLineView
+          Top = 128.504020000000000000
+          Width = 718.110700000000000000
+          Color = clBlack
+          Frame.Typ = [ftTop]
+        end
+        object Line6: TfrxLineView
+          Left = 374.173470000000000000
+          Top = 128.504020000000000000
+          Height = 22.677180000000000000
+          Color = clBlack
+          Frame.Typ = [ftLeft]
+        end
+        object Line7: TfrxLineView
+          Left = 593.386210000000000000
+          Top = 128.504020000000000000
+          Height = 22.677180000000000000
+          Color = clBlack
+          Frame.Typ = [ftLeft]
+        end
+        object Line8: TfrxLineView
+          Top = 77.590600000000000000
+          Width = 718.110700000000000000
+          Color = clBlack
+          Frame.Typ = [ftTop]
+        end
+        object Line10: TfrxLineView
+          Top = 79.370130000000000000
+          Height = 22.677180000000000000
+          Color = clBlack
+          Frame.Typ = [ftLeft]
+        end
+        object Line11: TfrxLineView
+          Left = 718.110700000000000000
+          Top = 83.929190000000000000
+          Height = 22.677180000000000000
+          Color = clBlack
+          Frame.Typ = [ftLeft]
+        end
+        object Line12: TfrxLineView
+          Left = 166.299320000000000000
+          Top = 78.370130000000000000
+          Height = 49.133890000000000000
+          Color = clBlack
+          Frame.Typ = [ftLeft]
+        end
+        object Line9: TfrxLineView
+          Left = 502.677490000000000000
+          Top = 79.370130000000000000
+          Height = 26.456710000000000000
+          Color = clBlack
+          Diagonal = True
+        end
       end
       object DetailData1: TfrxDetailData
         FillType = ftBrush
         Height = 22.677180000000000000
-        Top = 449.764070000000000000
+        Top = 461.102660000000000000
         Width = 718.110700000000000000
         DataSet = frxDBDataset2
         DataSetName = 'frxDBDataset2'
         RowCount = 0
+        object Memo25: TfrxMemoView
+          Width = 718.110700000000000000
+          Height = 18.897650000000000000
+          Highlight.Font.Charset = DEFAULT_CHARSET
+          Highlight.Font.Color = clRed
+          Highlight.Font.Height = -13
+          Highlight.Font.Name = 'Arial'
+          Highlight.Font.Style = []
+          Highlight.Condition = '<line> mod 2 = 0'
+          Highlight.FillType = ftBrush
+          Highlight.Fill.BackColor = clSilver
+        end
         object frxDBDataset2id_solucao: TfrxMemoView
           Left = 15.118120000000000000
           Width = 79.370130000000000000
@@ -6031,9 +6135,11 @@ object FrmManOS: TFrmManOS
     end
     object ADOQrySolucaoXOrdemvalor_unit: TFloatField
       FieldName = 'valor_unit'
+      DisplayFormat = ',#0.00'
     end
     object ADOQrySolucaoXOrdemvalor_total: TFloatField
       FieldName = 'valor_total'
+      DisplayFormat = ',#0.00'
     end
     object ADOQrySolucaoXOrdemquant: TIntegerField
       FieldName = 'quant'
