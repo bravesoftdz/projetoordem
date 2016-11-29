@@ -93,6 +93,8 @@ type
     DSControla: TDataSource;
     frxDBDataset1: TfrxDBDataset;
     frxReport1: TfrxReport;
+    frxDBDataset2: TfrxDBDataset;
+    BitBtn1: TBitBtn;
     ADOQryOrdemnumero: TAutoIncField;
     ADOQryOrdemid_cliente: TIntegerField;
     ADOQryOrdemid_funcionario: TIntegerField;
@@ -110,8 +112,13 @@ type
     ADOQryOrdembairro: TStringField;
     ADOQryOrdemestado: TStringField;
     ADOQryOrdemcep: TStringField;
+    ADOQryOrdemcargo: TStringField;
     ADOQryOrdemfunc_nome: TStringField;
+    ADOQryOrdemtelefone: TStringField;
+    ADOQryOrdemcelular: TStringField;
+    ADOQryOrdememail: TStringField;
     ADOQrySolucaoXOrdem: TADOQuery;
+    DSSxO: TDataSource;
     ADOQrySolucaoXOrdemid_solucao: TIntegerField;
     ADOQrySolucaoXOrdemnum_os: TIntegerField;
     ADOQrySolucaoXOrdemvalor_unit: TFloatField;
@@ -119,8 +126,6 @@ type
     ADOQrySolucaoXOrdemquant: TIntegerField;
     ADOQrySolucaoXOrdemdescricao: TStringField;
     ADOQrySolucaoXOrdemespecificacoes: TStringField;
-    frxDBDataset2: TfrxDBDataset;
-    ADOQryOrdemcargo: TStringField;
     procedure btn_PrimeiroClick(Sender: TObject);
     procedure btn_AnteriorClick(Sender: TObject);
     procedure btn_SairClick(Sender: TObject);
@@ -142,6 +147,7 @@ type
     procedure SpeedButton2Click(Sender: TObject);
     procedure SpeedButton3Click(Sender: TObject);
     procedure btn_ImprimirClick(Sender: TObject);
+    procedure BitBtn1Click(Sender: TObject);
   private
     { Private declarations }
     procedure Botoes(Ativa: Boolean);
@@ -158,7 +164,8 @@ implementation
 
 {$R *.dfm}
 
-uses UntDM, UntManCliente, UntManFuncionario, UntManProduto, UntRelOrdem;
+uses UntDM, UntManCliente, UntManFuncionario, UntManProduto, UntRelOrdem,
+  UntManServico;
 
 procedure TFrmManOS.Bbt_CancelarClick(Sender: TObject);
 begin
@@ -216,6 +223,11 @@ Bbt_Excluir.Enabled := false;
 
 pnlItems.Enabled := true;
 DM.ADODSSolucaoXOrdem.Insert;
+end;
+
+procedure TFrmManOS.BitBtn1Click(Sender: TObject);
+begin
+  FrmManServico.ShowModal;
 end;
 
 procedure TFrmManOS.Botoes(Ativa: Boolean);
@@ -319,8 +331,8 @@ end;
 
 procedure TFrmManOS.btn_ImprimirClick(Sender: TObject);
 begin
- ImpRelOrdem.Edit1.Text := dm.ADODSOrdemServiconumero.AsString;
- ImpRelOrdem.ShowModal();
+  ImpRelOrdem.Edit1.Text := dm.ADODSOrdemServiconumero.AsString;
+  ImpRelOrdem.ShowModal();
 end;
 
 procedure TFrmManOS.btn_InserirClick(Sender: TObject);

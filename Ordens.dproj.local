@@ -61,9 +61,9 @@
     <Transaction>2016/11/16 17:06:00.000.632,C:\Users\Lucas\Desktop\UntCadProduto.dfm=C:\Users\Lucas\Documents\GitHub\projetoordem\UntCadProduto.dfm</Transaction>
     <Transaction>2016/11/18 16:03:45.000.742,=C:\Users\Lucas\Documents\GitHub\projetoordem\UntManServico.pas</Transaction>
     <Transaction>2016/11/18 16:24:41.000.082,=C:\Users\Lucas\Documents\GitHub\projetoordem\UntCadServico.pas</Transaction>
-    <Transaction>2016/11/26 15:56:56.300,=C:\Users\Lucas\Documents\GitHub\projetoordem\Unit1.pas</Transaction>
-    <Transaction>2016/11/26 16:11:24.350,C:\Users\Lucas\Documents\GitHub\projetoordem\UntRelOrdem.dfm=C:\Users\Lucas\Documents\GitHub\projetoordem\Unit1.dfm</Transaction>
-    <Transaction>2016/11/26 16:11:24.350,C:\Users\Lucas\Documents\GitHub\projetoordem\UntRelOrdem.pas=C:\Users\Lucas\Documents\GitHub\projetoordem\Unit1.pas</Transaction>
+    <Transaction>2016/11/26 15:56:56.000.300,=C:\Users\Lucas\Documents\GitHub\projetoordem\Unit1.pas</Transaction>
+    <Transaction>2016/11/26 16:11:24.000.350,C:\Users\Lucas\Documents\GitHub\projetoordem\UntRelOrdem.dfm=C:\Users\Lucas\Documents\GitHub\projetoordem\Unit1.dfm</Transaction>
+    <Transaction>2016/11/26 16:11:24.000.350,C:\Users\Lucas\Documents\GitHub\projetoordem\UntRelOrdem.pas=C:\Users\Lucas\Documents\GitHub\projetoordem\Unit1.pas</Transaction>
   </Transactions>
 	<ProjectSortOrder AutoSort="0" SortType="0">
     <File Path="UntCadCliente.pas"/>

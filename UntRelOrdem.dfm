@@ -2,8 +2,8 @@ object ImpRelOrdem: TImpRelOrdem
   Left = 0
   Top = 0
   Caption = 'Imprimir Ordem de Servi'#231'o'
-  ClientHeight = 358
-  ClientWidth = 355
+  ClientHeight = 326
+  ClientWidth = 341
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -17,8 +17,8 @@ object ImpRelOrdem: TImpRelOrdem
   object Panel1: TPanel
     Left = 0
     Top = 0
-    Width = 355
-    Height = 81
+    Width = 341
+    Height = 65
     Align = alTop
     Caption = 'Imprimir Ordem de Servi'#231'o'
     Color = clHighlight
@@ -30,11 +30,10 @@ object ImpRelOrdem: TImpRelOrdem
     ParentBackground = False
     ParentFont = False
     TabOrder = 0
-    ExplicitWidth = 447
   end
   object BitBtn1: TBitBtn
     Left = 112
-    Top = 239
+    Top = 231
     Width = 81
     Height = 33
     Caption = 'Imprimir'
@@ -91,10 +90,11 @@ object ImpRelOrdem: TImpRelOrdem
       B5B5B5B5B5FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF}
     NumGlyphs = 2
     TabOrder = 1
+    OnClick = BitBtn1Click
   end
   object BitBtn2: TBitBtn
-    Left = 216
-    Top = 239
+    Left = 211
+    Top = 231
     Width = 81
     Height = 33
     Caption = 'Cancelar'
@@ -157,19 +157,19 @@ object ImpRelOrdem: TImpRelOrdem
     Left = 40
     Top = 87
     Width = 281
-    Height = 137
+    Height = 114
     Caption = 'Ordem de Servi'#231'o'
     TabOrder = 3
     object Label1: TLabel
       Left = 27
-      Top = 64
+      Top = 48
       Width = 126
       Height = 13
       Caption = 'Digite o N'#250'mero da Ordem'
     end
     object Edit1: TEdit
       Left = 159
-      Top = 61
+      Top = 45
       Width = 93
       Height = 21
       TabOrder = 0

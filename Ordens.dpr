@@ -4,8 +4,8 @@ program Ordens;
 
 uses
   Vcl.Forms,
-  UntMenuPrincipal in 'UntMenuPrincipal.pas' {FrmMenuPrincipal},
   UntDM in 'UntDM.pas' {DM: TDataModule},
+  UntMenuPrincipal in 'UntMenuPrincipal.pas' {FrmMenuPrincipal},
   UntManCliente in 'UntManCliente.pas' {FrmManCliente},
   UntCadCliente in 'UntCadCliente.pas' {FrmCadCliente},
   UntManProduto in 'UntManProduto.pas' {FrmManProduto},
@@ -24,8 +24,8 @@ uses
 begin
   Application.Initialize;
   Application.MainFormOnTaskbar := True;
-  Application.CreateForm(TFrmMenuPrincipal, FrmMenuPrincipal);
   Application.CreateForm(TDM, DM);
+  Application.CreateForm(TFrmMenuPrincipal, FrmMenuPrincipal);
   Application.CreateForm(TFrmManCliente, FrmManCliente);
   Application.CreateForm(TFrmCadCliente, FrmCadCliente);
   Application.CreateForm(TFrmManProduto, FrmManProduto);

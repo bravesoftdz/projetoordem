@@ -812,7 +812,6 @@ object FrmMenuPrincipal: TFrmMenuPrincipal
     Top = 0
     Width = 531
     Height = 31
-    UseSystemFont = False
     ActionManager = ActionManager1
     Caption = 'ActionMainMenuBar1'
     Color = clMenuBar
@@ -822,7 +821,7 @@ object FrmMenuPrincipal: TFrmMenuPrincipal
     ColorMap.UnusedColor = clWhite
     EdgeBorders = [ebTop, ebBottom]
     Font.Charset = DEFAULT_CHARSET
-    Font.Color = clBlack
+    Font.Color = clWindowText
     Font.Height = -13
     Font.Name = 'Segoe UI'
     Font.Style = []
@@ -871,10 +870,10 @@ object FrmMenuPrincipal: TFrmMenuPrincipal
   object ImageList1: TImageList
     Height = 24
     Width = 24
-    Left = 168
+    Left = 144
     Top = 152
     Bitmap = {
-      494C010109005400A80018001800FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      494C010109005400AC0018001800FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       000000000000360000002800000060000000480000000100200000000000006C
       0000000000000000000000000000000000000000000000000000000000000000
       00000000000000000000FDFAF709F1DFCA41E0B88992D29956D0CB893BF2C983

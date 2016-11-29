@@ -15,6 +15,7 @@ type
     Label1: TLabel;
     Edit1: TEdit;
     procedure BitBtn2Click(Sender: TObject);
+    procedure BitBtn1Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -27,6 +28,58 @@ var
 implementation
 
 {$R *.dfm}
+
+uses UntManOS, UntDM;
+
+procedure TImpRelOrdem.BitBtn1Click(Sender: TObject);
+begin
+ FrmManOS.ADOQryOrdem.Close;
+ FrmManOS.ADOQrySolucaoXOrdem.Close;
+ with FrmManOS.ADOQryOrdem.SQL do
+ begin
+  clear;
+   Add('SELECT OS.*, C.nome_razao, C.endereco, C.cidade, C.bairro, C.estado, C.cep, C.telefone, C.celular, C.email, F.cargo, F.nome_func as func_nome '+
+        'FROM Clientes C '+
+           'INNER JOIN Ordem_Servicos OS '+
+        'ON c.id = OS.id_cliente '+
+           'INNER JOIN Funcionarios F '+
+        'ON OS.id_funcionario = F.id ');
+
+  if Edit1.Text <> '' then
+  try
+    //StrToInt(Edit1.Text);
+    Add('where OS.numero = ' + Edit1.Text);
+  except
+    on EConvertError do ;
+  end;
+ end;
+ with FrmManOS.ADOQrySolucaoXOrdem.SQL do
+ begin
+  clear;
+  if edit1.Text = '' then
+  begin
+    ShowMessage('Digite o número da Ordem.');
+    Edit1.SetFocus;
+  end
+  else
+  begin
+
+  Add('SELECT SO.*, S.especificacoes '+
+        'FROM SolucaoXOrdem SO '+
+          'INNER JOIN Solucao S '+
+        'ON (SO.id_solucao = S.id)'+
+          'WHERE SO.num_os = '+ Edit1.Text);
+  end;
+ end;
+ FrmManOS.ADOQryOrdem.Open;
+ FrmManOS.ADOQrySolucaoXOrdem.Open;
+ FrmManOS.frxReport1.ShowReport();
+
+
+
+
+
+end;
 
 procedure TImpRelOrdem.BitBtn2Click(Sender: TObject);
 begin
