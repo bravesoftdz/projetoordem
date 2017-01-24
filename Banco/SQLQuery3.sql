@@ -2,6 +2,8 @@ create database DB_OS
 
 drop database DB_OS
 
+use master
+
 use DB_OS
 
 CREATE TABLE Clientes(
@@ -76,6 +78,26 @@ CREATE TABLE SolucaoXOrdem(
 	quant int,
 	descricao varchar,
 	CONSTRAINT PK_ProdutoXOrdem PRIMARY KEY (id_solucao, num_os),
-	CONSTRAINT FK_ProdutoXOrdem2 FOREIGN KEY (id_solucao) REFERENCES solucao (id),
-	CONSTRAINT FK_ProdutoXOrdem3 FOREIGN KEY (num_os) REFERENCES Ordem_Servicos (numero),
+	CONSTRAINT FK_ProdutoXOrdem2 FOREIGN KEY (id_solucao) REFERENCES solucao (id) ON DELETE CASCADE,
+	CONSTRAINT FK_ProdutoXOrdem3 FOREIGN KEY (num_os) REFERENCES Ordem_Servicos (numero)ON DELETE CASCADE,
 )
+
+
+
+
+use db_os
+
+insert into clientes(tipo, nome_razao, cpf_cnpj, rg_ie, data_nasc, endereco, cep, bairro, cidade, estado, telefone, celular, email)
+values('Física', 'Theo Benício Cavalcanti', '712.726.199-74', '41.126.748-6', '20/11/1994', 'Rua B', '97040-314', 'Divina Providência', 'Santa Maria', 'SP', '+55 (19) 34222200', '+55 (19) 987264652','theo-benicio88@emcinfo.com.br')
+
+insert into clientes(tipo, nome_razao, cpf_cnpj, rg_ie, data_nasc, endereco, cep, bairro, cidade, estado, telefone, celular, email)
+values('Física', 'Bryan Felipe Rafael Cardoso', '173.008.667-51', '41.126.748-6', '20/11/1994', 'Rua B', '97040-314', 'Divina Providência', 'Santa Maria', 'SP', '+55 (19) 34222200', '+55 (19) 987264652','theo-benicio88@emcinfo.com.br')
+
+insert into funcionarios(cargo, nome_func, cpf, rg, data_nasc, endereco, cep, bairro, cidade, estado, telefone, celular, email)
+values('Gerente', 'Guilherme Augusto Martins', '592.111.554-10', '11.425.956-2', '11/12/1995','Rua Quirino','13456842','Pauliceia','Piracicaba','SP','+55 (19) 34222200', '+55 (19) 987264652','TESTE@UNIMEP.COM')
+
+INSERT INTO Solucao(preco,especificacoes,marca,quantidade, tipo)
+VALUES('2000', 'TV OLED 52"','Samsung','350','produto')
+
+INSERT INTO Solucao(preco,especificacoes,quantidade, tipo)
+VALUES('250', 'Conserto TV OLED 50"','1','servico')

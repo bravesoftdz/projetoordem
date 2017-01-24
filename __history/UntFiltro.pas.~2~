@@ -1,0 +1,39 @@
+unit UntFiltro;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.ExtCtrls, Vcl.StdCtrls,
+  Vcl.ComCtrls, Vcl.Buttons;
+
+type
+  TFrmFiltro = class(TForm)
+    RadioGroup1: TRadioGroup;
+    Panel1: TPanel;
+    GroupBox1: TGroupBox;
+    BitBtn1: TBitBtn;
+    BitBtn2: TBitBtn;
+    LabeledEdit1: TLabeledEdit;
+    LabeledEdit2: TLabeledEdit;
+    StatusBar1: TStatusBar;
+    procedure BitBtn2Click(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  FrmFiltro: TFrmFiltro;
+
+implementation
+
+{$R *.dfm}
+
+procedure TFrmFiltro.BitBtn2Click(Sender: TObject);
+begin
+Close;
+end;
+
+end.

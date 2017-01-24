@@ -34,7 +34,6 @@ uses UntManOS, UntDM;
 procedure TImpRelOrdem.BitBtn1Click(Sender: TObject);
 begin
  FrmManOS.ADOQryOrdem.Close;
- FrmManOS.ADOQrySolucaoXOrdem.Close;
  with FrmManOS.ADOQryOrdem.SQL do
  begin
   clear;
@@ -53,6 +52,9 @@ begin
     on EConvertError do ;
   end;
  end;
+  FrmManOS.ADOQryOrdem.Open;
+
+  FrmManOS.ADOQrySolucaoXOrdem.Close;
  with FrmManOS.ADOQrySolucaoXOrdem.SQL do
  begin
   clear;
@@ -71,14 +73,9 @@ begin
           'WHERE SO.num_os = '+ Edit1.Text);
   end;
  end;
- FrmManOS.ADOQryOrdem.Open;
  FrmManOS.ADOQrySolucaoXOrdem.Open;
+
  FrmManOS.frxReport1.ShowReport();
-
-
-
-
-
 end;
 
 procedure TImpRelOrdem.BitBtn2Click(Sender: TObject);

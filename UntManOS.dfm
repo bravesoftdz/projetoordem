@@ -69,6 +69,7 @@ object FrmManOS: TFrmManOS
       Hint = 'Filtrar Registro'
       Caption = 'btn_Filtrar'
       ImageIndex = 0
+      OnClick = btn_FiltrarClick
     end
     object ToolButton4: TToolButton
       Left = 43
@@ -214,14 +215,14 @@ object FrmManOS: TFrmManOS
     TabOrder = 2
     object Label3: TLabel
       Left = 16
-      Top = 106
+      Top = 74
       Width = 33
       Height = 13
       Caption = 'Cliente'
     end
     object Label4: TLabel
       Left = 16
-      Top = 69
+      Top = 107
       Width = 55
       Height = 13
       Caption = 'Funcion'#225'rio'
@@ -243,7 +244,7 @@ object FrmManOS: TFrmManOS
     end
     object SpeedButton1: TSpeedButton
       Left = 540
-      Top = 97
+      Top = 65
       Width = 29
       Height = 30
       Glyph.Data = {
@@ -326,7 +327,7 @@ object FrmManOS: TFrmManOS
     end
     object SpeedButton2: TSpeedButton
       Left = 540
-      Top = 61
+      Top = 99
       Width = 29
       Height = 30
       Glyph.Data = {
@@ -445,7 +446,7 @@ object FrmManOS: TFrmManOS
     end
     object DBEdit1: TDBEdit
       Left = 93
-      Top = 103
+      Top = 71
       Width = 121
       Height = 21
       DataField = 'id_cliente'
@@ -454,7 +455,7 @@ object FrmManOS: TFrmManOS
     end
     object DBEdit2: TDBEdit
       Left = 93
-      Top = 66
+      Top = 104
       Width = 121
       Height = 21
       DataField = 'id_funcionario'
@@ -463,7 +464,7 @@ object FrmManOS: TFrmManOS
     end
     object DBLookupComboBox1: TDBLookupComboBox
       Left = 216
-      Top = 103
+      Top = 71
       Width = 321
       Height = 21
       DataField = 'id_cliente'
@@ -475,7 +476,7 @@ object FrmManOS: TFrmManOS
     end
     object DBLookupComboBox2: TDBLookupComboBox
       Left = 216
-      Top = 66
+      Top = 104
       Width = 321
       Height = 21
       DataField = 'id_funcionario'
@@ -1096,7 +1097,7 @@ object FrmManOS: TFrmManOS
     Width = 24
     Left = 16
     Bitmap = {
-      494C01010C002000BC0018001800FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      494C01010C002000CC0018001800FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000600000006000000001002000000000000090
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
@@ -2296,7 +2297,7 @@ object FrmManOS: TFrmManOS
     Width = 24
     Left = 64
     Bitmap = {
-      494C01010C002000B00018001800FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      494C01010C002000C00018001800FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000600000006000000001002000000000000090
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
@@ -3496,7 +3497,7 @@ object FrmManOS: TFrmManOS
     Width = 24
     Left = 112
     Bitmap = {
-      494C01010C002C00C80018001800FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      494C01010C002C00D80018001800FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000600000006000000001002000000000000090
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
@@ -4732,6 +4733,7 @@ object FrmManOS: TFrmManOS
     Left = 504
   end
   object ADOQueryProduto: TADOQuery
+    Active = True
     Connection = DM.ADOConnection1
     CursorType = ctStatic
     Parameters = <>
@@ -4762,7 +4764,7 @@ object FrmManOS: TFrmManOS
     Left = 392
     Top = 217
     Bitmap = {
-      494C010102005C008C0010001800FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      494C010102005C009C0010001800FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000400000001800000001002000000000000018
       0000000000000000000000000000000000000000000000000000000000000000
       00000000000000000000F8FCFD0A7CC8E5C083CFECB8FAFDFE07000000000000
@@ -4968,7 +4970,6 @@ object FrmManOS: TFrmManOS
       000000000000}
   end
   object ADOQryOrdem: TADOQuery
-    Active = True
     Connection = DM.ADOConnection1
     CursorType = ctStatic
     Parameters = <>
@@ -5138,7 +5139,7 @@ object FrmManOS: TFrmManOS
           Font.Color = clBlack
           Font.Height = -19
           Font.Name = 'Arial'
-          Font.Style = [fsBold]
+          Font.Style = [fsBold, fsUnderline]
           HAlign = haCenter
           Memo.UTF8W = (
             'Gest'#227'o de Ordem de Servi'#231'os')
@@ -5152,7 +5153,7 @@ object FrmManOS: TFrmManOS
           Font.Color = clBlack
           Font.Height = -15
           Font.Name = 'Arial'
-          Font.Style = []
+          Font.Style = [fsBold]
           HAlign = haCenter
           Memo.UTF8W = (
             'Ordem de Servi'#231'o')
@@ -5487,7 +5488,7 @@ object FrmManOS: TFrmManOS
           Font.Height = -13
           Font.Name = 'Arial'
           Font.Style = []
-          HAlign = haCenter
+          HAlign = haRight
           Memo.UTF8W = (
             '[frxDBDataset1."valor_total"]')
           ParentFont = False
@@ -5522,7 +5523,7 @@ object FrmManOS: TFrmManOS
           DataSetName = 'frxDBDataset1'
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clBlack
-          Font.Height = -13
+          Font.Height = -15
           Font.Name = 'Arial'
           Font.Style = [fsBold]
           Memo.UTF8W = (
@@ -5570,8 +5571,15 @@ object FrmManOS: TFrmManOS
           DataField = 'id_cliente'
           DataSet = frxDBDataset1
           DataSetName = 'frxDBDataset1'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -13
+          Font.Name = 'Arial'
+          Font.Style = []
+          HAlign = haRight
           Memo.UTF8W = (
             '[frxDBDataset1."id_cliente"]')
+          ParentFont = False
         end
         object frxDBDataset1id_funcionario: TfrxMemoView
           Left = 109.606370000000000000
@@ -5581,8 +5589,15 @@ object FrmManOS: TFrmManOS
           DataField = 'id_funcionario'
           DataSet = frxDBDataset1
           DataSetName = 'frxDBDataset1'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -13
+          Font.Name = 'Arial'
+          Font.Style = []
+          HAlign = haRight
           Memo.UTF8W = (
             '[frxDBDataset1."id_funcionario"]')
+          ParentFont = False
         end
         object frxDBDataset1nome_razao: TfrxMemoView
           Left = 170.078850000000000000
@@ -5679,12 +5694,12 @@ object FrmManOS: TFrmManOS
           Height = 18.897650000000000000
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clBlack
-          Font.Height = -13
+          Font.Height = -15
           Font.Name = 'Arial'
           Font.Style = [fsBold]
           HAlign = haRight
           Memo.UTF8W = (
-            'OS N'#250'mero')
+            'OS N'#250'mero:')
           ParentFont = False
         end
         object Memo2: TfrxMemoView
@@ -5915,7 +5930,7 @@ object FrmManOS: TFrmManOS
         object Memo16: TfrxMemoView
           Left = 430.866420000000000000
           Top = 247.330860000000000000
-          Width = 94.488250000000000000
+          Width = 90.708720000000000000
           Height = 18.897650000000000000
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clBlack
@@ -6007,15 +6022,15 @@ object FrmManOS: TFrmManOS
           Frame.Typ = [ftTop]
         end
         object Line10: TfrxLineView
-          Top = 79.370130000000000000
-          Height = 22.677180000000000000
+          Top = 78.370130000000000000
+          Height = 26.456710000000000000
           Color = clBlack
           Frame.Typ = [ftLeft]
         end
         object Line11: TfrxLineView
           Left = 718.110700000000000000
-          Top = 83.929190000000000000
-          Height = 22.677180000000000000
+          Top = 78.929190000000000000
+          Height = 26.456710000000000000
           Color = clBlack
           Frame.Typ = [ftLeft]
         end
@@ -6045,6 +6060,12 @@ object FrmManOS: TFrmManOS
         object Memo25: TfrxMemoView
           Width = 718.110700000000000000
           Height = 18.897650000000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -13
+          Font.Name = 'Arial'
+          Font.Style = []
+          HAlign = haRight
           Highlight.Font.Charset = DEFAULT_CHARSET
           Highlight.Font.Color = clRed
           Highlight.Font.Height = -13
@@ -6053,6 +6074,7 @@ object FrmManOS: TFrmManOS
           Highlight.Condition = '<line> mod 2 = 0'
           Highlight.FillType = ftBrush
           Highlight.Fill.BackColor = clSilver
+          ParentFont = False
         end
         object frxDBDataset2id_solucao: TfrxMemoView
           Left = 15.118120000000000000
@@ -6076,13 +6098,20 @@ object FrmManOS: TFrmManOS
         end
         object frxDBDataset2valor_unit: TfrxMemoView
           Left = 430.866420000000000000
-          Width = 79.370130000000000000
+          Width = 90.708720000000000000
           Height = 18.897650000000000000
           DataField = 'valor_unit'
           DataSet = frxDBDataset2
           DataSetName = 'frxDBDataset2'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -13
+          Font.Name = 'Arial'
+          Font.Style = []
+          HAlign = haRight
           Memo.UTF8W = (
             '[frxDBDataset2."valor_unit"]')
+          ParentFont = False
         end
         object frxDBDataset2quant: TfrxMemoView
           Left = 544.252320000000000000
@@ -6091,8 +6120,15 @@ object FrmManOS: TFrmManOS
           DataField = 'quant'
           DataSet = frxDBDataset2
           DataSetName = 'frxDBDataset2'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -13
+          Font.Name = 'Arial'
+          Font.Style = []
+          HAlign = haCenter
           Memo.UTF8W = (
             '[frxDBDataset2."quant"]')
+          ParentFont = False
         end
         object frxDBDataset2valor_total: TfrxMemoView
           Left = 634.961040000000000000
@@ -6101,8 +6137,15 @@ object FrmManOS: TFrmManOS
           DataField = 'valor_total'
           DataSet = frxDBDataset2
           DataSetName = 'frxDBDataset2'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -13
+          Font.Name = 'Arial'
+          Font.Style = []
+          HAlign = haRight
           Memo.UTF8W = (
             '[frxDBDataset2."valor_total"]')
+          ParentFont = False
         end
       end
     end
@@ -6116,7 +6159,6 @@ object FrmManOS: TFrmManOS
     Top = 530
   end
   object ADOQrySolucaoXOrdem: TADOQuery
-    Active = True
     Connection = DM.ADOConnection1
     CursorType = ctStatic
     Parameters = <>

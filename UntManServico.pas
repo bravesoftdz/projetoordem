@@ -32,6 +32,8 @@ type
     ADODataSet1preco: TFloatField;
     ADODataSet1id: TAutoIncField;
     ADODataSet1especificacoes: TStringField;
+    ToolButton1: TToolButton;
+    ToolButton2: TToolButton;
     procedure btn_InserirClick(Sender: TObject);
     procedure btn_AlterarClick(Sender: TObject);
     procedure btn_ExcluirClick(Sender: TObject);
@@ -39,6 +41,7 @@ type
     procedure FormActivate(Sender: TObject);
     procedure Edit1Change(Sender: TObject);
     procedure ApplicationEvents1Exception(Sender: TObject; E: Exception);
+    procedure ToolButton2Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -52,7 +55,7 @@ implementation
 
 {$R *.dfm}
 
-uses UntDM, UntCadProduto, UntCadServico;
+uses UntDM, UntCadProduto, UntCadServico, UntRelServico;
 
 procedure TFrmManServico.ApplicationEvents1Exception(Sender: TObject;
   E: Exception);
@@ -114,5 +117,10 @@ DM.ADODSSolucao.Open;
 end;
 
 
+
+procedure TFrmManServico.ToolButton2Click(Sender: TObject);
+begin
+frmRelServico.ShowModal;
+end;
 
 end.

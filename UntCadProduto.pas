@@ -68,6 +68,9 @@ begin
   Application.MessageBox('O registro foi incluído ou alterado com sucesso.', 'Informação', MB_OK+MB_ICONINFORMATION);
 
 DM.ADODSSolucao.Post;
+
+DM.ADODSSolucao.Refresh;
+
 btn_salvar.Enabled := false;
 btn_cancelar.Enabled := false;
 btn_sair.Enabled := true;

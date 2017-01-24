@@ -3,7 +3,7 @@ object FrmMenuPrincipal: TFrmMenuPrincipal
   Top = 0
   Caption = 'Sistema de Gerenciamento de Ordem de Servi'#231'o - COALA'
   ClientHeight = 328
-  ClientWidth = 531
+  ClientWidth = 592
   Color = clSilver
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -810,8 +810,9 @@ object FrmMenuPrincipal: TFrmMenuPrincipal
   object ActionMainMenuBar1: TActionMainMenuBar
     Left = 0
     Top = 0
-    Width = 531
+    Width = 592
     Height = 31
+    UseSystemFont = False
     ActionManager = ActionManager1
     Caption = 'ActionMainMenuBar1'
     Color = clMenuBar
@@ -821,17 +822,38 @@ object FrmMenuPrincipal: TFrmMenuPrincipal
     ColorMap.UnusedColor = clWhite
     EdgeBorders = [ebTop, ebBottom]
     Font.Charset = DEFAULT_CHARSET
-    Font.Color = clWindowText
+    Font.Color = clBlack
     Font.Height = -13
     Font.Name = 'Segoe UI'
     Font.Style = []
     Spacing = 0
+    ExplicitWidth = 531
+  end
+  object StatusBar1: TStatusBar
+    Left = 0
+    Top = 296
+    Width = 592
+    Height = 32
+    Panels = <
+      item
+        Width = 75
+      end
+      item
+        Width = 300
+      end
+      item
+        Width = 300
+      end
+      item
+        Width = 50
+      end>
+    ExplicitWidth = 531
   end
   object ActionToolBar1: TActionToolBar
     Left = 0
     Top = 31
-    Width = 531
-    Height = 44
+    Width = 592
+    Height = 36
     ActionManager = ActionManager1
     Caption = 'ActionToolBar1'
     Color = clMenuBar
@@ -847,25 +869,7 @@ object FrmMenuPrincipal: TFrmMenuPrincipal
     Font.Style = []
     ParentFont = False
     Spacing = 0
-  end
-  object StatusBar1: TStatusBar
-    Left = 0
-    Top = 296
-    Width = 531
-    Height = 32
-    Panels = <
-      item
-        Width = 75
-      end
-      item
-        Width = 300
-      end
-      item
-        Width = 300
-      end
-      item
-        Width = 50
-      end>
+    ExplicitWidth = 531
   end
   object ImageList1: TImageList
     Height = 24
@@ -873,7 +877,7 @@ object FrmMenuPrincipal: TFrmMenuPrincipal
     Left = 144
     Top = 152
     Bitmap = {
-      494C010109005400AC0018001800FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      494C010109005400BC0018001800FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       000000000000360000002800000060000000480000000100200000000000006C
       0000000000000000000000000000000000000000000000000000000000000000
       00000000000000000000FDFAF709F1DFCA41E0B88992D29956D0CB893BF2C983
@@ -1823,6 +1827,16 @@ object FrmMenuPrincipal: TFrmMenuPrincipal
                 Action = RelFunc
                 Caption = 'R&elat'#243'rio de Funcion'#225'rios'
                 ImageIndex = 7
+              end
+              item
+                Action = Action1
+                Caption = 'Re&lat'#243'rio de Produtos'
+                ImageIndex = 6
+              end
+              item
+                Action = Action2
+                Caption = 'Rel&at'#243'rio de Servi'#231'os'
+                ImageIndex = 6
               end>
             Caption = '&Relat'#243'rios'
           end>
@@ -1878,7 +1892,62 @@ object FrmMenuPrincipal: TFrmMenuPrincipal
             Caption = 'S&air'
             ImageIndex = 5
           end>
+      end
+      item
+        Items = <
+          item
+            Action = Cad_os
+            Caption = '&Ordem de Servi'#231'o'
+            ImageIndex = 0
+          end
+          item
+            Action = Cad_Cliente
+            Caption = '&Cliente'
+            ImageIndex = 2
+          end
+          item
+            Action = Cad_funcionario
+            Caption = '&Funcion'#225'rios'
+            ImageIndex = 3
+          end
+          item
+            Action = cad_produto
+            Caption = '&Produtos'
+            ImageIndex = 4
+          end
+          item
+            Action = act_Servico
+            Caption = '&Servi'#231'os'
+            ImageIndex = 1
+          end
+          item
+            Action = act_sair
+            Caption = 'S&air'
+            ImageIndex = 5
+          end>
         ActionBar = ActionToolBar1
+      end
+      item
+        Items = <
+          item
+            Action = Action2
+            Caption = 'Rel&at'#243'rio de Servi'#231'os'
+            ImageIndex = 6
+          end
+          item
+            Action = Action1
+            Caption = 'Re&lat'#243'rio de Produtos'
+            ImageIndex = 6
+          end
+          item
+            Action = RelFunc
+            ImageIndex = 7
+          end
+          item
+            Action = RelClientes
+            Caption = '&Relat'#243'rio de Clientes'
+            ImageIndex = 6
+          end>
       end>
     Images = ImageList1
     Left = 216
@@ -1938,6 +2007,18 @@ object FrmMenuPrincipal: TFrmMenuPrincipal
       Hint = 'Relat'#243'rio de Funcion'#225'rios'
       ImageIndex = 7
       OnExecute = RelFuncExecute
+    end
+    object Action1: TAction
+      Category = 'Relat'#243'rios'
+      Caption = 'Relat'#243'rio de Produtos'
+      ImageIndex = 6
+      OnExecute = Action1Execute
+    end
+    object Action2: TAction
+      Category = 'Relat'#243'rios'
+      Caption = 'Relat'#243'rio de Servi'#231'os'
+      ImageIndex = 6
+      OnExecute = Action2Execute
     end
   end
   object Timer1: TTimer

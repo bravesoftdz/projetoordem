@@ -34,6 +34,8 @@ type
     ADODataSet1especificacoes: TStringField;
     ADODataSet1marca: TStringField;
     ADODataSet1quantidade: TIntegerField;
+    ToolButton1: TToolButton;
+    ToolButton2: TToolButton;
     procedure btn_InserirClick(Sender: TObject);
     procedure btn_AlterarClick(Sender: TObject);
     procedure btn_ExcluirClick(Sender: TObject);
@@ -41,6 +43,7 @@ type
     procedure FormActivate(Sender: TObject);
     procedure Edit1Change(Sender: TObject);
     procedure ApplicationEvents1Exception(Sender: TObject; E: Exception);
+    procedure ToolButton1Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -54,7 +57,7 @@ implementation
 
 {$R *.dfm}
 
-uses UntDM, UntCadProduto;
+uses UntDM, UntCadProduto, UntRelProduto;
 
 procedure TFrmManProduto.ApplicationEvents1Exception(Sender: TObject;
   E: Exception);
@@ -111,10 +114,15 @@ procedure TFrmManProduto.FormActivate(Sender: TObject);
 begin
 DM.ADODSSolucao.Close;
 DM.ADODSSolucao.CommandText:= '';
-DM.ADODSSolucao.CommandText:= 'select * from SOLUCAO order by id';
+DM.ADODSSolucao.CommandText:= 'SELECT * FROM solucao WHERE tipo=:produto';
 DM.ADODSSolucao.Open;
 end;
 
 
+
+procedure TFrmManProduto.ToolButton1Click(Sender: TObject);
+begin
+  frmRelProduto.ShowModal;
+end;
 
 end.
